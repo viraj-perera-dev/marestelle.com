@@ -1,31 +1,45 @@
-# ⚡ Next.js Static Site SEO Template
+# ⚡ Next.js Static Site SEO Template (with Multilanguage Support)
 
-A minimal, high-performance **Next.js** template optimized for generating static pages with strong SEO support. Ideal for hosting on static site platforms (e.g., Vercel, Netlify), this template is perfect for quickly launching landing pages, product presentations, or micro-sites.
+A minimal, high-performance **Next.js** template optimized for generating static pages with strong SEO support and multi-language capabilities using `next-intl`. Perfect for hosting on platforms like Vercel, Netlify, or traditional web hosting services.
 
 ---
 
+## 🌍 Live Preview
+
+You can preview the deployed site here:
+
+🔗 [https://marestelle.vercel.app/it](https://marestelle.vercel.app/it)
+
+> ⚠️ This is a temporary deployment link provided by Vercel for preview purposes. Replace this with your custom domain when ready.
+
+---
+
+
 ## ✨ Features
 
-* ✅ **SEO-ready** via `Metadata.jsx` helper
-* ⚡ **Blazing fast static pages** with `next export`
-* 📱 Fully responsive layout with Tailwind CSS (optional)
-* 🌐 Best practices for **OpenGraph**, **structured data**, and meta tags
-* 🧠 Clean and easy to extend
+- ✅ **SEO-ready** via `Metadata.jsx` helper
+- 🌐 **Multilanguage** routing with `next-intl`
+- ⚡ **Static export** with `next export`
+- 🎨 **Tailwind CSS** styling
+- 🧠 **Structured data** and OpenGraph support
+- 📱 Fully responsive design
 
 ---
 
 ## 📁 Project Structure
 
-```bash
+```
 ├── components/
 │   └── Metadata.jsx      # SEO metadata + structured data generator
 ├── app/
-│   └── page.jsx         # Example homepage
-│   └── contatti/page.jsx
-│   └── chi-siamo/page.jsx
+│   └── [locale]/         # Dynamic locale routing
+│       ├── page.jsx      # Homepage for each locale
+│       ├── contatti/
+│       │   └── page.jsx
+│       └── chi-siamo/
+│           └── page.jsx
 ├── public/               # Static assets
-├── styles/               # Global styles (if any)
-├── next.config.js        # Next.js config
+├── next.config.js        # Next.js config with `output: 'export'`
 └── README.md
 ```
 
@@ -33,82 +47,85 @@ A minimal, high-performance **Next.js** template optimized for generating static
 
 ## 🚀 Getting Started
 
-First, install dependencies:
-
 ```bash
 npm install
-# or
-yarn install
-```
-
-Start the development server:
-
-```bash
 npm run dev
 # or
+yarn install
 yarn dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
+Visit [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🔨 Build for Production
-
-To generate a **fully static site**:
+## 🔨 Build Static Export
 
 ```bash
 npm run build
-# Output is saved in /out folder
+# Generates the /out folder with static files
 ```
 
-You can now host the `/out` folder on any static hosting service (e.g., Hostinger, Register, Vercel, Netlify, etc..).
-
----
-
-## 📦 Deploy
-
-To deploy to Vercel (you have to be logged in before running this command):
-
-```bash
-npm vercel --prod
-```
+Deploy the `/out` folder to any static host (Netlify, Hostinger, GitHub Pages, etc.).
 
 ---
 
 ## 🧠 Metadata Helper
 
-This template includes `components/Metadata.jsx`:
+Use `components/Metadata.jsx`:
 
-```js
-import { generateSEOMetadata, generateStructuredData } from "@/components/Metadata";
+```jsx
+<Metadata
+  title="Chi siamo - Marestelle"
+  description="Scopri chi siamo. La nostra missione e i nostri valori."
+  image="/og-image.jpg"
+  type="WebPage"
+/>
 ```
 
-Use it to inject:
+Injects:
+- SEO title, description, canonical link
+- OpenGraph and Twitter Cards
+- Schema.org structured data (`WebPage`, `Article`, etc.)
 
-* SEO titles and descriptions
-* OpenGraph images
-* Schema.org structured data (`WebPage`, `Article`, etc.)
+---
+
+## 🌐 Multilingual Support
+
+Pages are organized by locale inside `[locale]` folders (e.g. `/it`, `/en`).
+
+- Fully crawlable by search engines
+- Language-specific URLs like `/it/contatti`, `/en/contact`
+- Translation messages managed via `next-intl`
+
+---
+
+## 🏗 Customization
+
+- Replace content in `app/[locale]`
+- Update translations and SEO data
+- Customize design using Tailwind classes
+
+---
+
+## ✅ Summary
+
+| Feature        | Description                            |
+|----------------|----------------------------------------|
+| Static Export  | Great performance, easy hosting        |
+| Multilanguage  | Locale-aware routing and translations  |
+| SEO Metadata   | Tags, OpenGraph, structured data       |
+| Tailwind CSS   | Responsive and modern design           |
+| Deploy Ready   | Works with any static hosting provider |
 
 ---
 
 ## 👨‍💼 Author
 
-Built with ❤️ using [Next.js](https://nextjs.org) and modern web practices.
+Built with ❤️ by Viraj Perera using [Next.js](https://nextjs.org) and [next-intl](https://next-intl-docs.vercel.app).
 
 ---
 
-## Support
-
-If you find this project useful and would like to support its development, consider buying me a ☕!
-
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-donate-orange.svg)](https://www.buymeacoffee.com/virajperera
-)
-
-
 ## 📜 License
 
-[MIT](https://github.com/viraj-perera-dev/nextjs-static-page-template/blob/main/LICENSE)
-
-"# next-static-multilang-template" 
-"# marestelle.com" 
+[Next.js](https://github.com/viraj-perera-dev/marestelle.com/blob/main/LICENSE)

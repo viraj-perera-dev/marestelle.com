@@ -1,0 +1,21 @@
+{
+  "Navbar": {
+    "Home": "Home",
+    "About": "About",
+    "Contact": "Contact"
+  },
+  "HomePage": {
+    "title": "Welcome!"
+  },
+  "AboutUs": {
+    "title": "About Us"
+  },
+  "Contact": {
+    "title": "Contact"
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backToHome": "Back to Home"
+  }
+}
