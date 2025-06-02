@@ -2,10 +2,24 @@
   "Navbar": {
     "Home": "Home",
     "About": "Chi Siamo",
-    "Contact": "CONTATTI"
+    "Contact": "CONTATTI",
+    "ContactUs": "Contattaci"
   },
   "HomePage": {
-    "title": "Benvenuto!"
+    "title": "Vivi l’Incanto del Mare di Sicilia",
+    "subtitle": "Marestelle: un’esperienza di eleganza e quiete sul Mediterraneo, tra comfort esclusivi e natura incontaminata.",
+    "section1": {
+      "title": "Mare e Stelle offre diversi servizi alle Isole Tremiti",
+      "subtitle": "Che sia via mare o via terra, penseremo noi a farvi trascorrere una vacanza da sogno in pieno relax…",
+      "listItem1": "",
+      "subItem1":"",
+      "listItem2": "",
+      "subItem2":"",
+      "listItem3": "",
+      "subItem3":"",
+      "listItem4": "",
+      "subItem4":""
+    }
   },
   "AboutUs": {
     "title": "Chi Siamo"

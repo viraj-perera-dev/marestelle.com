@@ -3,22 +3,32 @@
 import { Link } from "@/i18n/navigation";
 import { routing } from '@/i18n/routing';
 import { usePathname } from "next/navigation"; // Get current route
-import { useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { useEffect, useRef, useState } from "react";
+import { CgMenuLeft } from "react-icons/cg";
 import { IoMdClose } from "react-icons/io";
 import routes from "@/navbarRoutes";
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { MdOutlineArrowDropDown } from "react-icons/md";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { IoMdPaperPlane } from "react-icons/io";
 
-export default function Navbar() {
+
+
+export default function Navbar({ locale }) {
   const pathname = usePathname(); // Get current route
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuOpenAnimation, setMenuOpenAnimation] = useState(false);
   const [menuItemShow, setMenuItemShow] = useState(false);
-  const locale = useLocale(); 
   const t = useTranslations("Navbar");
   const router = useRouter();
   const { locales } = routing;
+
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
 
   // Function to check active link
   const isActive = (href) =>
@@ -42,33 +52,91 @@ export default function Navbar() {
     }, 1000);
   };
 
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  const handleLocaleChange = (newLocale) => {
+    setIsOpen(false)
+    const segments = pathname.split("/").filter(Boolean)
+    if (locales.includes(segments[0])) {
+      segments[0] = newLocale
+    } else {
+      segments.unshift(newLocale)
+    }
+    const newPath = "/" + segments.join("/")
+    router.push(newPath)
+  }
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
+
   return (
     <>
-      <div className="block md:hidden">
+      <div className="flex justify-center">
         {/* Mobile Navbar Header */}
-        <div className="absolute top-0 w-full z-50 h-20 flex justify-between items-center p-5 text-black">
-          <Link href="/">Logo here</Link>
-          <RxHamburgerMenu
-            className="text-2xl cursor-pointer text-black"
-            onClick={openMenu}
-          />
+        <div className="absolute top-0 w-[90%] z-50 h-20 flex justify-between items-center p-5 text-black">
+          <Link href="/">
+            <Image src="/assets/logo/cropped-marestelle-titleonly.png" className="w-56 h-56 object-contain invert" alt="cloud" width={500} height={500} />
+          </Link>
+          <div className="flex items-center gap-5">
+            <button className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-md text-gray-800 border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
+              {t("Contact")}
+              <IoMdPaperPlane className="text-2xl cursor-pointer" />
+            </button>
+            <div className="">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-sm text-gray-800 border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                {locale.toUpperCase()}
+                <MdOutlineArrowDropDown className="text-2xl cursor-pointer" />
+              </button>
+              {isOpen && (
+                <ul className="absolute w-[5.5rem] bg-white z-10 mt-1  border border-gray-300 rounded-md shadow-lg  overflow-auto">
+                  {locales.map((loc) => (
+                    <li
+                      key={loc}
+                      onClick={() => handleLocaleChange(loc)}
+                      className="px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 cursor-pointer transition"
+                    >
+                      {loc.toUpperCase()}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <div className="bg-white p-3 rounded-full">
+              <CgMenuLeft
+                className="text-2xl cursor-pointer text-black"
+                onClick={openMenu}
+              />
+            </div>
+          </div>
         </div>
         {/* Mobile Sidebar Menu */}
         {menuOpen && (
           <div
-            className={`fixed top-0 left-0 w-full h-full bg-black text-white opacity-0 transform transition-all duration-1000 ease-in-out z-50 flex items-center justify-center ${
-              menuOpenAnimation
-                ? "opacity-100 translate-y-0 h-screen"
-                : "-translate-y-full opacity-0"
-            }`}
-            style={{ transitionProperty: "transform, opacity" }}
+            className={`fixed top-0 right-0 w-full h-full bg-white text-black z-50 transition-transform duration-700 ease-in-out transform ${menuOpenAnimation ? "translate-x-0" : "translate-x-full"
+              }`}
           >
             <IoMdClose
               className="absolute top-5 right-5 text-3xl cursor-pointer"
               onClick={closeMenu}
             />
+
             {menuItemShow && (
-              <ul className="flex flex-col items-center gap-5 p-5 ">
+              <ul className="flex flex-col items-start gap-5 p-10 mt-20">
                 {routes.map((route) => (
                   <li
                     key={route.path}
@@ -78,7 +146,7 @@ export default function Navbar() {
                     <Link
                       href={route.path}
                       locale={locale}
-                      className={`uppercase ${isActive(route.path)}`}
+                      className={`uppercase w-full text-6xl font-semibold ${isActive(route.path)} hover:text-blue-500`}
                       onClick={closeMenu}
                     >
                       {t(route.name)}
@@ -89,61 +157,7 @@ export default function Navbar() {
             )}
           </div>
         )}
-      </div>
-      {/* Desktop Navbar Header */}
-      <div className="hidden md:block">
-        {/* bg-gradient-to-b from-white/60 to-transparent */}
-        <div
-          className={`text-negative-remove absolute z-40 top-0 left-0 w-full transition-transform duration-300 h-44`}
-        >
-          <div
-            className={`flex justify-between items-center p-8 md:p-5 text-black`}
-          >
-            Logo here
-          </div>
-        </div>
 
-        <div
-          className={`text-negative-remove absolute z-50 top-0 left-0 w-full transition-transform duration-300 `}
-        >
-          <div className={`flex justify-end items-center py-10`}>
-            <nav className="flex justify-end items-center gap-6 mx-6 text-black">
-              {routes.map((route) => (
-                
-                  <Link
-                    key={route.path}
-                    href={route.path}
-                    locale={locale}
-                    className={`uppercase ${isActive(route.path)}`}
-                  >
-                    {t(route.name)}
-                  </Link>
-              
-              ))}
-              <select
-                className="border p-1 text-black"
-                value={locale}
-                onChange={(e) => {
-                  const newLocale = e.target.value;
-                  const segments = pathname.split("/").filter(Boolean);
-                  if (locales.includes(segments[0])) {
-                    segments[0] = newLocale;
-                  } else {
-                    segments.unshift(newLocale);
-                  }
-                  const newPath = "/" + segments.join("/");
-                  router.push(newPath);
-                }}
-              >
-                {locales.map((loc) => (
-                  <option key={loc} value={loc}>
-                    {loc.toUpperCase()}
-                  </option>
-                ))}
-              </select>
-            </nav>
-          </div>
-        </div>
       </div>
     </>
   );

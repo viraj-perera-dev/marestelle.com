@@ -2,10 +2,24 @@
   "Navbar": {
     "Home": "Home",
     "About": "About",
-    "Contact": "Contact"
+    "Contact": "Contact",
+    "ContactUs": "Contact Us"
   },
   "HomePage": {
-    "title": "Welcome!"
+    "title": "Embrace the Essence of Sicilian Seaside Luxury",
+    "subtitle": "Discover Marestelle: Where Elegance Meets the Mediterranean Breeze in the Heart of Sicily.",
+    "section1": {
+      "title": "Our Services",
+      "subtitle": "Mare e Stelle offers various services to the Tremiti Islands: boat excursions and holiday cottages.",
+      "listItem1": "",
+      "subItem1":"",
+      "listItem2": "",
+      "subItem2":"",
+      "listItem3": "",
+      "subItem3":"",
+      "listItem4": "",
+      "subItem4":""
+    }
   },
   "AboutUs": {
     "title": "About Us"
