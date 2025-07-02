@@ -2,7 +2,7 @@
   "Navbar": {
     "Home": "Home",
     "About": "Chi Siamo",
-    "Contact": "CONTATTI",
+    "Contact": "Prenota Ora",
     "ContactUs": "Contattaci"
   },
   "HomePage": {
@@ -19,6 +19,10 @@
       "subItem3":"",
       "listItem4": "",
       "subItem4":""
+    },
+    "section2": {
+      "title": "Le Nostre Barche",
+      "subtitle": "Scoprite le nostre barche per un viaggio di relax e tranquillità."
     }
   },
   "AboutUs": {

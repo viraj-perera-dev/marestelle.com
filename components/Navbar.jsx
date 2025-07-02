@@ -89,14 +89,14 @@ export default function Navbar({ locale }) {
             <Image src="/assets/logo/cropped-marestelle-titleonly.png" className="w-56 h-56 object-contain invert" alt="cloud" width={500} height={500} />
           </Link>
           <div className="flex items-center gap-5">
-            <button className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-md text-gray-800 border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
+            <button className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-md text-gray-800 border border-gray-300 shadow-sm hover:text-black bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
               {t("Contact")}
               <IoMdPaperPlane className="text-2xl cursor-pointer" />
             </button>
             <div className="">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-sm text-gray-800 border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-sm text-gray-800 border border-gray-300 shadow-sm hover:text-black bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {locale.toUpperCase()}
                 <MdOutlineArrowDropDown className="text-2xl cursor-pointer" />
@@ -107,7 +107,7 @@ export default function Navbar({ locale }) {
                     <li
                       key={loc}
                       onClick={() => handleLocaleChange(loc)}
-                      className="px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 cursor-pointer transition"
+                      className="px-4 py-2 text-sm text-gray-700 hover:text-black bg-blue-100 cursor-pointer transition"
                     >
                       {loc.toUpperCase()}
                     </li>
@@ -127,16 +127,15 @@ export default function Navbar({ locale }) {
         {/* Mobile Sidebar Menu */}
         {menuOpen && (
           <div
-            className={`fixed top-0 right-0 w-full h-full bg-white text-black z-50 transition-transform duration-700 ease-in-out transform ${menuOpenAnimation ? "translate-x-0" : "translate-x-full"
-              }`}
+            className={`fixed top-0 right-0 w-full h-full bg-white text-black z-50 transition-transform duration-700 ease-in-out transform ${menuOpenAnimation ? "translate-x-0" : "translate-x-full"}`}
           >
             <IoMdClose
-              className="absolute top-5 right-5 text-3xl cursor-pointer"
+              className="absolute top-10 right-10 text-3xl cursor-pointer"
               onClick={closeMenu}
             />
 
             {menuItemShow && (
-              <ul className="flex flex-col items-start gap-5 p-10 mt-20">
+              <ul className="flex flex-col items-start gap-10 ps-20 mt-20">
                 {routes.map((route) => (
                   <li
                     key={route.path}
@@ -146,13 +145,26 @@ export default function Navbar({ locale }) {
                     <Link
                       href={route.path}
                       locale={locale}
-                      className={`uppercase w-full text-6xl font-semibold ${isActive(route.path)} hover:text-blue-500`}
+                      className={`uppercase w-full text-7xl font-semibold ${isActive(route.path)} hover:text-black text-blue-500`}
                       onClick={closeMenu}
                     >
                       {t(route.name)}
                     </Link>
                   </li>
                 ))}
+                  <li
+                    data-aos="fade-right"
+                    data-aos-duration="2500"
+                  >
+                    <Link
+                      href="https://admin-template-beige.vercel.app/"
+                      target="_blank"
+                      className={`uppercase w-full text-7xl font-semibold hover:text-black text-blue-500`}
+                      onClick={closeMenu}
+                    >
+                      Area Riservata
+                    </Link>
+                  </li>
               </ul>
             )}
           </div>
