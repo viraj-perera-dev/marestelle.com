@@ -1,32 +1,99 @@
-import { getMessages } from '@/lib/getMessages';
-import { generateSEOMetadata } from '@/components/Metadata';
-import { Link } from '@/i18n/navigation';
+import { getMessages } from "@/lib/getMessages";
+import { generateSEOMetadata } from "@/components/Metadata";
+import ContactForm from "@/components/sections/ContactSection";
+import { MdArrowOutward } from "react-icons/md";
 
 export const metadata = generateSEOMetadata({
   contentMetadata: {
-    title: 'title test 1',
-    description: 'description test 1',
-    keywords: ['test'],
-    siteColor: 'dark',
-    url: '',
-    siteName: '',
-    image: '',
-    imageAlt: '',
-  }
+    title: "Prenota Ora - Esperienze in Barca alle Tremiti",
+    description:
+      "Prenota la tua escursione in barca o un tour completo alle Isole Tremiti con la Motonave Victor.",
+    keywords: [
+      "prenota",
+      "escursioni tremiti",
+      "gite in barca",
+      "motonave Victor",
+    ],
+    siteColor: "light",
+    url: "",
+    siteName: "Victor Tremiti",
+    image: "",
+    imageAlt: "",
+  },
 });
 
-
-
 export default async function Contact({ params }) {
-  
   const messages = await getMessages(params.locale);
   const t = (key) => messages.Contact?.[key] ?? key;
 
   return (
-    <main>
-      <div className="w-full h-screen flex flex-col justify-center items-center bg-[#fefefe] z-50">
-        <p className="text-red-500 text-6xl font-bold">{t('title')}</p>
-      </div>
+    <main className="bg-white text-gray-800">
+      {/* Hero */}
+      <section
+        className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/prenota-hero.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/50 z-0" />
+        <div className="z-10 text-center text-white px-4">
+          <h1 className="text-4xl md:text-6xl font-bold">
+            Prenota la Tua Esperienza
+          </h1>
+          <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+            Escursioni giornaliere, gite in barca, cucina di mare e molto altro.
+          </p>
+        </div>
+      </section>
+
+      {/* Booking Info + Contact Form */}
+      <section className="bg-gray-50">
+        <div className="grid md:grid-cols-2">
+          {/* Info Side */}
+          <div className="w-2/3 mx-auto flex flex-col justify-center py-20 md:py-0">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 uppercase">
+              Come Prenotare
+            </h2>
+            <p className="mb-4 text-xl md:text-2xl font-semibold text-neutral-600">
+              Compila il modulo con i tuoi dati e le tue preferenze. Ti
+              risponderemo al più presto per confermare la disponibilità.
+            </p>
+            <ul className="list-disc list-inside mb-6">
+              <li className="text-md md:text-xl font-semibold text-black">
+                Gite full-day con pranzo di pesce a bordo della Motonave Victor
+              </li>
+              <li className="text-md md:text-xl font-semibold text-black">
+                Mini tour in gozzo intorno all’arcipelago
+              </li>
+              <li className="text-md md:text-xl font-semibold text-black">
+                Eventi privati e tour personalizzati
+              </li>
+            </ul>
+            <p className="text-gray-600 text-md md:text-xl mb-10">
+              Oppure contattaci direttamente su WhatsApp o via telefono al
+              numero{" "}
+              <a
+                href="tel:+39123456789"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 font-semibold"
+              >
+                +39 123456789
+              </a>
+            </p>
+            <a
+              href="tel:+39123456789"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="flex items-center justify-center gap-2 font-semibold text-md md:text-xl bg-blue-500 text-white w-full py-3 rounded-full hover:bg-blue-600 transition duration-300 cursor-pointer">
+                Chiama ora <MdArrowOutward size={20} />
+              </button>
+            </a>
+          </div>
+
+          {/* Contact Form */}
+          <ContactForm />
+        </div>
+      </section>
     </main>
   );
 }

@@ -34,7 +34,7 @@ export default async function Section2({ params }) {
           <p className="text-lg text-neutral-600">{tSection2("subtitle")}</p>
         </div>
         <button className="bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition">
-          Richiedi informazioni ✉️
+          Richiedi informazioni
         </button>
       </div>
 

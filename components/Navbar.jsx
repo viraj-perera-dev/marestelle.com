@@ -17,6 +17,7 @@ import { IoMdPaperPlane } from "react-icons/io";
 
 
 
+
 export default function Navbar({ locale }) {
   const pathname = usePathname(); // Get current route
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,6 +26,7 @@ export default function Navbar({ locale }) {
   const t = useTranslations("Navbar");
   const router = useRouter();
   const { locales } = routing;
+  
 
   useEffect(() => {
     AOS.init({ once: true });
@@ -84,9 +86,9 @@ export default function Navbar({ locale }) {
     <>
       <div className="flex justify-center">
         {/* Mobile Navbar Header */}
-        <div className="absolute top-0 w-[90%] z-50 h-20 flex justify-between items-center p-5 text-black">
+        <div className="fixed top-0 w-[90%] z-50 h-20 flex justify-between items-center p-5 text-black">
           <Link href="/">
-            <Image src="/assets/logo/cropped-marestelle-titleonly.png" className="w-56 h-56 object-contain invert" alt="cloud" width={500} height={500} />
+            <Image src="/assets/logo/cropped-marestelle-titleonly.png" className={`w-56 h-56 object-contain ${pathname.includes("/diario-di-bordo/") ? "" : "invert"}`} alt="cloud" width={500} height={500} />
           </Link>
           <div className="flex items-center gap-5">
             <button className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-md text-gray-800 border border-gray-300 shadow-sm hover:text-black bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">

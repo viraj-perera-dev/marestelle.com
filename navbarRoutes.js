@@ -14,6 +14,11 @@ const routes = [
     {
         path: '/contatti/',
         name: 'Contact',
+        duration:1000
+    },
+    {
+        path: '/diario-di-bordo/',
+        name: 'DiarioDiBordo',
         duration:1500
     },
 ]
