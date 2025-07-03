@@ -184,7 +184,7 @@ export default function InteractiveMap() {
         >
           {itinerary[activeIndex].image && (
             <Image
-              src={`/${itinerary[activeIndex].image}`}
+              src={`/assets/diario/${itinerary[activeIndex].image}`}
               alt={itinerary[activeIndex].title}
               width={500}
               height={300}
