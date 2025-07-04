@@ -86,15 +86,17 @@ export default function Navbar({ locale }) {
     <>
       <div className="flex justify-center">
         {/* Mobile Navbar Header */}
-        <div className="fixed top-0 w-[90%] z-50 h-20 flex justify-between items-center p-5 text-black">
-          <Link href="/">
-            <Image src="/assets/logo/cropped-marestelle-titleonly.png" className={`w-56 h-56 object-contain ${pathname.includes("/diario-di-bordo/") ? "" : "invert"}`} alt="cloud" width={500} height={500} />
+        <div className="fixed top-0 w-full md:w-[90%] z-50 h-20 flex justify-between items-center p-5 text-black">
+          <Link href="/" className="">
+            <Image src="/assets/logo/cropped-marestelle-titleonly.png" className={`md:w-56 md:h-56 w-36 h-36 object-contain ${pathname.includes("/diario-di-bordo") ? "" : "invert"}`} alt="cloud" width={500} height={500} />
           </Link>
-          <div className="flex items-center gap-5">
-            <button className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-md text-gray-800 border border-gray-300 shadow-sm hover:text-black bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
-              {t("Contact")}
-              <IoMdPaperPlane className="text-2xl cursor-pointer" />
-            </button>
+          <div className="flex items-center gap-2 md:gap-5">
+            <div className="hidden md:block">
+              <button className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-md text-gray-800 border border-gray-300 shadow-sm hover:text-black bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
+                {t("Contact")}
+                <IoMdPaperPlane className="text-2xl cursor-pointer" />
+              </button>
+            </div>
             <div className="">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -118,10 +120,9 @@ export default function Navbar({ locale }) {
               )}
             </div>
 
-            <div className="bg-white p-3 rounded-full">
+            <div className="bg-white p-3 rounded-full cursor-pointer" onClick={openMenu}>
               <CgMenuLeft
-                className="text-2xl cursor-pointer text-black"
-                onClick={openMenu}
+                className="text-2xl text-black"
               />
             </div>
           </div>
@@ -132,12 +133,12 @@ export default function Navbar({ locale }) {
             className={`fixed top-0 right-0 w-full h-full bg-white text-black z-50 transition-transform duration-700 ease-in-out transform ${menuOpenAnimation ? "translate-x-0" : "translate-x-full"}`}
           >
             <IoMdClose
-              className="absolute top-10 right-10 text-3xl cursor-pointer"
+              className="absolute top-5 right-5 md:top-10 md:right-10 text-3xl cursor-pointer"
               onClick={closeMenu}
             />
 
             {menuItemShow && (
-              <ul className="flex flex-col items-start gap-10 ps-20 mt-20">
+              <ul className="flex flex-col items-start gap-5 md:gap-10 p-10 md:ps-20 mt-20">
                 {routes.map((route) => (
                   <li
                     key={route.path}
@@ -147,7 +148,7 @@ export default function Navbar({ locale }) {
                     <Link
                       href={route.path}
                       locale={locale}
-                      className={`uppercase w-full text-7xl font-semibold ${isActive(route.path)} hover:text-black text-blue-500`}
+                      className={`uppercase w-full text-3xl md:text-6xl font-semibold ${isActive(route.path)} hover:text-black text-blue-500`}
                       onClick={closeMenu}
                     >
                       {t(route.name)}
@@ -161,7 +162,7 @@ export default function Navbar({ locale }) {
                     <Link
                       href="https://admin-template-beige.vercel.app/"
                       target="_blank"
-                      className={`uppercase w-full text-7xl font-semibold hover:text-black text-blue-500`}
+                      className={`uppercase w-full text-3xl md:text-6xl font-semibold hover:text-black text-blue-500`}
                       onClick={closeMenu}
                     >
                       Area Riservata
