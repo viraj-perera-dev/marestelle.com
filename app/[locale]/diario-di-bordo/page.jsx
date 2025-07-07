@@ -219,7 +219,7 @@ export default function InteractiveMap() {
 
               {/* Truncated Description */}
               <p
-                className="text-gray-700 font-semibold md:text-xl line-clamp-5 mb-2"
+                className="text-gray-600 md:text-xl line-clamp-4 mb-2"
                 style={{ display: "-webkit-box", WebkitBoxOrient: "vertical" }}
               >
                 {itinerary[activeIndex].description}

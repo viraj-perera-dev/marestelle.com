@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ProgressIndicator({ activeIndex, total }) {
   return (
-    <div className="fixed right-4 top-18 md:top-1/2 md:-translate-y-1/2 z-50 flex flex-col items-center bg-white px-1 py-2 rounded-full">
+    <div className="fixed right-4 top-[16dvh] md:top-1/2 md:-translate-y-1/2 z-40 flex flex-col items-center bg-white px-1 py-2 rounded-full">
       {Array.from({ length: total }).map((_, i) => {
         const isPast = i < activeIndex;
         const isCurrent = i === activeIndex;

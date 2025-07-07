@@ -10,8 +10,9 @@ const imageUrls = [
     '/assets/slider/image1.jpg',
     '/assets/slider/image2.jpg',
     '/assets/slider/image13.jpg',
-    '/assets/slider/image4.jpg',
     '/assets/slider/image8.jpg',
+    '/assets/slider/image4.jpg',
+
     '/assets/slider/image5.jpg',
     '/assets/slider/image11.jpg',
     '/assets/slider/image6.jpg',
@@ -19,12 +20,20 @@ const imageUrls = [
     '/assets/slider/image7.jpg',
     '/assets/slider/image9.jpg',
     '/assets/slider/image12.jpg',
-    '/assets/slider/image3.jpg'
+    '/assets/slider/image3.jpg',
+    '/assets/slider/image14.jpg',
+    '/assets/slider/image15.jpg',
+    '/assets/slider/image16.jpg',
+    '/assets/slider/image17.jpg',
+    '/assets/slider/image18.jpg',
+    '/assets/slider/image19.jpg',
+    '/assets/slider/image20.jpg',
+    '/assets/slider/image21.jpg',
 ];
 
-export default async function Section3() {
+export default function Section3() {
     return (
-        <div className="px-6 py-36">
+        <div className="px-6 py-10 md:py-36 z-0 bg-white">
             <Swiper
                 modules={[Autoplay]}
                 autoplay={{ delay: 3000 }}
@@ -37,13 +46,13 @@ export default async function Section3() {
                         key={index}
                         className="!w-auto flex items-center"
                     >
-                        <div className="h-[350px] flex items-center">
+                        <div className="md:h-[350px] flex items-center">
                             <Image
                                 src={url}
                                 alt={`Slide ${index + 1}`}
                                 height={350}
                                 width={500} // You can put a dummy max width; it'll auto adjust
-                                className="h-[350px] w-auto rounded-xl shadow-lg object-contain"
+                                className="md:h-[350px] h-[250px] w-auto rounded-xl object-contain"
                             />
                         </div>
                     </SwiperSlide>

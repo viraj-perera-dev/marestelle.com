@@ -12,19 +12,156 @@
     "section1": {
       "title": "Mare e Stelle offre diversi servizi alle Isole Tremiti",
       "subtitle": "Che sia via mare o via terra, penseremo noi a farvi trascorrere una vacanza da sogno in pieno relax…",
-      "listItem1": "",
-      "subItem1":"",
-      "listItem2": "",
-      "subItem2":"",
-      "listItem3": "",
-      "subItem3":"",
-      "listItem4": "",
-      "subItem4":""
+      "listItem1": "Flotta Esclusiva",
+      "subItem1": "Yacht selezionati per ogni desiderio",
+      "listItem2": "Destinazioni Globali",
+      "subItem2": "Naviga nel Mediterraneo, nei Caraibi e oltre",
+      "listItem3": "Esperienze Personalizzate",
+      "subItem3": "Itinerari su misura e servizio VIP",
+      "listItem4": "Esperti del Settore",
+      "subItem4": "Consulenti nautici affidabili dal 2010"
     },
     "section2": {
       "title": "Le Nostre Barche",
-      "subtitle": "Scoprite le nostre barche per un viaggio di relax e tranquillità."
+      "subtitle": "Scoprite le nostre barche per un viaggio di relax e tranquillità.",
+      "button": "Richiedi informazioni",
+      "fleet": [
+        {
+          "name": "Mare e Stelle",
+          "description": "Scopri la nostra barca e le sue caratteristiche.",
+          "guests": "10 Ospiti",
+          "dimension": "40×50 Dimensioni",
+          "linkLabel": "Scopri di più"
+        },
+        {
+          "name": "Motonave Victor",
+          "description": "Scopri la nostra motonave e le sue caratteristiche.",
+          "guests": "35 Ospiti",
+          "dimension": "70×60 Dimensioni",
+          "linkLabel": "Scopri di più"
+        }
+      ]
+    },
+    "section4": {
+      "title": "Esperienze che Offriamo",
+      "subtitle": "Esperienze su misura per ogni occasione",
+      "button": "Scopri di più",
+      "experiences": [
+        {
+          "id": "01",
+          "title": "Crociera al Tramonto",
+          "description": "Concediti un momento di relax e goditi la vista mozzafiato sull’oceano che si estende davanti a te.",
+          "link": "contatti",
+          "linkLabel": "Scopri di più"
+        },
+        {
+          "id": "02",
+          "title": "Eventi Privati",
+          "description": "Festeggia compleanni e anniversari con stile a bordo di uno yacht privato, con viste spettacolari e ottima compagnia.",
+          "link": "contatti",
+          "linkLabel": "Scopri di più"
+        },
+        {
+          "id": "03",
+          "title": "Ritiri Aziendali",
+          "description": "Stupisci i tuoi clienti e rafforza i legami del team. Rilassati e lascia un'impressione duratura.",
+          "link": "contatti",
+          "linkLabel": "Scopri di più"
+        },
+        {
+          "id": "04",
+          "title": "Tour tra le Isole",
+          "description": "Vivi l’emozione di attività acquatiche come snorkeling e immersioni in viaggi avventurosi e rilassanti.",
+          "link": "contatti",
+          "linkLabel": "Scopri di più"
+        }
+      ]
+    },
+    "section5": {
+      "title": "Cosa dicono i nostri clienti",
+      "subtitle": "Esperienze uniche e indimenticabili",
+      "testimonials": [
+        {
+          "name": "P R B",
+          "location": "Roma, Italia",
+          "image": "/assets/testimonials/PRB.jpg",
+          "title": "Altamente raccomandato",
+          "text": "Riccardo è una guida attenta e ha grande cura degli ospiti, il suo racconto è interessante e mai invadente. È figlio d'arte ed ama le sue isole. Ci ha servito un aperitivo unico, con pesce apprezzatissimo, frutta e vino ghiacciato. Lo consigliamo con certezza, e cercheremo anche noi di tornare presto e farci un altro giro tra calette e grotte, capperi e gabbiani.",
+          "date": "3 giugno 2025",
+          "rating": 5
+        },
+        {
+          "name": "Ornella B",
+          "location": "Italia",
+          "image": "/assets/testimonials/OrnellaB.jpg",
+          "title": "Bellissima!",
+          "text": "Gran bel giro in barca e vista spettacolare.Riccardo è stato veramente fantastico. Consiglio molto se andate alle Tremiti giro in barca con MARE E STELLE,TOP😊",
+          "date": "25 settembre 2024",
+          "rating": 5
+        },
+        {
+          "name": "fm1270",
+          "location": "Livorno, Italia",
+          "image": "/assets/testimonials/fm1270.jpg",
+          "title": "Esperienza consigliata",
+          "text": "Giornata alle Tremiti con mia figlia di 20 anni. Nonostante il forte vento di maestrale Riccardo ci ha guidato per le calette, illustrandoci le bellezze dell'Isola. professionale e gentile. Buono l'aperitivo; cibo e vino. Ottimo rapporto qualità/prezzo. Consigliato!",
+          "date": "10 settembre 2024",
+          "rating": 5
+        },
+        {
+          "name": "Nadia C",
+          "location": "Tremiti, Italia",
+          "image": "/assets/testimonials/NadiaC.jpg",
+          "title": "Super top!!!!",
+          "text": "Riccardo super top!!!! Una guida attenta, scrupolosa e molto informata ma allo stesso tempo che ti permette di divertirti e passare del tempo in sicurezza in barca!!! Super consigliato sicuramente torneremo dall'Abruzzo la prossima volta per stare qualche giorno in loro compagnia!!!!! Voto 10",
+          "date": "18 agosto 2024",
+          "rating": 5
+        },
+        {
+          "name": "salutoni",
+          "location": "Italia",
+          "image": "/assets/testimonials/salutoni.jpg",
+          "title": "Tremiti affascinanti con uno skipper doc",
+          "text": "Fin dalla prenotazione avevo intuito che c’era grande professionalità sia nel fornire informazioni che nel richiederle per meglio gestire il giro. La professionalità era motivata dalla passione e amore per la propria terra e il giro poi si è trasformato in stupore e conoscenza il tutto condito dall’ottimo aperitivo servito a bordo. Posso solo dire grazie per il calore sentito nei racconti e descrizioni di queste isole che sono stupende e che vanno visitate con rispetto per assaporarle completamente. Grazie a Riccardo per aver mantenuto intatta la tradizione e competenza marinaresca",
+          "date": "17 agosto 2024",
+          "rating": 5
+        },
+        {
+          "name": "Andrea",
+          "location": "Monza, Italia",
+          "image": "/assets/testimonials/andrea.jpg",
+          "title": "Alla scoperta delle Tremiti",
+          "text": "Gita fantastica in barca di quattro ore alla scoperta delle Tremiti con tre soste bagno! Maschere per snorkeling indispensabili per godere questa bellezza! Bravo Riccardo per averci accompagnato, spiegato e preparato un ottimo ed abbondante aperitivo in barca e per averci fatto assaggiare il caffè del marinaio…di cui non sveliamo l’ingrediente misterioso :)",
+          "date": "11 agosto 2024",
+          "rating": 5
+        }
+      ]
     }
+  },
+  "BookingForm": {
+    "title": "Prenota un appuntamento",
+    "subtitle": "Prenota un appuntamento per un tour in barca",
+    "step1": {
+      "label": "Seleziona una data",
+      "error": "Per favore seleziona una data per proseguire.",
+      "nextButton": "Prosegui"
+    },
+    "step2": {
+      "timeLabel": "Seleziona orario",
+      "morning": "Tour Mattutino",
+      "afternoon": "Tour Pomeridiano",
+      "nameLabel": "Nome completo",
+      "emailLabel": "Indirizzo Email",
+      "phoneLabel": "Numero di Telefono",
+      "messageLabel": "Messaggio (Opzionale)",
+      "nameRequired": "Il nome è obbligatorio.",
+      "emailRequired": "L’email è obbligatoria.",
+      "phoneRequired": "Il telefono è obbligatorio.",
+      "dateRequired": "La data è obbligatoria.",
+      "backButton": "Indietro",
+      "submitButton": "Prenota Ora"
+    },
+    "alertSuccess": "Prenotazione inviata!"
   },
   "AboutUs": {
     "title": "Chi Siamo"

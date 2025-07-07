@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/hero-section.jsx", "components/image-gallery.jsx", "app/[locale]/layout.jsx", "app/[locale]/page.jsx", "app/[locale]/dictionaries.js", "i18n/navigation.js", "i18n/request.js", "i18n/routing.js", "app/page.jsx", "app/layout.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/hero-section.jsx", "components/image-gallery.jsx", "app/[locale]/layout.jsx", "app/[locale]/page.jsx", "app/[locale]/dictionaries.js", "i18n/navigation.js", "i18n/request.js", "i18n/routing.js", "app/page.jsx", "app/layout.jsx", "components/sections/ContactSection.jsx", "utils/supabase/server.js"],
   "exclude": ["node_modules"]
 }

@@ -1,80 +1,95 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { FaStar } from 'react-icons/fa';
 import { Swiper as SwiperType } from 'swiper';
+import { getMessages } from '@/lib/getMessages';
 import 'swiper/css';
 
-const testimonials = [
-  {
-    name: 'P R B',
-    location: 'Roma, Italia',
-    image: '/assets/testimonials/PRB.jpg',
-    text: "Riccardo è una guida attenta e ha grande cura degli ospiti, il suo racconto è interessante e mai invadente. È figlio d'arte ed ama le sue isole. Ci ha servito un aperitivo unico, con pesce apprezzatissimo, frutta e vino ghiacciato. Lo consigliamo con certezza, e cercheremo anche noi di tornare presto e farci un altro giro tra calette e grotte, capperi e gabbiani.",
-    title: 'Altamente raccomandato',
-    date: '3 giugno 2025',
-    rating: 5,
-  },
-  {
-    name: 'Ornella B',
-    location: 'Italia',
-    image: '/assets/testimonials/OrnellaB.jpg',
-    text: "Gran bel giro in barca e vista spettacolare.Riccardo è stato veramente fantastico. Consiglio molto se andate alle Tremiti giro in barca con MARE E STELLE,TOP😊",
-    title: 'Bellissima!',
-    date: '25 settembre 2024',
-    rating: 5,
-  },
-  {
-    name: 'fm1270',
-    location: 'Livorno, Italia',
-    image: '/assets/testimonials/fm1270.jpg',
-    text: "Giornata alle Tremiti con mia figlia di 20 anni. Nonostante il forte vento di maestrale Riccardo ci ha guidato per le calette, illustrandoci le bellezze dell'Isola. professionale e gentile. Buono l'aperitivo; cibo e vino. Ottimo rapporto qualità/prezzo. Consigliato!",
-    title: 'Esperienza consigliata',
-    date: '10 settembre 2024',
-    rating: 5,
-  },
-  {
-    name: 'Nadia C',
-    location: 'Tremiti, Italia',
-    image: '/assets/testimonials/NadiaC.jpg',
-    text: "Riccardo super top!!!! Una guida attenta, scrupolosa e molto informata ma allo stesso tempo che ti permette di divertirti e passare del tempo in sicurezza in barca!!! Super consigliato sicuramente torneremo dall'Abruzzo la prossima volta per stare qualche giorno in loro compagnia!!!!! Voto 10",
-    title: 'Super top!!!!',
-    date: '18 agosto 2024',
-    rating: 5,
-  },
-  {
-    name: 'salutoni',
-    location: 'Italia',
-    image: '/assets/testimonials/salutoni.jpg',
-    text: 'Fin dalla prenotazione avevo intuito che c’era grande professionalità sia nel fornire informazioni che nel richiederle per meglio gestire il giro. La professionalità era motivata dalla passione e amore per la propria terra e il giro poi si è trasformato in stupore e conoscenza il tutto condito dall’ottimo aperitivo servito a bordo. Posso solo dire grazie per il calore sentito nei racconti e descrizioni di queste isole che sono stupende e che vanno visitate con rispetto per assaporarle completamente. Grazie a Riccardo per aver mantenuto intatta la tradizione e competenza marinaresca',
-    title: 'Tremiti affascinanti con uno skipper doc',
-    date: '17 agosto 2024',
-    rating: 5,
-  },
-  {
-    name: 'Andrea',
-    location: 'Monza, Italia',
-    image: '/assets/testimonials/andrea.jpg',
-    text: "Gita fantastica in barca di quattro ore alla scoperta delle Tremiti con tre soste bagno! Maschere per snorkeling indispensabili per godere questa bellezza! Bravo Riccardo per averci accompagnato, spiegato e preparato un ottimo ed abbondante aperitivo in barca e per averci fatto assaggiare il caffè del marinaio…di cui non sveliamo l’ingrediente misterioso :)",
-    title: 'Alla scoperta delle Tremiti',
-    date: '11 agosto 2024',
-    rating: 5,
-  },
-];
 
-export default function Section5() {
+
+export default function Section5({ params }) {
   const swiperRef = useRef();
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const [messages, setMessages] = useState(null);
+
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const messages = await getMessages(params.locale);
+      setMessages(messages);
+    };
+    fetchMessages();
+  }, [params.locale]);
+
+  const tSection5 = (key) => messages?.HomePage?.section5?.[key] ?? key;
+
+  const testimonials = [
+    {
+      name: tSection5("testimonials")[0].name,
+      location: tSection5("testimonials")[0].location,
+      image: tSection5("testimonials")[0].image,
+      text: tSection5("testimonials")[0].text,
+      title: tSection5("testimonials")[0].title,
+      date: tSection5("testimonials")[0].date,
+      rating: tSection5("testimonials")[0].rating,
+    },
+    {
+      name: tSection5("testimonials")[1].name,
+      location: tSection5("testimonials")[1].location,
+      image: tSection5("testimonials")[1].image,
+      text: tSection5("testimonials")[1].text,
+      title: tSection5("testimonials")[1].title,
+      date: tSection5("testimonials")[1].date,
+      rating: tSection5("testimonials")[1].rating,
+    },
+    {
+      name: tSection5("testimonials")[2].name,
+      location: tSection5("testimonials")[2].location,
+      image: tSection5("testimonials")[2].image,
+      text: tSection5("testimonials")[2].text,
+      title: tSection5("testimonials")[2].title,
+      date: tSection5("testimonials")[2].date,
+      rating: tSection5("testimonials")[2].rating,
+    },
+    {
+      name: tSection5("testimonials")[3].name,
+      location: tSection5("testimonials")[3].location,
+      image: tSection5("testimonials")[3].image,
+      text: tSection5("testimonials")[3].text,
+      title: tSection5("testimonials")[3].title,
+      date: tSection5("testimonials")[3].date,
+      rating: tSection5("testimonials")[3].rating,
+    },
+    {
+      name: tSection5("testimonials")[4].name,
+      location: tSection5("testimonials")[4].location,
+      image: tSection5("testimonials")[4].image,
+      text: tSection5("testimonials")[4].text,
+      title: tSection5("testimonials")[4].title,
+      date: tSection5("testimonials")[4].date,
+      rating: tSection5("testimonials")[4].rating,
+    },
+    {
+      name: tSection5("testimonials")[5].name,
+      location: tSection5("testimonials")[5].location,
+      image: tSection5("testimonials")[5].image,
+      text: tSection5("testimonials")[5].text,
+      title: tSection5("testimonials")[5].title,
+      date: tSection5("testimonials")[5].date,
+      rating: tSection5("testimonials")[5].rating,
+    },
+  ];
 
   return (
     <section className="bg-white py-24">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold">Cosa dicono i nostri clienti</h2>
+        <h2 className="text-3xl md:text-4xl font-bold">{tSection5("title")}</h2>
         <p className="text-neutral-500 text-lg mt-2">
-          Esperienze uniche e indimenticabili
+          {tSection5("subtitle")}
         </p>
 
         <div className="mt-16">

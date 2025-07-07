@@ -30,15 +30,15 @@ export default async function Contact({ params }) {
     <main className="bg-white text-gray-800">
       {/* Hero */}
       <section
-        className="relative h-[70vh] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/prenota-hero.jpg')" }}
+        className="relative h-svh flex items-center justify-center bg-cover bg-center md:bg-[center_35%] w-full"
+        style={{ backgroundImage: "url('/assets/sectionImages/hero_ragazza.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/50 z-0" />
-        <div className="z-10 text-center text-white px-4">
+        <div className="z-10 absolute bottom-20 md:left-10 left-2 text-start text-white px-4">
           <h1 className="text-4xl md:text-6xl font-bold">
             Prenota la Tua Esperienza
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="mt-4 text-lg md:text-xl max-w-2xl">
             Escursioni giornaliere, gite in barca, cucina di mare e molto altro.
           </p>
         </div>
@@ -46,24 +46,24 @@ export default async function Contact({ params }) {
 
       {/* Booking Info + Contact Form */}
       <section className="bg-gray-50">
-        <div className="grid md:grid-cols-2">
+        <div className="grid md:grid-cols-2 grid-cols-1">
           {/* Info Side */}
-          <div className="w-2/3 mx-auto flex flex-col justify-center py-20 md:py-0">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 uppercase">
+          <div className="w-full md:w-2/3 mx-auto flex flex-col justify-center py-20 md:py-0 px-5">
+            <h2 className="text-2xl md:text-4xl font-bold mb-6 uppercase">
               Come Prenotare
             </h2>
-            <p className="mb-4 text-xl md:text-2xl font-semibold text-neutral-600">
+            <p className="mb-4 text-lg md:text-xl font-semibold text-neutral-600">
               Compila il modulo con i tuoi dati e le tue preferenze. Ti
               risponderemo al più presto per confermare la disponibilità.
             </p>
             <ul className="list-disc list-inside mb-6">
-              <li className="text-md md:text-xl font-semibold text-black">
+              <li className="text-md md:text-lg font-semibold text-black">
                 Gite full-day con pranzo di pesce a bordo della Motonave Victor
               </li>
-              <li className="text-md md:text-xl font-semibold text-black">
+              <li className="text-md md:text-lg font-semibold text-black">
                 Mini tour in gozzo intorno all’arcipelago
               </li>
-              <li className="text-md md:text-xl font-semibold text-black">
+              <li className="text-md md:text-lg font-semibold text-black">
                 Eventi privati e tour personalizzati
               </li>
             </ul>
@@ -84,14 +84,16 @@ export default async function Contact({ params }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="flex items-center justify-center gap-2 font-semibold text-md md:text-xl bg-blue-500 text-white w-full py-3 rounded-full hover:bg-blue-600 transition duration-300 cursor-pointer">
+              <button className="flex items-center justify-center gap-2 font-semibold text-md md:text-xl border border-blue-500 text-blue-500 w-full py-3 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer">
                 Chiama ora <MdArrowOutward size={20} />
               </button>
             </a>
           </div>
 
           {/* Contact Form */}
+          <div className="w-full">
           <ContactForm />
+          </div>
         </div>
       </section>
     </main>
