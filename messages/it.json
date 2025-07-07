@@ -141,12 +141,9 @@
   "BookingForm": {
     "title": "Prenota un appuntamento",
     "subtitle": "Prenota un appuntamento per un tour in barca",
-    "step1": {
       "label": "Seleziona una data",
       "error": "Per favore seleziona una data per proseguire.",
-      "nextButton": "Prosegui"
-    },
-    "step2": {
+      "nextButton": "Prosegui",
       "timeLabel": "Seleziona orario",
       "morning": "Tour Mattutino",
       "afternoon": "Tour Pomeridiano",
@@ -159,19 +156,13 @@
       "phoneRequired": "Il telefono è obbligatorio.",
       "dateRequired": "La data è obbligatoria.",
       "backButton": "Indietro",
-      "submitButton": "Prenota Ora"
-    },
-    "alertSuccess": "Prenotazione inviata!"
+      "submitButton": "Prenota Ora",
+      "alertSuccess": "Prenotazione inviata!"
   },
   "AboutUs": {
     "title": "Chi Siamo"
   },
   "Contact": {
     "title": "Contatti"
-  },
-  "NotFound": {
-    "title": "Pagina Non Trovata",
-    "description": "La pagina che stai cercando non esiste o è stata spostata.",
-    "backToHome": "Torna alla Home"
   }
 }

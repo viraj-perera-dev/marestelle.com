@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
-import dayjs from 'dayjs';
 import { getMessages } from '@/lib/getMessages';
+import { useLocale } from "next-intl";
 
 export default function Section6({ params }) {
   const [step, setStep] = useState(1);
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,11 +25,11 @@ export default function Section6({ params }) {
 
   useEffect(() => {
     const fetchMessages = async () => {
-      const messages = await getMessages(params.locale);
+      const messages = await getMessages(locale);
       setMessages(messages);
     };
     fetchMessages();
-  }, [params.locale]);
+  }, [locale]);
 
   const t = (key) => messages?.BookingForm?.[key] ?? key;  
 
@@ -51,7 +52,7 @@ export default function Section6({ params }) {
 
   const handleNext = () => {
     if (!selectedDate) {
-      setErrors({ date: t('step1.error') });
+      setErrors({ date: t('error') });
     } else {
       setErrors({});
       setStep(2);
@@ -66,10 +67,10 @@ export default function Section6({ params }) {
     e.preventDefault();
 
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = t('step2.nameRequired');
-    if (!formData.email.trim()) newErrors.email = t('step2.emailRequired');
-    if (!formData.phone.trim()) newErrors.phone = t('step2.phoneRequired');
-    if (!formData.date.trim()) newErrors.date = t('step2.dateRequired');
+    if (!formData.name.trim()) newErrors.name = t('nameRequired');
+    if (!formData.email.trim()) newErrors.email = t('emailRequired');
+    if (!formData.phone.trim()) newErrors.phone = t('phoneRequired');
+    if (!formData.date.trim()) newErrors.date = t('dateRequired');
 
     setErrors(newErrors);
 
@@ -78,6 +79,9 @@ export default function Section6({ params }) {
       alert(t('alertSuccess'));
     }
   };
+
+  if (!messages) return;
+
 
   return (
     <section className="bg-blue-50 py-24">
@@ -89,7 +93,7 @@ export default function Section6({ params }) {
           {step === 1 && (
             <div className="flex flex-col justify-center items-center text-center">
               <label className="block font-medium text-neutral-700 text-lg mb-10 uppercase">
-                {t('step1.label')}<span className="text-red-500"> *</span>
+                {t('label')}<span className="text-red-500"> *</span>
               </label>
               <div className="scale-110">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -101,44 +105,44 @@ export default function Section6({ params }) {
                 onClick={handleNext}
                 className="bg-blue-600 text-white rounded-full w-1/2 py-4 hover:bg-blue-700 transition mt-8"
               >
-                {t('step1.nextButton')}
+                {t('nextButton')}
               </button>
             </div>
           )}
 
           {step === 2 && (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="md:space-y-6 space-y-4">
               {/* Time Selection */}
               <div>
-                <label className="block font-medium text-neutral-700 text-lg mb-2 uppercase">
-                  {t('step2.timeLabel')}<span className="text-red-500"> *</span>
+                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                  {t('timeLabel')}<span className="text-red-500"> *</span>
                 </label>
-                <div className="flex gap-4">
+                <div className="flex md:gap-4 gap-2 text-sm md:text-md">
                   <button
                     type="button"
                     onClick={() => handleTimeSelect('morning')}
-                    className={`px-4 py-2 rounded-full w-full border border-neutral-400 transition ${
+                    className={`md:px-4 px-2 py-2 rounded-full w-full border border-neutral-400 transition ${
                       formData.time === 'morning' ? 'bg-blue-600 text-white' : 'bg-white'
                     }`}
                   >
-                    {t('step2.morning')}
+                    {t('morning')}
                   </button>
                   <button
                     type="button"
                     onClick={() => handleTimeSelect('afternoon')}
-                    className={`px-4 py-2 rounded-full w-full border border-neutral-400 transition ${
+                    className={`md:px-4 px-2 py-2 rounded-full w-full border border-neutral-400 transition ${
                       formData.time === 'afternoon' ? 'bg-blue-600 text-white' : 'bg-white'
                     }`}
                   >
-                    {t('step2.afternoon')}
+                    {t('afternoon')}
                   </button>
                 </div>
               </div>
 
               {/* Name */}
               <div>
-                <label className="block font-medium text-neutral-700 text-lg mb-2 uppercase">
-                  {t('step2.nameLabel')}<span className="text-red-500"> *</span>
+                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                  {t('nameLabel')}<span className="text-red-500"> *</span>
                 </label>
                 <input
                   type="text"
@@ -152,8 +156,8 @@ export default function Section6({ params }) {
 
               {/* Email */}
               <div>
-                <label className="block font-medium text-neutral-700 text-lg mb-2 uppercase">
-                  {t('step2.emailLabel')}<span className="text-red-500"> *</span>
+                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                  {t('emailLabel')}<span className="text-red-500"> *</span>
                 </label>
                 <input
                   type="email"
@@ -167,8 +171,8 @@ export default function Section6({ params }) {
 
               {/* Phone */}
               <div>
-                <label className="block font-medium text-neutral-700 text-lg mb-2 uppercase">
-                  {t('step2.phoneLabel')}<span className="text-red-500"> *</span>
+                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                  {t('phoneLabel')}<span className="text-red-500"> *</span>
                 </label>
                 <input
                   type="tel"
@@ -182,8 +186,8 @@ export default function Section6({ params }) {
 
               {/* Message */}
               <div>
-                <label className="block font-medium text-neutral-700 text-lg mb-2 uppercase">
-                  {t('step2.messageLabel')}
+                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                  {t('messageLabel')}
                 </label>
                 <textarea
                   name="message"
@@ -201,13 +205,13 @@ export default function Section6({ params }) {
                   onClick={handlePrev}
                   className="mt-6 bg-gray-400 text-white rounded-full w-full py-4 hover:bg-gray-500 transition"
                 >
-                  {t('step2.backButton')}
+                  {t('backButton')}
                 </button>
                 <button
                   type="submit"
                   className="mt-6 bg-blue-600 text-white rounded-full w-full py-4 hover:bg-blue-800 transition"
                 >
-                  {t('step2.submitButton')}
+                  {t('submitButton')}
                 </button>
               </div>
             </form>

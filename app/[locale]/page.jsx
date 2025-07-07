@@ -1,6 +1,5 @@
 import { getMessages } from '@/lib/getMessages';
 import { generateSEOMetadata } from '@/components/Metadata';
-import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import Section1 from '@/components/sections/Section1';
 import Section2 from '@/components/sections/Section2';
@@ -11,12 +10,12 @@ import ContractSection from '@/components/sections/ContactSection';
 
 export const metadata = generateSEOMetadata({
   contentMetadata: {
-    title: 'title test 1',
-    description: 'description test 1',
-    keywords: ['test'],
-    siteColor: 'dark',
+    title: 'mare e stelle',
+    description: 'Scopri la storia della nostra famiglia tra le onde delle Isole Tremiti.',
+    keywords: ['Isole Tremiti', 'Motonave Victor', 'escursioni mare', 'pesce fresco'],
+    siteColor: 'light',
     url: '',
-    siteName: '',
+    siteName: 'mare e stelle',
     image: '',
     imageAlt: '',
   }
@@ -27,6 +26,8 @@ export const metadata = generateSEOMetadata({
 export default async function Home({ params }) {
   const messages = await getMessages(params.locale);
   const t = (key) => messages.HomePage?.[key] ?? key;
+
+  if (!messages) return;
 
   return (
     <>

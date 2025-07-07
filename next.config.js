@@ -2,7 +2,6 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -11,8 +10,9 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  generateBuildId: async () => 'build',
   skipTrailingSlashRedirect: true,
+  // generateBuildId: async () => 'build', // 🚫 Try disabling this
+  output: 'standalone' // ✅ helps with Vercel production deployment
 };
 
 export default withNextIntl(nextConfig);

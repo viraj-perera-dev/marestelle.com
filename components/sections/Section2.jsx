@@ -38,6 +38,8 @@ export default function Section2({ params }) {
     },
   ];
 
+  if (!messages) return;
+
   return (
     <div className="w-full bg-white">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center items-start space-y-5 md:space-y-0 md:py-20 py-10 bg-neutral-50 px-4">
