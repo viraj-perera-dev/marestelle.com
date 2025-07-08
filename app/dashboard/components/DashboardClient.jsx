@@ -3,13 +3,13 @@ import { useAuth } from '@/contexts/AuthContext'
 import ProtectedRoute from '@/components/ProtectedRoute'
 import { useRouter } from 'next/navigation'
 
-export default function DashboardClient({ locale }) {
+export default function DashboardClient() {
   const { user, signOut } = useAuth()
   const router = useRouter()
 
   const handleSignOut = async () => {
     await signOut()
-    router.push(`/${locale}`)
+    router.push('/login')
   }
 
   return (

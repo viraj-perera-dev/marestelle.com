@@ -11,43 +11,29 @@ export default function LoginForm() {
   const { signIn } = useAuth()
   const router = useRouter()
 
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
     setError('')
-  
-    const { error } = await signIn(email, password)
-  
-    if (error) {
-      setError(error.message)
-      setLoading(false)
-      return
-    }
-  
-    // Poll until user is set in AuthContext
-    const maxRetries = 10
-    let retries = 0
-    const checkUserReady = async () => {
-      while (retries < maxRetries) {
-        await new Promise((r) => setTimeout(r, 300))
-        if (typeof window !== 'undefined' && localStorage.getItem('supabase.auth.token')) {
-          const parsed = JSON.parse(localStorage.getItem('supabase.auth.token'))
-          if (parsed?.currentSession?.user) {
-            break
-          }
-        }
-        retries++
+
+    try {
+      const { error } = await signIn(email, password)
+
+      if (error) {
+        setError(error.message)
+        setLoading(false)
+        return
       }
-    //   console.log(locale)
-      router.push(`/dashboard`)
+
+      // Simple redirect after successful login
+      router.push('/dashboard')
+      setLoading(false)
+
+    } catch (err) {
+      setError('An unexpected error occurred')
+      setLoading(false)
     }
-  
-    await checkUserReady()
-    setLoading(false)
-  } 
-  
-  
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">

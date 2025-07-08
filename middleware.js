@@ -19,17 +19,9 @@ export async function middleware(req) {
     return res;
   }
 
-  // Redirect if no locale is present in pathname
-  const hasLocale = pathname.startsWith('/it') || pathname.startsWith('/en');
-  const excludeFromLocale = ['/dashboard', '/login']
-
-  if (!hasLocale && !excludeFromLocale.some(path => pathname.startsWith(path))) {
-    const locale = 'it'; // default locale
-    return NextResponse.redirect(
-      new URL(`/${locale}${pathname === '/' ? '' : pathname}`, req.url)
-    );
-  }
-  
+  // Routes that should be excluded from locale prefix
+  const excludeFromLocale = ['/dashboard', '/login'];
+  const isExcluded = excludeFromLocale.some(path => pathname.startsWith(path));
 
   // Check if this is a protected route
   const protectedRoutes = ['/dashboard'];
@@ -43,8 +35,20 @@ export async function middleware(req) {
     } = await supabase.auth.getSession();
 
     if (!session) {
-      const loginUrl = new URL(hasLocale ? `/${pathname.split('/')[1]}/login` : '/login', req.url);
+      const loginUrl = new URL('/login', req.url);
       return NextResponse.redirect(loginUrl);
+    }
+  }
+
+  // Redirect if no locale is present in pathname (only for non-excluded routes)
+  if (!isExcluded) {
+    const hasLocale = pathname.startsWith('/it') || pathname.startsWith('/en');
+    
+    if (!hasLocale) {
+      const locale = 'it'; // default locale
+      return NextResponse.redirect(
+        new URL(`/${locale}${pathname === '/' ? '' : pathname}`, req.url)
+      );
     }
   }
 

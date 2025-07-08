@@ -14,6 +14,6 @@ export const metadata = generateSEOMetadata({
   }
 });
 
-export default function DashboardPage({ params }) {
-  return <DashboardClient locale={params.locale} />;
+export default function DashboardPage() {
+  return <DashboardClient />;
 }

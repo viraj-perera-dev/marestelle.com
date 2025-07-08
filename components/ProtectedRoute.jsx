@@ -13,6 +13,7 @@ export default function ProtectedRoute({ children }) {
     }
   }, [user, loading, router])
 
+  // Show loading spinner while checking auth
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -21,9 +22,11 @@ export default function ProtectedRoute({ children }) {
     )
   }
 
+  // If not authenticated, return null (redirect will happen via useEffect)
   if (!user) {
     return null
   }
 
+  // If authenticated, render the protected content
   return children
 }
