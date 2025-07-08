@@ -22,9 +22,15 @@ export default function ProtectedRoute({ children }) {
     )
   }
 
-  // If not authenticated, return null (redirect will happen via useEffect)
+  // If not authenticated, show a message while redirecting
   if (!user) {
-    return null
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <p>Redirecting to login...</p>
+        </div>
+      </div>
+    )
   }
 
   // If authenticated, render the protected content

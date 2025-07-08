@@ -42,6 +42,10 @@
         }
       ]
     },
+    "section3":{
+      "title": "",
+      "subtitle": ""
+    },
     "section4": {
       "title": "Esperienze che Offriamo",
       "subtitle": "Esperienze su misura per ogni occasione",
@@ -157,7 +161,9 @@
       "dateRequired": "La data è obbligatoria.",
       "backButton": "Indietro",
       "submitButton": "Prenota Ora",
-      "alertSuccess": "Prenotazione inviata!"
+      "alertSuccess": "Prenotazione inviata!",
+      "successTitle": "Richiesta inviata!",
+      "successMessage": "Riceverai una email di conferma per procedere."
   },
   "AboutUs": {
     "title": "Chi Siamo"

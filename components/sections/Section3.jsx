@@ -5,6 +5,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay } from 'swiper/modules';
 import Image from 'next/image';
+import { getMessages } from "@/lib/getMessages";
+import { useEffect, useState } from 'react';
 
 const imageUrls = [
     '/assets/slider/image1.jpg',
@@ -31,7 +33,22 @@ const imageUrls = [
     '/assets/slider/image21.jpg',
 ];
 
-export default function Section3() {
+export default function Section3({ params }) {
+    const [messages, setMessages] = useState(null);
+
+    useEffect(() => {
+      const fetchMessages = async () => {
+        const messages = await getMessages(params.locale);
+        setMessages(messages);
+      };
+      fetchMessages();
+    }, [params.locale]);
+  
+    const tSection3 = (key) => messages?.HomePage?.section3?.[key] ?? key;
+
+    if (!messages) return;
+
+
     return (
         <div className="px-6 py-10 md:py-36 z-0 bg-white">
             <Swiper

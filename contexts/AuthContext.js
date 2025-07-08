@@ -1,74 +1,46 @@
 'use client'
+
 import { createContext, useContext, useEffect, useState } from 'react'
-import { supabase } from '@/utils/supabaseClient'
+import { createClient } from '@supabase/supabase-js'
 
-const AuthContext = createContext({})
+const AuthContext = createContext()
 
-export const useAuth = () => {
-  const context = useContext(AuthContext)
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider')
-  }
-  return context
-}
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+)
 
-export const AuthProvider = ({ children }) => {
+export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Get initial session
-    const getInitialSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
+    const getSession = async () => {
+      const { data: { session }, error } = await supabase.auth.getSession()
       setUser(session?.user ?? null)
       setLoading(false)
     }
-
-    getInitialSession()
-
-    // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        setUser(session?.user ?? null)
-        setLoading(false)
-      }
-    )
-
-    return () => subscription.unsubscribe()
+  
+    getSession()
+  
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+    })
+  
+    return () => listener.subscription.unsubscribe()
   }, [])
+  
 
-  const signIn = async (email, password) => {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
-    return { data, error }
-  }
+  const signIn = (email, password) =>
+    supabase.auth.signInWithPassword({ email, password })
 
-  const signUp = async (email, password) => {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-    })
-    return { data, error }
-  }
-
-  const signOut = async () => {
-    const { error } = await supabase.auth.signOut()
-    return { error }
-  }
-
-  const value = {
-    user,
-    loading,
-    signIn,
-    signUp,
-    signOut,
-  }
+  const signOut = () => supabase.auth.signOut()
 
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ user, loading, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   )
 }
+
+export const useAuth = () => useContext(AuthContext)

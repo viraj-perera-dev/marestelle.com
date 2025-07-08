@@ -23,22 +23,6 @@ export async function middleware(req) {
   const excludeFromLocale = ['/dashboard', '/login'];
   const isExcluded = excludeFromLocale.some(path => pathname.startsWith(path));
 
-  // Check if this is a protected route
-  const protectedRoutes = ['/dashboard'];
-  const isProtectedRoute = protectedRoutes.some(route =>
-    pathname.startsWith(route)
-  );
-
-  if (isProtectedRoute) {
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
-
-    if (!session) {
-      const loginUrl = new URL('/login', req.url);
-      return NextResponse.redirect(loginUrl);
-    }
-  }
 
   // Redirect if no locale is present in pathname (only for non-excluded routes)
   if (!isExcluded) {

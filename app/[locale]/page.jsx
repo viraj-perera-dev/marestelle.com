@@ -63,7 +63,7 @@ export default async function Home({ params }) {
         
         <Section1 params={params} />
         <Section2 params={params} />
-        <Section3 />
+        <Section3 params={params} />
         <Section4 params={params} />
         <Section5 params={params} />
         <ContactSection params={params} />

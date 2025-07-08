@@ -9,6 +9,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  middleware: {
+    // required for Supabase cookies to work
+    matchers: ['/((?!api|_next|.*\\..*).*)'],
+  },  
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   // generateBuildId: async () => 'build', // 🚫 Try disabling this

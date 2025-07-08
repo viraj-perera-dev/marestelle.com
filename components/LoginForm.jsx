@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
 import { useRouter } from 'next/navigation'
 
@@ -8,8 +8,16 @@ export default function LoginForm() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const { signIn } = useAuth()
+  const { signIn, user } = useAuth()
   const router = useRouter()
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (user) {
+      router.replace('/dashboard')
+    }
+  }, [user, router])
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -25,15 +33,16 @@ export default function LoginForm() {
         return
       }
 
-      // Simple redirect after successful login
-      router.push('/dashboard')
-      setLoading(false)
+      // Don't redirect here - let the useEffect handle it when user state changes
+      console.log('Login successful, waiting for auth state change...')
 
     } catch (err) {
+      console.error('Login error:', err)
       setError('An unexpected error occurred')
       setLoading(false)
     }
   }
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
