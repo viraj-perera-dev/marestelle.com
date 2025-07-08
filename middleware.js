@@ -1,15 +1,14 @@
-// middleware.js (create this file in your project root, same level as app folder)
+// middleware.js
 import { NextResponse } from 'next/server';
+import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs';
 
-export function middleware(request) {
-  const { pathname } = request.nextUrl;
-  
-  // Don't redirect if already has a locale
-  if (pathname.startsWith('/it') || pathname.startsWith('/en')) {
-    return NextResponse.next();
-  }
+export async function middleware(req) {
+  const res = NextResponse.next();
+  const supabase = createMiddlewareClient({ req, res });
 
-  // Don't redirect API routes, static files, etc.
+  const { pathname } = req.nextUrl;
+
+  // Skip static files and API routes
   if (
     pathname.startsWith('/api') ||
     pathname.startsWith('/_next') ||
@@ -17,14 +16,39 @@ export function middleware(request) {
     pathname.startsWith('/assets') ||
     pathname.includes('.')
   ) {
-    return NextResponse.next();
+    return res;
   }
 
-  // Redirect root and other paths to /it
-  const locale = 'it'; // Default locale
-  return NextResponse.redirect(
-    new URL(`/${locale}${pathname === '/' ? '' : pathname}`, request.url)
+  // Redirect if no locale is present in pathname
+  const hasLocale = pathname.startsWith('/it') || pathname.startsWith('/en');
+  const excludeFromLocale = ['/dashboard']
+
+  if (!hasLocale && !excludeFromLocale.some(path => pathname.startsWith(path))) {
+    const locale = 'it'; // default locale
+    return NextResponse.redirect(
+      new URL(`/${locale}${pathname === '/' ? '' : pathname}`, req.url)
+    );
+  }
+  
+
+  // Check if this is a protected route
+  const protectedRoutes = ['/dashboard'];
+  const isProtectedRoute = protectedRoutes.some(route =>
+    pathname.startsWith(route)
   );
+
+  if (isProtectedRoute) {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+
+    if (!session) {
+      const loginUrl = new URL(hasLocale ? `/${pathname.split('/')[1]}/login` : '/login', req.url);
+      return NextResponse.redirect(loginUrl);
+    }
+  }
+
+  return res;
 }
 
 export const config = {

@@ -1,5 +1,5 @@
-// app/layout.jsx
 import './main.css';
+import { AuthProvider } from '@/contexts/AuthContext';
 
 export default function RootLayout({ children }) {
   return (
@@ -12,7 +12,9 @@ export default function RootLayout({ children }) {
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       </head>
       <body className="overflow-x-hidden">
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
