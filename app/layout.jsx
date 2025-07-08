@@ -1,12 +1,16 @@
-// /app/layout.jsx
 import './main.css';
-import LenisProvider from '@/components/LenisProvider';
 
 export default function RootLayout({ children }) {
   return (
-    <LenisProvider>
-      {children}
-    </LenisProvider>
+    <html>
+      <head>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      </head>
+      <body className="overflow-x-hidden">
+        {children}
+      </body>
+    </html>
   );
 }
-	

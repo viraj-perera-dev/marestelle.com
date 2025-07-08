@@ -1,70 +1,68 @@
-"use client";
-
 import { supabase } from "@/utils/supabaseClient";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { useLocale } from "next-intl";
-import { useEffect, useState } from "react";
+import { generateSEOMetadata } from '@/components/Metadata';
+import DetailPageClient from './components/DetailPageClient';
 
-export default function FullDescriptionPage({ params }) {
+// Generate metadata for SEO
+export async function generateMetadata({ params }) {
   const { id } = params;
-  const locale = useLocale();
+  
+  try {
+    const { data } = await supabase
+      .from("itinerary")
+      .select("title, description")
+      .eq("id", id)
+      .single();
 
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+    if (!data) {
+      return generateSEOMetadata({
+        contentMetadata: {
+          title: 'Pagina non trovata',
+          description: 'La pagina richiesta non è stata trovata.',
+        }
+      });
+    }
 
-  useEffect(() => {
-    const fetchItinerary = async () => {
-      const { data, error } = await supabase
-        .from("itinerary")
-        .select("*")
-        .eq("id", id)
-        .single();
-
-      if (error) {
-        setError(error);
-      } else {
-        setData(data);
+    return generateSEOMetadata({
+      contentMetadata: {
+        title: `${data.title} - Diario di Bordo`,
+        description: data.description?.substring(0, 160) || 'Scopri di più sul nostro itinerario alle Isole Tremiti',
+        keywords: ['Isole Tremiti', 'itinerario', data.title],
+        siteColor: 'light',
+        url: '',
+        siteName: 'Victor Tremiti',
+        image: '',
+        imageAlt: data.title,
       }
-    };
+    });
+  } catch (error) {
+    console.error('Error generating metadata:', error);
+    return generateSEOMetadata({
+      contentMetadata: {
+        title: 'Diario di Bordo - Victor Tremiti',
+        description: 'Scopri il nostro itinerario alle Isole Tremiti',
+      }
+    });
+  }
+}
 
-    fetchItinerary();
-  }, [id]);
+export default async function DetailPage({ params }) {
+  const { id, locale } = params;
+  
+  try {
+    const { data, error } = await supabase
+      .from("itinerary")
+      .select("*")
+      .eq("id", id)
+      .single();
 
-  if (error) return notFound();
-  if (!data)
-    return (
-      <div className="h-screen flex items-center justify-center">
-        <p className="p-10">Caricamento...</p>
-      </div>
-    );
+    if (error || !data) {
+      notFound();
+    }
 
-  return (
-    <div className="w-full h-auto bg-white">
-      <main className="max-w-2xl mx-auto px-4 py-12 pt-36 h-auto">
-        <Link
-          href={`/${locale}/diario-di-bordo#stop-${id}`}
-          className="text-blue-600 mb-4 inline-block cursor-pointer"
-        >
-          ← Torna all'itinerario
-        </Link>
-
-        <h1 className="text-4xl font-bold mb-6">{data.title}</h1>
-        <img
-          src={`/assets/diario/${data.image}`}
-          alt={data.title}
-          className="rounded-lg mb-6 max-h-[400px] w-full object-cover"
-        />
-        <p className="text-lg text-gray-800 whitespace-pre-wrap">
-          {data.description}
-        </p>
-        <Link
-          href={`/${locale}/diario-di-bordo#stop-${id}`}
-          className="bg-blue-600 text-white px-4 py-2 rounded-full mt-4 inline-block cursor-pointer"
-        >
-          ← Torna all'itinerario
-        </Link>
-      </main>
-    </div>
-  );
+    return <DetailPageClient data={data} locale={locale} />;
+  } catch (error) {
+    console.error('Error fetching itinerary:', error);
+    notFound();
+  }
 }

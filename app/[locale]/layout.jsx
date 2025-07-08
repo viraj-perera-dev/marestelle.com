@@ -1,29 +1,23 @@
-import '@/app/main.css';
 import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from '@/lib/getMessages';
 import Navbar from '@/components/Navbar';
+import LenisProvider from '@/components/LenisProvider';
 import { routing } from '@/i18n/routing';
 
 export async function generateStaticParams() {
-
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function RootLayout({ children, params }) {
+export default async function LocaleLayout({ children, params }) {
   const { locale } = params;
+  const messages = await getMessages(locale);
 
   return (
-    <html lang={locale}>
-      <head>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-      </head>
-      <body className="overflow-x-hidden">
-        <NextIntlClientProvider locale={locale}>
-          <Navbar key={locale} locale={locale} />
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <LenisProvider>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <Navbar locale={locale} />
+        {children}
+      </NextIntlClientProvider>
+    </LenisProvider>
   );
 }
