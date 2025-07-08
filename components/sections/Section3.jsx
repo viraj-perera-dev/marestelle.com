@@ -53,6 +53,7 @@ export default function Section3() {
                                 height={350}
                                 width={500} // You can put a dummy max width; it'll auto adjust
                                 className="md:h-[350px] h-[250px] w-auto rounded-xl object-contain"
+                                loading="lazy"
                             />
                         </div>
                     </SwiperSlide>
