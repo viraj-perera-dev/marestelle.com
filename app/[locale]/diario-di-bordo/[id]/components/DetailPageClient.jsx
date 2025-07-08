@@ -18,6 +18,7 @@ export default function DetailPageClient({ data, locale }) {
         
         {data.image && (
           <Image
+            loading="lazy"
             src={`/assets/diario/${data.image}`}
             alt={data.title}
             width={800}

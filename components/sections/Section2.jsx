@@ -91,6 +91,7 @@ export default function Section2({ params }) {
                 </div>
                 <div className="w-[15rem] h-[25rem] md:w-[25rem] md:h-[30rem]">
                   <Image
+                    loading="lazy"
                     src={yacht.image}
                     alt={yacht.name}
                     width={500}

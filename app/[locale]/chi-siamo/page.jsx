@@ -41,13 +41,13 @@ export default async function ChiSiamo({ params }) {
             <p className="mb-4">Facciamo questo lavoro da 20 anni, con l’impegno di valorizzare i sapori più genuini di queste isole, servendovi ciò che il mare ci regala, come espressione del passato marinaresco che ci caratterizza.</p>
           </div>
           <div className="w-full h-[30rem]">
-            <Image src="/assets/sectionImages/DSC02686.jpg" alt="Motonave Victor" width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
+            <Image priority src="/assets/sectionImages/DSC02686.jpg" alt="Motonave Victor" width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
           </div>
         </div>
 
         <div className="mt-20 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="w-full h-[30rem]">
-            <Image src="/assets/food/piatto.jpg" alt="Roberto cucina pesce fresco" width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
+            <Image loading="lazy" src="/assets/food/piatto.jpg" alt="Roberto cucina pesce fresco" width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
           </div>
           <div>
             <h2 className="text-3xl font-bold mb-4">Tradizione in cucina</h2>
@@ -63,7 +63,7 @@ export default async function ChiSiamo({ params }) {
             <p className="mb-4">Un modo intimo e autentico per vivere il mare, accompagnati da chi lo conosce da sempre.</p>
           </div>
           <div className="w-full h-[30rem]">
-            <Image src="/assets/sectionImages/DJI_0987.jpg" alt="Riccardo con il gozzo" width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
+            <Image loading="lazy" src="/assets/sectionImages/DJI_0987.jpg" alt="Riccardo con il gozzo" width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
           </div>
         </div>
       </section>

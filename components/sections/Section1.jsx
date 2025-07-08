@@ -27,6 +27,7 @@ export default function Section1({ params }) {
         <div className="flex flex-col items-start gap-8 max-w-md">
           <h2 className="text-3xl font-bold text-neutral-800">{tSection1("title")}</h2>
           <Image
+            loading="lazy"
             className="rounded-3xl h-full w-full object-cover z-40"
             width={500}
             height={500}

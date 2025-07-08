@@ -85,6 +85,7 @@ export default function Navbar({ locale }) {
         className="text-negative fixed top-6 md:top-5 left-5 md:left-26 z-[999] cursor-pointer"
       >
         <Image
+          priority
           src="/assets/logo/logo_max_white.png"
           className={`md:w-46 md:h-auto w-32 h-auto object-contain`}
           alt="cloud"

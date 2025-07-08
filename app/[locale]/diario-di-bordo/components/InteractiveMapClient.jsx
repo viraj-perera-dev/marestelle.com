@@ -27,11 +27,11 @@ export default function InteractiveMapClient({ locale }) {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   // Fetch itinerary data
@@ -49,7 +49,7 @@ export default function InteractiveMapClient({ locale }) {
           ...rest,
           coords: { lat, lng },
         }));
-        
+
         setItinerary(normalized);
       } catch (error) {
         console.error("Error fetching itinerary:", error);
@@ -100,20 +100,20 @@ export default function InteractiveMapClient({ locale }) {
           end: "bottom center",
           onEnter: () => {
             setActiveIndex(i);
-            setVisibleMarkers(prev => [...new Set([...prev, i])]);
+            setVisibleMarkers((prev) => [...new Set([...prev, i])]);
           },
           onEnterBack: () => {
             setActiveIndex(i);
           },
         });
-        
+
         triggers.push(trigger);
       });
     }, 100);
 
     return () => {
       clearTimeout(timer);
-      triggers.forEach(trigger => trigger.kill());
+      triggers.forEach((trigger) => trigger.kill());
     };
   }, [isLoaded, loading, itinerary]);
 
@@ -147,7 +147,7 @@ export default function InteractiveMapClient({ locale }) {
   if (!isLoaded) {
     return (
       <div className="h-screen flex items-center justify-center">
-        <p>Loading map...</p>
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
       </div>
     );
   }
@@ -175,20 +175,22 @@ export default function InteractiveMapClient({ locale }) {
               disableDoubleClickZoom: true,
             }}
           >
-            {itinerary.map((stop, index) => 
-              visibleMarkers.includes(index) && (
-                <Marker
-                  key={stop.id}
-                  position={stop.coords}
-                  animation={2} // DROP animation
-                  icon={{
-                    url: index === activeIndex
-                      ? "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-                      : "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-                    scaledSize: new window.google.maps.Size(50, 50),
-                  }}
-                />
-              )
+            {itinerary.map(
+              (stop, index) =>
+                visibleMarkers.includes(index) && (
+                  <Marker
+                    key={stop.id}
+                    position={stop.coords}
+                    animation={2} // DROP animation
+                    icon={{
+                      url:
+                        index === activeIndex
+                          ? "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                          : "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                      scaledSize: new window.google.maps.Size(50, 50),
+                    }}
+                  />
+                )
             )}
           </GoogleMap>
         </div>
@@ -201,6 +203,7 @@ export default function InteractiveMapClient({ locale }) {
           >
             {itinerary[activeIndex]?.image && (
               <Image
+                loading="lazy"
                 src={`/assets/diario/${itinerary[activeIndex].image}`}
                 alt={itinerary[activeIndex].title}
                 width={500}
@@ -208,7 +211,7 @@ export default function InteractiveMapClient({ locale }) {
                 className="rounded-lg object-cover h-[20rem] w-full hidden md:block"
               />
             )}
-            
+
             <div className="mt-10 flex flex-col justify-center items-start w-full">
               <h2 className="md:text-4xl text-2xl font-bold mb-2">
                 {itinerary[activeIndex]?.title}
@@ -265,7 +268,7 @@ export default function InteractiveMapClient({ locale }) {
           ))}
         </div>
       </section>
-      
+
       <ProgressIndicator activeIndex={activeIndex} total={itinerary.length} />
     </main>
   );
