@@ -1,7 +1,7 @@
-import {redirect} from 'next/navigation';
+// app/page.jsx
+import { redirect } from 'next/navigation';
 
-
-// This page only renders when the app is built statically (output: 'export')
 export default function RootPage() {
+  // This should only be reached if middleware fails
   redirect('/it');
 }
