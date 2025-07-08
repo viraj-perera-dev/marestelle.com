@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { useAuth } from '@/contexts/AuthContext'
 import { useRouter } from 'next/navigation'
-import { useLocale } from 'next-intl'
 
 export default function LoginForm() {
   const [email, setEmail] = useState('')
@@ -11,7 +10,6 @@ export default function LoginForm() {
   const [error, setError] = useState('')
   const { signIn } = useAuth()
   const router = useRouter()
-  const locale = useLocale();
 
 
   const handleSubmit = async (e) => {

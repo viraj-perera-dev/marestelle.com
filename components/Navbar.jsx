@@ -168,7 +168,7 @@ export default function Navbar({ locale }) {
                 ))}
                 <li data-aos="fade-right" data-aos-duration="2500">
                   <Link
-                    href={`${locale}/login`}
+                    href={`/login`}
                     target="_blank"
                     className={`uppercase w-full text-3xl md:text-6xl font-semibold hover:text-black text-blue-500`}
                     onClick={closeMenu}

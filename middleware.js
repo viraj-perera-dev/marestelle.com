@@ -21,7 +21,7 @@ export async function middleware(req) {
 
   // Redirect if no locale is present in pathname
   const hasLocale = pathname.startsWith('/it') || pathname.startsWith('/en');
-  const excludeFromLocale = ['/dashboard']
+  const excludeFromLocale = ['/dashboard', '/login']
 
   if (!hasLocale && !excludeFromLocale.some(path => pathname.startsWith(path))) {
     const locale = 'it'; // default locale
