@@ -86,11 +86,11 @@ export async function POST(req) {
           <p style="color: #374151; margin: 0; font-size: 14px;">
             <strong>Contattaci:</strong> Per assistenza immediata chiamaci al nostro numero o scrivici un'email.
           </p>
-          <a href="tel:${booking.phone}" style="color: #374151; margin-bottom: 10px;">
-            📞 {booking.phone}
+          <a href="tel:+393714891806" style="color: #374151; margin-bottom: 10px; text-decoration: none;">
+            📞  +39 371 489 1806
           </a> <br/>
-          <a href="mailto:${booking.email}" style="color: #374151; margin-bottom: 10px;">
-           📧 {booking.email}
+          <a href="mailto:info@marestelle.com" style="color: #374151; margin-bottom: 10px; text-decoration: none;">
+           📧 info@marestelle.com
           </a>
         </div>
 

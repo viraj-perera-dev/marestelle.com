@@ -8,6 +8,8 @@ export async function POST(req) {
   try {
     const { bookingId } = await req.json();
 
+    console.log("🔄 Booking ID received:", bookingId);
+
     // Get booking details
     const { data: booking, error: fetchError } = await supabase
       .from("bookings")
@@ -16,10 +18,13 @@ export async function POST(req) {
       .single();
 
     if (fetchError || !booking) {
+      console.error("❌ Booking not found:", fetchError);
       return new Response(JSON.stringify({ error: "Booking not found" }), {
         status: 404,
       });
     }
+
+    console.log("✅ Booking fetched:", booking);
 
     // Update booking status to confirmed (1)
     const { error: updateError } = await supabase
@@ -28,10 +33,13 @@ export async function POST(req) {
       .eq("id", bookingId);
 
     if (updateError) {
+      console.error("❌ Failed to update booking:", updateError);
       return new Response(JSON.stringify({ error: "Failed to update booking" }), {
         status: 500,
       });
     }
+
+    console.log("✅ Booking status updated");
 
     // Create Stripe payment link
     const paymentResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/create-payment-link`, {
@@ -45,13 +53,21 @@ export async function POST(req) {
       }),
     });
 
+    console.log("🔄 Waiting for Stripe payment response...");
+
     const paymentData = await paymentResponse.json();
+
+    console.log("✅ Stripe payment response:", paymentData);
+
     
     if (!paymentData.success) {
+      console.error("❌ Failed to create payment link:", paymentData);
       return new Response(JSON.stringify({ error: "Failed to create payment link" }), {
         status: 500,
       });
     }
+
+    console.log("🔗 Stripe payment link:", paymentData.paymentLink);
 
     const stripePaymentLink = paymentData.paymentLink;
 
