@@ -42,7 +42,7 @@ export async function POST(req) {
     console.log("✅ Booking status updated");
 
     // Create Stripe payment link
-    const paymentResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/create-payment-link`, {
+    const paymentResponse = await fetch(`https://${process.env.NEXT_PUBLIC_APP_URL}/api/create-payment-link`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
