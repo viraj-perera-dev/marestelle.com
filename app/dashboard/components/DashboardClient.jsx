@@ -37,42 +37,44 @@ export default function DashboardClient() {
 
   const handleSignOut = async () => {
     await signOut();
-    router.push("/login");
   };
+
 
   return (
     <ProtectedRoute>
-      <div className="min-h-screen bg-gray-50">
-        <div className="bg-white shadow">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-6">
-              <Image
-                priority
-                src="/assets/logo/logo_max_white.png"
-                className={`md:w-30 h-auto object-contain invert`}
-                alt="cloud"
-                width={500}
-                height={500}
-              />
-              <div className="flex items-center space-x-4">
-                <span className="text-sm text-gray-500">
-                  Bentornato, {loadingProfile ? "Loading..." : profile?.name || user.email}
-                </span>
-                <button
-                  onClick={handleSignOut}
-                  className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
-                >
-                  Sign Out
-                </button>
+        <div className="min-h-screen bg-gray-50">
+          <div className="bg-white shadow">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex justify-between items-center py-6">
+                <Image
+                  priority
+                  src="/assets/logo/logo_max_white.png"
+                  className={`md:w-30 h-auto object-contain invert`}
+                  alt="cloud"
+                  width={500}
+                  height={500}
+                />
+                <div className="flex items-center space-x-4">
+                  <span className="text-sm text-gray-500">
+                    Bentornato,{" "}
+                    {loadingProfile
+                      ? "Loading..."
+                      : profile?.name || user.email}
+                  </span>
+                  <button
+                    onClick={handleSignOut}
+                    className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition"
+                  >
+                    Sign Out
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+          <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <BookingsTable />
+          </div>
         </div>
-
-        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          <BookingsTable />
-        </div>
-      </div>
     </ProtectedRoute>
   );
 }

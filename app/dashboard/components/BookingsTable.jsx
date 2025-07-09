@@ -14,12 +14,23 @@ import {
 } from "lucide-react";
 
 export default function BookingsTable() {
+  const [mounted, setMounted] = useState(false);
   const [bookings, setBookings] = useState([]);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
   const [processingBookings, setProcessingBookings] = useState(new Set());
   const pageSize = 10;
   const [selectedMessage, setSelectedMessage] = useState(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      fetchBookings(page);
+    }
+  }, [page, mounted]);
 
   const fetchBookings = async (page) => {
     const from = (page - 1) * pageSize;
