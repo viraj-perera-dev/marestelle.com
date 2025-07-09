@@ -7,6 +7,7 @@ import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { getMessages } from "@/lib/getMessages";
 import { useLocale } from "next-intl";
 import { supabase } from "@/utils/supabaseClient";
+import QuantityInput from "@/components/QuantityInput";
 
 export default function Section6({ params }) {
   const [step, setStep] = useState(1);
@@ -19,6 +20,9 @@ export default function Section6({ params }) {
     date: "",
     time: "morning",
     message: "",
+    people: 1,
+    children: 0,
+    price: 0,
   });
 
   const [selectedDate, setSelectedDate] = useState(null);
@@ -37,7 +41,19 @@ export default function Section6({ params }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const newData = {
+      ...formData,
+      [name]:
+        name === "people" || name === "children" ? parseInt(value || 0) : value,
+    };
+
+    // Auto-update price if relevant fields change
+    newData.price = calculatePrice(
+      newData.date,
+      newData.people,
+      newData.children
+    );
+    setFormData(newData);
   };
 
   const handleTimeSelect = (time) => {
@@ -45,11 +61,14 @@ export default function Section6({ params }) {
   };
 
   const handleDateChange = (newValue) => {
+    const dateStr = newValue ? newValue.format("YYYY-MM-DD") : "";
     setSelectedDate(newValue);
-    setFormData((prev) => ({
-      ...prev,
-      date: newValue ? newValue.format("YYYY-MM-DD") : "",
-    }));
+    const newData = {
+      ...formData,
+      date: dateStr,
+      price: calculatePrice(dateStr, formData.people, formData.children),
+    };
+    setFormData(newData);
   };
 
   const handleNext = () => {
@@ -106,6 +125,9 @@ export default function Section6({ params }) {
             date: "",
             time: "morning",
             message: "",
+            people: 1,
+            children: 0,
+            price: 0,
           });
           setSelectedDate(null);
           setStep(1);
@@ -115,6 +137,34 @@ export default function Section6({ params }) {
         alert("Unexpected error occurred.");
       }
     }
+  };
+
+  const calculatePrice = (dateStr, people, children) => {
+    if (!dateStr) return 0;
+    const date = new Date(dateStr);
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    let adultPrice = 40;
+    let childPrice = 30;
+
+    if (month === 7) {
+      adultPrice = 45;
+      childPrice = 35;
+    } else if (month === 8) {
+      if (day >= 10 && day <= 17) {
+        adultPrice = 70;
+        childPrice = 60;
+      } else {
+        adultPrice = 60;
+        childPrice = 50;
+      }
+    } else if (month === 9 && day <= 10) {
+      adultPrice = 45;
+      childPrice = 35;
+    }
+
+    return people * adultPrice + children * childPrice;
   };
 
   if (!messages) return;
@@ -143,14 +193,33 @@ export default function Section6({ params }) {
                   />
                 </LocalizationProvider>
               </div>
+
+              <div className="flex flex-col md:gap-4 gap-2">
+                <QuantityInput
+                  label="Adulti"
+                  name="people"
+                  value={formData.people}
+                  onChange={handleChange}
+                  min={1}
+                />
+
+                <QuantityInput
+                  label="Bambini"
+                  name="children"
+                  value={formData.children}
+                  onChange={handleChange}
+                  min={0}
+                />
+              </div>
+
               {errors.date && (
                 <p className="text-red-500 text-sm mb-5">{errors.date}</p>
               )}
               <button
                 onClick={handleNext}
-                className="bg-blue-600 text-white rounded-full w-1/2 py-4 hover:bg-blue-700 transition mt-8"
+                className="bg-blue-600 text-white rounded-full md:w-1/2 w-full py-4 hover:bg-blue-700 transition mt-8"
               >
-                {t("nextButton")}
+                {t("nextButton")} ( prezzo: {formData.price}€ )
               </button>
             </div>
           )}
