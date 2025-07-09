@@ -50,7 +50,7 @@ export async function POST(req) {
       after_completion: {
         type: "redirect",
         redirect: {
-          url: `${process.env.NEXT_PUBLIC_APP_URL}/payment-success?booking_id=${bookingId}`,
+          url: `https://${process.env.NEXT_PUBLIC_APP_URL}/payment-success?booking_id=${bookingId}`,
         },
       },
       // Optional: Set automatic tax
