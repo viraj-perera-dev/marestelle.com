@@ -60,6 +60,7 @@ export async function POST(req) {
   </div>
 `;
 
+
   try {
     // Send to admin
     await resend.emails.send({

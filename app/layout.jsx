@@ -1,5 +1,7 @@
 import './main.css';
 import { AuthProvider } from '@/contexts/AuthContext';
+import { Analytics } from "@vercel/analytics/next"
+
 
 export default function RootLayout({ children }) {
   return (
@@ -17,6 +19,7 @@ export default function RootLayout({ children }) {
           {children}
         </AuthProvider>
       </body>
+      <Analytics />
     </html>
   );
 }

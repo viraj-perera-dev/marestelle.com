@@ -57,6 +57,7 @@
     "@supabase/supabase-js": "^2.50.3",
     "@types/node": "20.6.2",
     "@types/react-dom": "18.2.7",
+    "@vercel/analytics": "^1.5.0",
     "aos": "^2.3.4",
     "axios": "^1.9.0",
     "class-variance-authority": "^0.7.0",
@@ -89,6 +90,7 @@
     "recharts": "^2.12.7",
     "resend": "^4.6.0",
     "sonner": "^1.5.0",
+    "stripe": "^18.3.0",
     "swiper": "^11.2.8",
     "vaul": "^0.9.9",
     "zod": "^3.23.8"

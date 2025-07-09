@@ -20,7 +20,7 @@ export async function middleware(req) {
   }
 
   // Routes that should be excluded from locale prefix
-  const excludeFromLocale = ['/dashboard', '/login'];
+  const excludeFromLocale = ['/dashboard', '/login', '/payment-success'];
   const isExcluded = excludeFromLocale.some(path => pathname.startsWith(path));
 
 

@@ -10,12 +10,14 @@ import {
   PhoneIcon,
   MessageSquare,
   Banknote,
+  Loader2,
 } from "lucide-react";
 
 export default function BookingsTable() {
   const [bookings, setBookings] = useState([]);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
+  const [processingBookings, setProcessingBookings] = useState(new Set());
   const pageSize = 10;
   const [selectedMessage, setSelectedMessage] = useState(null);
 
@@ -47,6 +49,64 @@ export default function BookingsTable() {
   useEffect(() => {
     fetchBookings(page);
   }, [page]);
+
+  const handleAcceptBooking = async (bookingId) => {
+    setProcessingBookings(prev => new Set(prev).add(bookingId));
+    
+    try {
+      const response = await fetch("/api/accept-booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ bookingId }),
+      });
+
+      if (response.ok) {
+        // Refresh the bookings table
+        await fetchBookings(page);
+        alert("Prenotazione accettata! Email di conferma inviata.");
+      } else {
+        alert("Errore nell'accettare la prenotazione.");
+      }
+    } catch (error) {
+      console.error("Error accepting booking:", error);
+      alert("Errore nell'accettare la prenotazione.");
+    } finally {
+      setProcessingBookings(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(bookingId);
+        return newSet;
+      });
+    }
+  };
+
+  const handleRejectBooking = async (bookingId) => {
+    setProcessingBookings(prev => new Set(prev).add(bookingId));
+    
+    try {
+      const response = await fetch("/api/reject-booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ bookingId }),
+      });
+
+      if (response.ok) {
+        // Refresh the bookings table
+        await fetchBookings(page);
+        alert("Prenotazione rifiutata. Email di notifica inviata.");
+      } else {
+        alert("Errore nel rifiutare la prenotazione.");
+      }
+    } catch (error) {
+      console.error("Error rejecting booking:", error);
+      alert("Errore nel rifiutare la prenotazione.");
+    } finally {
+      setProcessingBookings(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(bookingId);
+        return newSet;
+      });
+    }
+  };
 
   const renderStatus = (status, paid) => {
     switch (status) {
@@ -177,11 +237,27 @@ export default function BookingsTable() {
               <td className="px-4 py-3">
                 {booking.confirmed === 0 ? (
                   <div className="flex gap-2 items-center justify-center">
-                    <button className="px-3 rounded-md text-white bg-green-500 hover:bg-green-600 cursor-pointer flex gap-2 items-center">
-                      Accetta
+                    <button 
+                      onClick={() => handleAcceptBooking(booking.id)}
+                      disabled={processingBookings.has(booking.id)}
+                      className="px-3 py-1 rounded-md text-white bg-green-500 hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer flex gap-2 items-center"
+                    >
+                      {processingBookings.has(booking.id) ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        "Accetta"
+                      )}
                     </button>
-                    <button className="px-3 rounded-md text-white bg-red-500 hover:bg-red-600 cursor-pointer flex gap-2 items-center">
-                      Rifiuta
+                    <button 
+                      onClick={() => handleRejectBooking(booking.id)}
+                      disabled={processingBookings.has(booking.id)}
+                      className="px-3 py-1 rounded-md text-white bg-red-500 hover:bg-red-600 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer flex gap-2 items-center"
+                    >
+                      {processingBookings.has(booking.id) ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        "Rifiuta"
+                      )}
                     </button>
                   </div>
                 ) : booking.confirmed === 1 && booking.paid === true ? (
