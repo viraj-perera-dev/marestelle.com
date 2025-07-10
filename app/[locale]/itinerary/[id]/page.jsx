@@ -60,7 +60,9 @@ export default async function DetailPage({ params }) {
       notFound();
     }
 
-    return <DetailPageClient data={data} locale={locale} />;
+    return (
+      <DetailPageClient data={data} locale={locale} />
+    );
   } catch (error) {
     console.error('Error fetching itinerary:', error);
     notFound();

@@ -4,6 +4,7 @@
     "About": "Chi Siamo",
     "Contact": "Prenota Ora",
     "DiarioDiBordo": "Diario Di Bordo",
+    "Faq": "Domande Frequenti",
     "ContactUs": "Contattaci"
   },
   "HomePage": {
@@ -39,12 +40,19 @@
           "guests": "35 Ospiti",
           "dimension": "70×60 Dimensioni",
           "linkLabel": "Scopri di più"
+        },
+        {
+          "name": "Motonave Victor",
+          "description": "Scopri la nostra motonave e le sue caratteristiche.",
+          "guests": "35 Ospiti",
+          "dimension": "70×60 Dimensioni",
+          "linkLabel": "Scopri di più"
         }
       ]
     },
-    "section3":{
-      "title": "",
-      "subtitle": ""
+    "section3": {
+      "title": "Seguici sui nostri canali social",
+      "subtitle": "Condividi la tua esperienza e sarai ricondiviso."
     },
     "section4": {
       "title": "Esperienze che Offriamo",
@@ -84,6 +92,9 @@
     "section5": {
       "title": "Cosa dicono i nostri clienti",
       "subtitle": "Esperienze uniche e indimenticabili",
+      "rating": "Recensione Verificata",
+      "showMore": "Mostra di più",
+      "showLess": "Mostra meno",
       "testimonials": [
         {
           "name": "P R B",
@@ -91,7 +102,7 @@
           "image": "/assets/testimonials/PRB.jpg",
           "title": "Altamente raccomandato",
           "text": "Riccardo è una guida attenta e ha grande cura degli ospiti, il suo racconto è interessante e mai invadente. È figlio d'arte ed ama le sue isole. Ci ha servito un aperitivo unico, con pesce apprezzatissimo, frutta e vino ghiacciato. Lo consigliamo con certezza, e cercheremo anche noi di tornare presto e farci un altro giro tra calette e grotte, capperi e gabbiani.",
-          "date": "3 giugno 2025",
+          "date": "3/06/2025",
           "rating": 5
         },
         {
@@ -100,7 +111,7 @@
           "image": "/assets/testimonials/OrnellaB.jpg",
           "title": "Bellissima!",
           "text": "Gran bel giro in barca e vista spettacolare.Riccardo è stato veramente fantastico. Consiglio molto se andate alle Tremiti giro in barca con MARE E STELLE,TOP😊",
-          "date": "25 settembre 2024",
+          "date": "25/09/2024",
           "rating": 5
         },
         {
@@ -109,7 +120,7 @@
           "image": "/assets/testimonials/fm1270.jpg",
           "title": "Esperienza consigliata",
           "text": "Giornata alle Tremiti con mia figlia di 20 anni. Nonostante il forte vento di maestrale Riccardo ci ha guidato per le calette, illustrandoci le bellezze dell'Isola. professionale e gentile. Buono l'aperitivo; cibo e vino. Ottimo rapporto qualità/prezzo. Consigliato!",
-          "date": "10 settembre 2024",
+          "date": "10/09/2024",
           "rating": 5
         },
         {
@@ -118,7 +129,7 @@
           "image": "/assets/testimonials/NadiaC.jpg",
           "title": "Super top!!!!",
           "text": "Riccardo super top!!!! Una guida attenta, scrupolosa e molto informata ma allo stesso tempo che ti permette di divertirti e passare del tempo in sicurezza in barca!!! Super consigliato sicuramente torneremo dall'Abruzzo la prossima volta per stare qualche giorno in loro compagnia!!!!! Voto 10",
-          "date": "18 agosto 2024",
+          "date": "18/08/2024",
           "rating": 5
         },
         {
@@ -127,7 +138,7 @@
           "image": "/assets/testimonials/salutoni.jpg",
           "title": "Tremiti affascinanti con uno skipper doc",
           "text": "Fin dalla prenotazione avevo intuito che c’era grande professionalità sia nel fornire informazioni che nel richiederle per meglio gestire il giro. La professionalità era motivata dalla passione e amore per la propria terra e il giro poi si è trasformato in stupore e conoscenza il tutto condito dall’ottimo aperitivo servito a bordo. Posso solo dire grazie per il calore sentito nei racconti e descrizioni di queste isole che sono stupende e che vanno visitate con rispetto per assaporarle completamente. Grazie a Riccardo per aver mantenuto intatta la tradizione e competenza marinaresca",
-          "date": "17 agosto 2024",
+          "date": "17/08/2024",
           "rating": 5
         },
         {
@@ -136,34 +147,80 @@
           "image": "/assets/testimonials/andrea.jpg",
           "title": "Alla scoperta delle Tremiti",
           "text": "Gita fantastica in barca di quattro ore alla scoperta delle Tremiti con tre soste bagno! Maschere per snorkeling indispensabili per godere questa bellezza! Bravo Riccardo per averci accompagnato, spiegato e preparato un ottimo ed abbondante aperitivo in barca e per averci fatto assaggiare il caffè del marinaio…di cui non sveliamo l’ingrediente misterioso :)",
-          "date": "11 agosto 2024",
+          "date": "11/08/2024",
           "rating": 5
         }
       ]
     }
   },
   "BookingForm": {
-    "title": "Prenota un appuntamento",
-    "subtitle": "Prenota un appuntamento per un tour in barca",
-      "label": "Seleziona una data",
-      "error": "Per favore seleziona una data per proseguire.",
-      "nextButton": "Prosegui",
-      "timeLabel": "Seleziona orario",
-      "morning": "Tour Mattutino",
-      "afternoon": "Tour Pomeridiano",
-      "nameLabel": "Nome completo",
-      "emailLabel": "Indirizzo Email",
-      "phoneLabel": "Numero di Telefono",
-      "messageLabel": "Messaggio (Opzionale)",
-      "nameRequired": "Il nome è obbligatorio.",
-      "emailRequired": "L’email è obbligatoria.",
-      "phoneRequired": "Il telefono è obbligatorio.",
-      "dateRequired": "La data è obbligatoria.",
-      "backButton": "Indietro",
-      "submitButton": "Prenota Ora",
-      "alertSuccess": "Prenotazione inviata!",
-      "successTitle": "Richiesta inviata!",
-      "successMessage": "Riceverai una email di conferma per procedere."
+    "title": "Prenota il tuo tour",
+    "subtitle": "Prenota il tuo tour in barca",
+    "label": "Seleziona una data",
+    "error": "Per favore seleziona una data per proseguire.",
+    "nextButton": "Prosegui",
+    "timeLabel": "Seleziona orario",
+    "morning": "Tour Mattutino",
+    "afternoon": "Tour Pomeridiano",
+    "nameLabel": "Nome completo",
+    "emailLabel": "Indirizzo Email",
+    "phoneLabel": "Numero di Telefono",
+    "messageLabel": "Messaggio (Opzionale)",
+    "nameRequired": "Il nome è obbligatorio.",
+    "emailRequired": "L’email è obbligatoria.",
+    "phoneRequired": "Il telefono è obbligatorio.",
+    "dateRequired": "La data è obbligatoria.",
+    "backButton": "Indietro",
+    "submitButton": "Prenota Ora",
+    "alertSuccess": "Prenotazione inviata!",
+    "successTitle": "Richiesta inviata!",
+    "successMessage": "Riceverai una email di conferma per procedere."
+  },
+  "FAQ": {
+    "title": "Domande Frequenti",
+    "subtitle": "Scopri le nostre domande più frequenti.",
+    "questions": [
+      {
+        "question": "Da dove parte l’escursione?",
+        "answer": "Dal porto dell’Isola di San Domino. Scendendo dal traghetto, sulla sinistra trovate ormeggiato il nostro gozzo."
+      },
+      {
+        "question": "L’escursione può partire da San Nicola?",
+        "answer": "L’escursione parte dal porto dell’isola di San Domino. Tuttavia, se preferite iniziare l’escursione da San Nicola, possiamo organizzare il prelievo da lì, previo avviso anticipato tramite cellulare o email. È importante comunicarlo con almeno qualche ora di anticipo per consentirci di gestire al meglio l’organizzazione."
+      },
+      {
+        "question": "Come possiamo raggiungere le isole per fare l’escursione?",
+        "answer": "Noi partiamo dal porto di San Domino, per cui per raggiungerci potete prenotare il traghetto da Termoli con la NLG, dal Gargano con il Gruppo Armatori Garganici o l’elicottero da Foggia con Alidaunia."
+      },
+      {
+        "question": "Si parcheggia facilmente al porto di Termoli?",
+        "answer": "C’è un parcheggio a pagamento. In alta stagione (luglio e agosto) conviene prenotarlo. Potete farlo contattando la biglietteria del porto."
+      },
+      {
+        "question": "È possibile tuffarsi dalla barca?",
+        "answer": "Per motivi di sicurezza, non è consentito tuffarsi dalla barca. Le superfici della barca possono risultare scivolose, soprattutto quando sono bagnate, aumentando notevolmente il rischio di cadute accidentali, urti con strutture rigide (come il bordo o il motore) o immersioni in punti non sicuri. Anche in presenza di fondali apparentemente profondi, non è sempre possibile garantire l’assenza di ostacoli sommersi o variazioni improvvise della profondità. Inoltre, da un punto di vista legale e assicurativo, in caso di incidente derivante da tuffi non autorizzati, la responsabilità ricade interamente sull’autore del gesto. L’equipaggio ha il dovere di far rispettare tutte le misure previste per la tutela della salute e dell’incolumità degli ospiti. Per vivere l’esperienza in totale serenità, sono previste soste bagno in rada o in punti sicuri, dove sarà possibile scendere comodamente in acqua utilizzando la scaletta o accompagnati dal personale, sempre nel rispetto delle normative e delle condizioni del mare."
+      },
+      {
+        "question": "Devo togliere le scarpe per salire in barca?",
+        "answer": "Sì, è obbligatorio togliere le scarpe prima di salire a bordo. Questa regola è adottata per due motivi principali: Igiene e rispetto degli spazi comuni: la barca è uno spazio condiviso e, proprio come in casa, mantenere il ponte pulito è importante per il comfort di tutti. Le suole delle scarpe portano sabbia, sporco e detriti che possono danneggiare le superfici o renderle scivolose. Sicurezza: camminare scalzi o con calzature adatte (tipo calzari nautici antiscivolo approvati dall’equipaggio) riduce il rischio di scivolamenti o inciampi sul ponte, soprattutto in presenza di superfici bagnate. Scarpe con suola dura o inadatta possono compromettere l’equilibrio e aumentare il pericolo di cadute."
+      },
+      {
+        "question": "È possibile portare animali a bordo?",
+        "answer": "No, non è possibile portare animali a bordo. La nostra imbarcazione è condivisa da più ospiti e, per garantire il comfort e il benessere di tutti, non è consentito l'accesso agli animali domestici. La scelta è dettata da motivi igienici, ma anche da considerazioni legate a spazi limitati, possibili allergie e al rispetto di chi potrebbe non sentirsi a proprio agio in presenza di animali. Inoltre, la permanenza in barca può essere stressante per gli animali, soprattutto in presenza di caldo, rumori, movimento e contesti non familiari, per cui non sarebbe un’esperienza sicura o piacevole nemmeno per loro."
+      },
+      {
+        "question": "Cosa mi consigliate di portare a bordo?",
+        "answer": "Per goderti al meglio la giornata in barca ti consigliamo di portare: Costume, Crema solare (meglio se eco-friendly), occhiali da sole, telo mare, maschera e boccaglio per lo snorkeling e le scarpe da scoglio. Lo spazio a bordo è limitato, quindi è meglio portare solo l’essenziale in una borsa morbida e compatta."
+      },
+      {
+        "question": "È possibile ricevere o noleggiare attrezzatura da snorkeling a bordo?",
+        "answer": "No, l’attrezzatura da snorkeling non viene fornita a bordo. Per motivi igienico-sanitari, non mettiamo a disposizione maschere, boccagli o pinne. Si tratta infatti di oggetti a stretto contatto con bocca, naso e viso, e anche con un’accurata sanificazione non possiamo garantire gli standard di sicurezza e comfort che desideriamo offrire a tutti i nostri ospiti. Inoltre, per ragioni logistiche e di spazio, la barca non è attrezzata per gestire il trasporto, la distribuzione o la manutenzione di attrezzature personali. Ti consigliamo quindi di portare con te la tua maschera, se desideri fare snorkeling durante le soste bagno. È l’opzione più sicura, comoda e sostenibile per vivere al meglio l’esperienza tra le meraviglie marine delle Isole Tremiti."
+      },
+      {
+        "question": "Posso pescare durante l’escursione in barca?",
+        "answer": "No."
+      }
+    ]
   },
   "AboutUs": {
     "title": "Chi Siamo"

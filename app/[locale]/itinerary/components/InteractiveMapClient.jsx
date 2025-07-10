@@ -223,7 +223,7 @@ export default function InteractiveMapClient({ locale }) {
 
               {itinerary[activeIndex]?.description?.length > 250 && (
                 <Link
-                  href={`/${locale}/diario-di-bordo/${itinerary[activeIndex].id}`}
+                  href={`/${locale}/itinerary/${itinerary[activeIndex].id}`}
                   className="text-blue-600 underline text-sm mt-1 cursor-pointer"
                 >
                   Leggi tutto

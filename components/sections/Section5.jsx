@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useRef, useState, useEffect } from 'react';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { FaStar } from 'react-icons/fa';
-import { Swiper as SwiperType } from 'swiper';
-import { getMessages } from '@/lib/getMessages';
-import 'swiper/css';
-
-
+import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FaStar } from "react-icons/fa";
+import { Swiper as SwiperType } from "swiper";
+import { getMessages } from "@/lib/getMessages";
+import "swiper/css";
+import { MdOutlineVerified } from "react-icons/md";
 
 export default function Section5({ params }) {
   const swiperRef = useRef();
   const [activeIndex, setActiveIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState(null); // track expanded review
 
   const [messages, setMessages] = useState(null);
 
@@ -84,15 +84,18 @@ export default function Section5({ params }) {
     },
   ];
 
+  
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   if (!messages) return;
 
   return (
     <section className="bg-white py-24">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold">{tSection5("title")}</h2>
-        <p className="text-neutral-500 text-lg mt-2">
-          {tSection5("subtitle")}
-        </p>
+        <p className="text-neutral-500 text-lg mt-2">{tSection5("subtitle")}</p>
 
         <div className="mt-16">
           <Swiper
@@ -122,10 +125,31 @@ export default function Section5({ params }) {
                   />
                   <h4 className="text-lg font-semibold">{item.name}</h4>
                   <p className="text-sm text-neutral-500">{item.location}</p>
-                  <p className="mt-4 text-neutral-800 text-xl font-semibold line-clamp-1 hover:line-clamp-none transition duration-500">{item.title}</p>
-                  <p className="mt-4 text-neutral-800 line-clamp-3 cursor-pointer hover:line-clamp-none transition duration-500">{item.text}</p>
+                  <p className={`mt-4 text-neutral-800 text-xl font-semibold ${expandedIndex === idx ? "" : "line-clamp-1"} transition duration-500`}>
+                    {item.title}
+                  </p>
+                  <p
+                    onClick={() => toggleExpand(idx)}
+                    className={`mt-4 text-neutral-800 cursor-pointer transition-all duration-300 ${
+                      expandedIndex === idx ? "" : "line-clamp-3"
+                    }`}
+                  >
+                    {item.text}
+                  </p>
+
+                  <button
+                    onClick={() => toggleExpand(idx)}
+                    className="mt-2 text-blue-600 text-sm font-semibold"
+                  >
+                    {expandedIndex === idx ? tSection5("showLess") : tSection5("showMore")}
+                  </button>
+
                   <div className="flex justify-between items-center w-full mt-6 text-sm text-neutral-600 px-2">
                     <span>{item.date}</span>
+                    <span className="flex items-center gap-1 text-green-500 font-medium">
+                      <MdOutlineVerified className="text-green-500" />{" "}
+                      {tSection5("rating")}
+                    </span>
                     <span className="flex items-center gap-1 text-yellow-500 font-medium">
                       <FaStar className="text-yellow-500" /> {item.rating}
                     </span>
@@ -147,7 +171,7 @@ export default function Section5({ params }) {
               <span
                 key={i}
                 className={`w-3 h-3 rounded-full transition ${
-                  i === activeIndex ? 'bg-blue-600' : 'bg-gray-200'
+                  i === activeIndex ? "bg-blue-600" : "bg-gray-200"
                 }`}
               />
             ))}

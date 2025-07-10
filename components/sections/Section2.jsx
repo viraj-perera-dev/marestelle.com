@@ -21,18 +21,26 @@ export default function Section2({ params }) {
 
   const fleet = [
     {
-      name: tSection2("fleet")[0].name,
-      description: tSection2("fleet")[0].description,
-      guests: tSection2("fleet")[0].guests,
-      dimension: tSection2("fleet")[0].dimension,
+      name: tSection2("fleet")[0]?.name,
+      description: tSection2("fleet")[0]?.description,
+      guests: tSection2("fleet")[0]?.guests,
+      dimension: tSection2("fleet")[0]?.dimension,
       image: "/assets/sectionImages/DJI_0977.jpg",
       link: "/",
     },
     {
-      name: tSection2("fleet")[1].name,
-      description: tSection2("fleet")[1].description,
-      guests: tSection2("fleet")[1].guests,
-      dimension: tSection2("fleet")[1].dimension,
+      name: tSection2("fleet")[1]?.name,
+      description: tSection2("fleet")[1]?.description,
+      guests: tSection2("fleet")[1]?.guests,
+      dimension: tSection2("fleet")[1]?.dimension,
+      image: "/assets/sectionImages/DJI_0977.jpg",
+      link: "/",
+    },
+    {
+      name: tSection2("fleet")[2]?.name,
+      description: tSection2("fleet")[2]?.description,
+      guests: tSection2("fleet")[2]?.guests,
+      dimension: tSection2("fleet")[2]?.dimension,
       image: "/assets/barca/Motonave-Victor_-6.jpg",
       link: "https://motonavevictor.it/it/",
     },
@@ -54,8 +62,8 @@ export default function Section2({ params }) {
           </div>
 
         </div>
-      <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 py-10">
+      <div className="mx-auto max-w-8xl">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 py-10">
           {fleet.map((yacht, index) => (
             <div
               key={index}
@@ -86,7 +94,7 @@ export default function Section2({ params }) {
                     className="self-start text-blue-600 font-medium flex items-center gap-2 border border-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
                     href={yacht.link}
                   >
-                    {tSection2("fleet")[index].linkLabel} <MdArrowOutward size={20} />
+                    {tSection2("fleet")[index]?.linkLabel} <MdArrowOutward size={20} />
                   </Link>
                 </div>
                 <div className="w-[15rem] h-[25rem] md:w-[25rem] md:h-[30rem]">

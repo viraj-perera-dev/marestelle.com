@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 
 export default function RootLayout({ children }) {
   return (
-    <html>
+    <html lang="it" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
       </head>
-      <body className="overflow-x-hidden">
+      <body className="overflow-x-hidden" suppressHydrationWarning>
         <AuthProvider>
           {children}
         </AuthProvider>

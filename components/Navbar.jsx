@@ -36,10 +36,10 @@ export default function Navbar({ locale }) {
     setMenuOpen(true);
     setTimeout(() => {
       setMenuOpenAnimation(true);
-    }, 500);
+    }, 100);
     setTimeout(() => {
       setMenuItemShow(true);
-    }, 1300);
+    }, 500);
   };
 
   const closeMenu = () => {
@@ -78,6 +78,15 @@ export default function Navbar({ locale }) {
     };
   }, []);
 
+  const previousPath = useRef(pathname);
+
+  useEffect(() => {
+    if (previousPath.current !== pathname && menuOpen) {
+      closeMenu();
+    }
+    previousPath.current = pathname;
+  }, [pathname]);
+
   return (
     <>
       <Link
@@ -98,10 +107,13 @@ export default function Navbar({ locale }) {
         <div className="fixed top-0 w-full md:w-[90%] z-50 h-36 flex justify-end items-center p-5 text-black">
           <div className="flex items-center gap-2 md:gap-5">
             <div className="hidden md:block">
-              <button className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-md text-gray-800 border border-gray-300 shadow-sm hover:text-black bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer">
+              <Link
+                href={`/contatti`}
+                className="bg-white py-3 px-5 rounded-full flex items-center gap-2 w-full text-md text-gray-800 border border-gray-300 shadow-sm hover:text-black bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
+              >
                 {t("Contact")}
                 <IoMdPaperPlane className="text-2xl cursor-pointer" />
-              </button>
+              </Link>
             </div>
             <div className="">
               <button
@@ -155,12 +167,10 @@ export default function Navbar({ locale }) {
                     data-aos-duration={route.duration}
                   >
                     <Link
-                      href={route.path}
-                      locale={locale}
-                      className={`uppercase w-full text-3xl md:text-6xl font-semibold ${isActive(
+                      href={`/${route.path}`}
+                      className={`uppercase w-full text-3xl md:text-4xl font-semibold ${isActive(
                         route.path
                       )} hover:text-black text-blue-500`}
-                      onClick={closeMenu}
                     >
                       {t(route.name)}
                     </Link>
@@ -169,10 +179,10 @@ export default function Navbar({ locale }) {
                 <li data-aos="fade-right" data-aos-duration="2500">
                   <button
                     onClick={() => {
-                      router.push('/login')
-                      closeMenu()
+                      router.push("/login");
+                      closeMenu();
                     }}
-                    className={`uppercase w-full text-3xl md:text-6xl font-semibold hover:text-black text-blue-500 cursor-pointer`}
+                    className={`uppercase w-full text-3xl md:text-4xl font-semibold hover:text-black text-blue-500 cursor-pointer`}
                   >
                     Area Riservata
                   </button>
