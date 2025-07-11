@@ -3,12 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function DetailPageClient({ data, locale }) {
+export default function DetailPageClient({ data, locale, itinerary }) {
   return (
     <div className="w-full h-auto bg-white">
       <main className="max-w-2xl mx-auto px-4 py-12 pt-36 h-auto">
         <Link
-          href={`/${locale}/diario-di-bordo#stop-${data.id}`}
+          href={`/${locale}/itinerary/${itinerary.id}#stop-${data.id}`}
           className="text-blue-600 mb-4 inline-block cursor-pointer hover:underline"
         >
           ← Torna all'itinerario

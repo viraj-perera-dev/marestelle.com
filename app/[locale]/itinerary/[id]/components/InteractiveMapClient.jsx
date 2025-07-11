@@ -22,6 +22,8 @@ export default function InteractiveMapClient({ locale }) {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
+  const { id } = params;
+
   // Check if mobile on mount
   useEffect(() => {
     const checkMobile = () => {
@@ -223,7 +225,7 @@ export default function InteractiveMapClient({ locale }) {
 
               {itinerary[activeIndex]?.description?.length > 250 && (
                 <Link
-                  href={`/${locale}/itinerary/${itinerary[activeIndex].id}`}
+                  href={`/${locale}/location/${itinerary[activeIndex].id}/${id}`}
                   className="text-blue-600 underline text-sm mt-1 cursor-pointer"
                 >
                   Leggi tutto
