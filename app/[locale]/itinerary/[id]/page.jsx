@@ -15,5 +15,5 @@ export const metadata = generateSEOMetadata({
 });
 
 export default function DiarioDiBordoPage({ params }) {
-  return <InteractiveMapClient locale={params.locale} itinerary={params.itinerary} />;
+  return <InteractiveMapClient locale={params.locale} itineraryId={params.id} />;
 }

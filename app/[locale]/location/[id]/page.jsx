@@ -46,8 +46,10 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function DetailPage({ params }) {
-  const { id, locale, itinerary } = params;
+export default async function DetailPage({ params, searchParams }) {
+  const { id, locale } = params;
+  const itineraryId = searchParams?.itinerary || '1';
+
   
   try {
     const { data, error } = await supabase
@@ -61,7 +63,11 @@ export default async function DetailPage({ params }) {
     }
 
     return (
-      <DetailPageClient data={data} locale={locale} itinerary={itinerary} />
+      <DetailPageClient 
+        data={data} 
+        locale={locale} 
+        itineraryId={itineraryId} 
+      />
     );
   } catch (error) {
     console.error('Error fetching itinerary:', error);

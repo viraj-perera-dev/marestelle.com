@@ -11,7 +11,7 @@ import ProgressIndicator from "./ProgressIndicator";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function InteractiveMapClient({ locale }) {
+export default function InteractiveMapClient({ locale, itineraryId }) {
   const [itinerary, setItinerary] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -21,8 +21,6 @@ export default function InteractiveMapClient({ locale }) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
-
-  const { id } = params;
 
   // Check if mobile on mount
   useEffect(() => {
@@ -225,7 +223,7 @@ export default function InteractiveMapClient({ locale }) {
 
               {itinerary[activeIndex]?.description?.length > 250 && (
                 <Link
-                  href={`/${locale}/location/${itinerary[activeIndex].id}/${id}`}
+                  href={`/${locale}/location/${itinerary[activeIndex].id}?itinerary=${itineraryId}`}
                   className="text-blue-600 underline text-sm mt-1 cursor-pointer"
                 >
                   Leggi tutto
