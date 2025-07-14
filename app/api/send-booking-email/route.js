@@ -44,7 +44,7 @@ export async function POST(req) {
   const clientHtml = `
 <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: auto; padding: 24px; background-color: #ffffff; border-radius: 12px; border: 1px solid #e5e7eb; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
   <div style="text-align: center; margin-bottom: 24px;">
-    <img src="https://${process.env.NEXT_PUBLIC_APP_URL}/logo.png" alt="Marestelle Logo" style="max-width: 160px;" />
+    <img src="https://${process.env.NEXT_PUBLIC_APP_URL}/assets/logo/logo_transp_blu.png" alt="Marestelle Logo" style="max-width: 160px;" />
   </div>
 
   <h2 style="color: #1e3a8a; font-size: 22px; font-weight: 600; text-align: center; margin-bottom: 12px;">
