@@ -1,12 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 import { supabase } from "@/utils/supabaseClient";
 
-export default function PaymentSuccess() {
-  const searchParams = useSearchParams();
-  const bookingId = searchParams.get("booking_id");
+export default function PaymentSuccessComponent({ bookingId }) {
 
   useEffect(() => {
     const confirmPayment = async () => {

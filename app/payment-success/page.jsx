@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
-import PaymentSuccess from "./components/paymentSuccess";
+import PaymentSuccessComponent from "./components/paymentSuccess";
 
 export default async function PaymentSuccess() {
   const headersList = headers();
@@ -12,7 +12,7 @@ export default async function PaymentSuccess() {
 
   return (
     <>
-      <PaymentSuccess />
+      <PaymentSuccessComponent bookingId={bookingId} />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
           <div className="mb-6">
