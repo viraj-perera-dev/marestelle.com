@@ -59,9 +59,9 @@ export default async function PaymentSuccess() {
               </Link>
             </div>
           </div>
-          
+
           <div className="space-y-4">
-            <PaymentSuccessComponent bookingId={bookingId} />
+            <PaymentSuccessComponent />
           </div>
 
           <div className="mt-8 pt-6 border-t border-gray-200">
