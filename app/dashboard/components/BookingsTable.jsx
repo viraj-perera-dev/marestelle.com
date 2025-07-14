@@ -236,8 +236,12 @@ export default function BookingsTable() {
               </td>
 
               <td className="px-4 py-3">
-                {booking.paid ? (
+                {booking.confirmed === 0 ? (
+                  <Banknote className="text-red-500 w-4 h-4" />
+                ) : booking.confirmed === 1 && booking.paid === true ? (
                   <Banknote className="text-green-500 w-4 h-4" />
+                ) : booking.confirmed === 1 && booking.paid === false ? (
+                  <Banknote className="text-blue-500 w-4 h-4" />
                 ) : (
                   <Banknote className="text-red-500 w-4 h-4" />
                 )}
