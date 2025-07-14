@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/utils/supabaseClient";
-import { headers } from "next/headers";
-
+import { useSearchParams } from "next/navigation";
 
 export default function PaymentSuccessComponent() {
   const [isProcessing, setIsProcessing] = useState(true);
   const [error, setError] = useState(null);
-  const bookingId = headers().get("booking_id");
+  const searchParams = useSearchParams();
+  const bookingId = searchParams.get("booking_id");
 
   useEffect(() => {
     const confirmPayment = async () => {
