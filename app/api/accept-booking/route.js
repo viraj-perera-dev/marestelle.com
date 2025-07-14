@@ -73,51 +73,53 @@ export async function POST(req) {
 
     // Send confirmation email to client
     const clientHtml = `
-      <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: auto; padding: 20px; background: #3581be; border-radius: 12px;">
-        <img src="https://${process.env.NEXT_PUBLIC_APP_URL}/assets/logo/logo_max_white.png" alt="Marestelle Logo" style="max-width: 150px; margin-bottom: 20px;" />
+<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: auto; padding: 24px; background-color: #fff; border-radius: 12px;">
 
-        <h2 style="color: #fff;">🎉 Prenotazione Confermata!</h2>
-        <p style="font-size: 16px; color: #fff;">
-          Ciao ${booking.name}, la tua prenotazione è stata <strong>confermata</strong>!
-        </p>
-        
-        <div style="background: white; padding: 20px; border-radius: 10px; margin: 20px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">
-          <h3 style="color: #1e3a8a; margin-top: 0;">Dettagli della prenotazione:</h3>
-          <p><strong>📅 Data:</strong> ${new Date(booking.date).toLocaleDateString()}</p>
-          <p><strong>⏰ Orario:</strong> ${booking.time === "morning" ? "Mattino" : "Pomeriggio"}</p>
-          <p><strong>🧍 Persone:</strong> ${booking.people}</p>
-          <p><strong>👶 Bambini:</strong> ${booking.children}</p>
-          <p><strong>💶 Prezzo Totale:</strong> <span style="color:#16a34a; font-size: 18px; font-weight: bold;">€ ${booking.price}</span></p>
-        </div>
+  <div style="text-align: center; margin-bottom: 24px;">
+    <img src="https://${process.env.NEXT_PUBLIC_APP_URL}/assets/logo/logo_transp_blu.png" alt="Marestelle Logo" style="max-width: 160px;" />
+  </div>
 
-        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #fbbf24;">
-          <h3 style="color: #1e3a8a; margin-top: 0;">💳 Procedi con il pagamento</h3>
-          <p style="color: #374151; margin-bottom: 20px;">
-            Per completare la prenotazione, effettua il pagamento cliccando sul pulsante qui sotto:
-          </p>
-          <a href="${stripePaymentLink}" style="display:inline-block;padding:15px 30px;background:#16a34a;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold;font-size:16px;">
-            💳 Paga Ora - € ${booking.price}
-          </a>
-        </div>
+  <h2 style="color: #3581be; font-size: 24px; font-weight: 600; text-align: center; margin-bottom: 12px;">
+    Prenotazione Confermata
+  </h2>
 
-        <div style="background: #e5f3ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
-          <p style="color: #1e40af; margin: 0; font-size: 14px;">
-            <strong>ℹ️ Importante:</strong> Il pagamento deve essere completato entro 24 ore per garantire la prenotazione.
-          </p>
-        </div>
+  <p style="color: #000; font-size: 16px; text-align: center; margin-bottom: 24px;">
+    Ciao <strong>${booking.name}</strong>, la tua prenotazione è stata <strong>confermata</strong>!
+  </p>
 
-        <p style="color: #fff; font-size: 16px;">
-          Per qualsiasi domanda, non esitare a contattarci!
-        </p>
-        <p style="color: #fff; font-size: 16px;">
-          — Lo staff di Marestelle 🌊
-        </p>
-        
-        <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;" />
-        <p style="color: rgba(255,255,255,0.8); font-size: 12px;">
-          📧 Email inviata automaticamente da marestelle.com
-        </p>
-      </div>
+  <div style="background-color: #f9fafb; padding: 20px; border-radius: 10px; margin-bottom: 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); color: #1f2937; font-size: 15px;">
+    <h3 style="margin-top: 0; color: #1e3a8a;">Dettagli della Prenotazione</h3>
+    <p><strong>Data:</strong> ${new Date(booking.date).toLocaleDateString()}</p>
+    <p><strong>Orario:</strong> ${booking.time === "morning" ? "Mattino" : "Pomeriggio"}</p>
+    <p><strong>Persone:</strong> ${booking.people}</p>
+    <p><strong>Bambini:</strong> ${booking.children}</p>
+    <p><strong>Prezzo Totale:</strong> <span style="color:#16a34a; font-size: 18px; font-weight: bold;">€ ${booking.price}</span></p>
+  </div>
+
+  <div style="background-color: #3581be; padding: 20px; border-radius: 10px; margin-bottom: 24px; border-left: 4px solid #f9fafb; color: #fff;">
+    <h3 style="margin-top: 0;">Procedi con il Pagamento</h3>
+    <p>
+      Per completare la prenotazione, effettua il pagamento entro 24 ore cliccando sul pulsante qui sotto:
+    </p>
+    <a href="${stripePaymentLink}" style="display:inline-block; padding: 15px 30px; background: #5ed97d; color: #000; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+      Paga Ora – € ${booking.price}
+    </a>
+  </div>
+
+  <p style="color: #f0f9ff; font-size: 16px; text-align: center; margin-bottom: 12px;">
+    Per qualsiasi domanda, non esitare a contattarci!
+  </p>
+  <p style="color: #f0f9ff; font-size: 16px; text-align: center;">
+    — Lo staff di Marestelle
+  </p>
+
+  <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 24px 0;" />
+
+  <p style="color: rgba(255,255,255,0.7); font-size: 12px; text-align: center;">
+    Email inviata automaticamente da marestelle.com
+  </p>
+
+</div>
     `;
 
     await resend.emails.send({
