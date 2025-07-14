@@ -1,8 +1,7 @@
-// app/payment-success/page.jsx
 import { headers } from "next/headers";
 import Link from "next/link";
 import { CheckCircle } from "lucide-react";
-import { supabase } from "@/utils/supabaseClient";
+import { supabase } from "@/utils/supabaseClient"; // Make sure this is server-compatible
 
 async function sendPaymentSuccessEmails(bookingId) {
   try {
@@ -34,29 +33,25 @@ export default async function PaymentSuccess() {
   const searchParams = new URLSearchParams(headersList.get("x-forwarded-url")?.split("?")[1] || "");
   const bookingId = searchParams.get("booking_id");
 
-  let paymentUpdated = false;
+  let updated = false;
   let emailsSent = false;
-  let booking = null;
+
 
   if (bookingId) {
-    // Update booking as paid
-    const { data: bookingData, error: updateError } = await supabase
+    const { error } = await supabase
       .from("bookings")
       .update({ paid: true })
-      .eq("id", bookingId)
-      .select()
-      .single();
+      .eq("id", bookingId);
 
-    if (!updateError) {
-      paymentUpdated = true;
-      booking = bookingData;
-      console.log("✅ Booking marked as paid");
+    if (!error) {
+      updated = true;
 
-      // Send payment success emails
       const emailResult = await sendPaymentSuccessEmails(bookingId);
       emailsSent = emailResult.success;
+
+      console.log("✅ Booking marked as paid");
     } else {
-      console.error("❌ Error marking booking as paid:", updateError);
+      console.error("❌ Error marking booking as paid:", error);
     }
   }
 
@@ -73,40 +68,6 @@ export default async function PaymentSuccess() {
           </p>
         </div>
 
-        {/* Payment Status */}
-        {paymentUpdated && (
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
-            <p className="text-sm text-green-800">
-              ✅ Pagamento registrato con successo
-            </p>
-          </div>
-        )}
-
-        {/* Email Status */}
-        {emailsSent && (
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-            <p className="text-sm text-blue-800">
-              📧 Email di conferma inviate
-            </p>
-          </div>
-        )}
-
-        {/* Booking Details */}
-        {booking && (
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              Dettagli Prenotazione
-            </h3>
-            <div className="text-sm text-gray-600 space-y-1">
-              <p><strong>Data:</strong> {new Date(booking.date).toLocaleDateString()}</p>
-              <p><strong>Orario:</strong> {booking.time === "morning" ? "Mattino" : "Pomeriggio"}</p>
-              <p><strong>Persone:</strong> {booking.people}</p>
-              <p><strong>Bambini:</strong> {booking.children}</p>
-              <p><strong>Prezzo:</strong> € {booking.price}</p>
-            </div>
-          </div>
-        )}
-
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
           <h2 className="text-lg font-semibold text-green-800 mb-2">
             Cosa succede ora?
@@ -115,7 +76,6 @@ export default async function PaymentSuccess() {
             <li>✅ Riceverai un'email di conferma a breve</li>
             <li>✅ Porta un documento di identità</li>
             <li>✅ Arriva 15 minuti prima dell'orario</li>
-            <li>✅ In caso di maltempo ti contatteremo</li>
           </ul>
         </div>
 

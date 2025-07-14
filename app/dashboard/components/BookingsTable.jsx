@@ -62,8 +62,8 @@ export default function BookingsTable() {
   }, [page]);
 
   const handleAcceptBooking = async (bookingId) => {
-    setProcessingBookings(prev => new Set(prev).add(bookingId));
-    
+    setProcessingBookings((prev) => new Set(prev).add(bookingId));
+
     try {
       const response = await fetch("/api/accept-booking", {
         method: "POST",
@@ -82,7 +82,7 @@ export default function BookingsTable() {
       console.error("Error accepting booking:", error);
       alert("Errore nell'accettare la prenotazione.");
     } finally {
-      setProcessingBookings(prev => {
+      setProcessingBookings((prev) => {
         const newSet = new Set(prev);
         newSet.delete(bookingId);
         return newSet;
@@ -91,8 +91,8 @@ export default function BookingsTable() {
   };
 
   const handleRejectBooking = async (bookingId) => {
-    setProcessingBookings(prev => new Set(prev).add(bookingId));
-    
+    setProcessingBookings((prev) => new Set(prev).add(bookingId));
+
     try {
       const response = await fetch("/api/reject-booking", {
         method: "POST",
@@ -111,7 +111,7 @@ export default function BookingsTable() {
       console.error("Error rejecting booking:", error);
       alert("Errore nel rifiutare la prenotazione.");
     } finally {
-      setProcessingBookings(prev => {
+      setProcessingBookings((prev) => {
         const newSet = new Set(prev);
         newSet.delete(bookingId);
         return newSet;
@@ -129,7 +129,9 @@ export default function BookingsTable() {
         );
       case 1:
         return (
-          <span className={`${paid ? "text-green-600" : "text-blue-600"} flex items-center gap-1`}>
+          <span
+            className={`${paid ? "text-green-600" : "text-blue-600"} flex items-center gap-1`}
+          >
             <CheckCircleIcon className="w-4 h-4" />
           </span>
         );
@@ -189,7 +191,9 @@ export default function BookingsTable() {
         <tbody className="divide-y divide-gray-100">
           {bookings.map((booking) => (
             <tr key={booking.id} className="hover:bg-gray-50 transition">
-              <td className="px-4 py-3">{renderStatus(booking.confirmed, booking.paid)}</td>
+              <td className="px-4 py-3">
+                {renderStatus(booking.confirmed, booking.paid)}
+              </td>
               <td className="px-4 py-3 whitespace-nowrap">{booking.name}</td>
               <td className="px-4 py-3 whitespace-nowrap">
                 <div className="flex flex-col gap-2 items-star">
@@ -252,33 +256,40 @@ export default function BookingsTable() {
               <td className="px-4 py-3">
                 {booking.confirmed === 0 ? (
                   <div className="flex gap-2 items-center justify-center">
-                    <button 
-                      onClick={() => handleAcceptBooking(booking.id)}
-                      disabled={processingBookings.has(booking.id)}
-                      className="px-3 py-1 rounded-md text-white bg-green-500 hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer flex gap-2 items-center"
-                    >
-                      {processingBookings.has(booking.id) ? (
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                      ) : (
-                        "Accetta"
-                      )}
-                    </button>
-                    <button 
-                      onClick={() => handleRejectBooking(booking.id)}
-                      disabled={processingBookings.has(booking.id)}
-                      className="px-3 py-1 rounded-md text-white bg-red-500 hover:bg-red-600 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer flex gap-2 items-center"
-                    >
-                      {processingBookings.has(booking.id) ? (
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                      ) : (
-                        "Rifiuta"
-                      )}
-                    </button>
+                    {processingBookings.has(booking.id) ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <>
+                        <button
+                          onClick={() => handleAcceptBooking(booking.id)}
+                          disabled={processingBookings.has(booking.id)}
+                          className="px-3 py-1 rounded-md text-white bg-green-500 hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer flex gap-2 items-center"
+                        >
+                          Accetta
+                        </button>
+                        <button
+                          onClick={() => handleRejectBooking(booking.id)}
+                          disabled={processingBookings.has(booking.id)}
+                          className="px-3 py-1 rounded-md text-white bg-red-500 hover:bg-red-600 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer flex gap-2 items-center"
+                        >
+                          Rifiuta
+                        </button>
+                      </>
+                    )}
                   </div>
                 ) : booking.confirmed === 1 && booking.paid === true ? (
                   <span className="text-green-500">Pagato</span>
                 ) : booking.confirmed === 1 && booking.paid === false ? (
-                  <span className="text-blue-500">Non Pagato</span>
+                  <div className="flex gap-2 items-center justify-center">
+                    <span className="text-blue-500">Non Pagato</span>
+                    <button
+                      onClick={() => handleAcceptBooking(booking.id)}
+                      disabled={processingBookings.has(booking.id)}
+                      className="px-3 py-1 rounded-md text-white bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer flex gap-2 items-center"
+                    >
+                      Rinvia mail
+                    </button>
+                  </div>
                 ) : (
                   <span className="text-red-500">Rifiutato</span>
                 )}
