@@ -5,7 +5,7 @@ import { supabase } from "@/utils/supabaseClient"; // Make sure this is server-c
 
 async function sendPaymentSuccessEmails(bookingId) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/send-payment-success-email`, {
+    const response = await fetch(`/api/send-payment-success-email`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
