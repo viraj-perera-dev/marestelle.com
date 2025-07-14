@@ -68,7 +68,6 @@ async function sendPaymentSuccessEmails(booking) {
           La tua prenotazione è ora <strong>completamente confermata</strong>. Ti aspettiamo per un'esperienza indimenticabile!
         </p>
         <ul style="color: #374151; margin: 10px 0; padding-left: 20px;">
-          <li>Riceverai un promemoria 24h prima del tour</li>
           <li>Porta un documento di identità</li>
           <li>Arriva 15 minuti prima dell'orario stabilito</li>
           <li>In caso di maltempo ti contatteremo</li>
