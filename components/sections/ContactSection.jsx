@@ -28,6 +28,7 @@ export default function Section6({ params }) {
   const [selectedDate, setSelectedDate] = useState(null);
   const [errors, setErrors] = useState({});
   const [messages, setMessages] = useState(null);
+  const [loadingSubmit, setLoadingSubmit] = useState(false);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -86,6 +87,7 @@ export default function Section6({ params }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoadingSubmit(true);
 
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = t("nameRequired");
@@ -103,6 +105,7 @@ export default function Section6({ params }) {
 
         if (error) {
           console.error("Supabase insert error:", error);
+          setLoadingSubmit(false);
           alert(t("alertError") ?? "There was an error saving your booking.");
         } else {
           console.log("Booking saved:", data);
@@ -115,6 +118,8 @@ export default function Section6({ params }) {
             },
             body: JSON.stringify(formData),
           });
+
+          setLoadingSubmit(false);
 
           setShowSuccessModal(true);
           // Optional: reset form
@@ -134,6 +139,7 @@ export default function Section6({ params }) {
         }
       } catch (err) {
         console.error("Unexpected error:", err);
+        setLoadingSubmit(false);
         alert("Unexpected error occurred.");
       }
     }
@@ -339,7 +345,7 @@ export default function Section6({ params }) {
                   type="submit"
                   className="mt-6 bg-blue-600 text-white rounded-full w-full py-4 hover:bg-blue-800 transition"
                 >
-                  {t("submitButton")}
+                  {loadingSubmit ? "Loading..." : t("submitButton")}
                 </button>
               </div>
             </form>
