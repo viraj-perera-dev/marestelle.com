@@ -45,12 +45,23 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
 
         if (error) throw error;
 
-        const normalized = data.map(({ lat, lng, ...rest }) => ({
+        // const normalized = data.map(({ lat, lng, ...rest }) => ({
+        //   ...rest,
+        //   coords: { lat, lng },
+        // }));
+
+        const filtered = data
+        .filter(item => item[`itinerary_${itineraryId}`] === true)
+        .map(({ lat, lng, ...rest }) => ({
           ...rest,
           coords: { lat, lng },
         }));
 
-        setItinerary(normalized);
+
+
+        // setItinerary(normalized);
+        setItinerary(filtered);
+
       } catch (error) {
         console.error("Error fetching itinerary:", error);
       } finally {
