@@ -8,45 +8,247 @@
     "ContactUs": "Contattaci"
   },
   "HomePage": {
-    "title": "Vivi l’Incanto del Mare di Sicilia",
-    "subtitle": "Marestelle: un’esperienza di eleganza e quiete sul Mediterraneo, tra comfort esclusivi e natura incontaminata.",
+    "title": "Vivi l’incanto della Riserva Marina delle Isole Tremiti",
+    "subtitle": "Mare e Stelle: boat tours alle Isole Tremiti, tra natura incontaminata, accoglienza isolana e il fascino senza tempo di un gozzo in legno.",
     "section1": {
       "title": "Mare e Stelle offre diversi servizi alle Isole Tremiti",
       "subtitle": "Che sia via mare o via terra, penseremo noi a farvi trascorrere una vacanza da sogno in pieno relax…",
-      "listItem1": "Flotta Esclusiva",
-      "subItem1": "Yacht selezionati per ogni desiderio",
-      "listItem2": "Destinazioni Globali",
-      "subItem2": "Naviga nel Mediterraneo, nei Caraibi e oltre",
+      "listItem1": "Gozzo Autentico",
+      "subItem1": "Imbarcazione in legno d’epoca, restaurata con attenzione per garantire un’esperienza autentica e raffinata.",
+      "listItem2": "Isole Tremiti da Scoprire",
+      "subItem2": "Itinerari selezionati tra calette, grotte e fondali incontaminati, per una scoperta esclusiva del territorio.",
       "listItem3": "Esperienze Personalizzate",
-      "subItem3": "Itinerari su misura e servizio VIP",
+      "subItem3": "Itinerari su misura e servizio VIP.",
       "listItem4": "Esperti del Settore",
-      "subItem4": "Consulenti nautici affidabili dal 2010"
+      "subItem4": "Professionisti della nautica al tuo fianco dal 2021"
     },
     "section2": {
-      "title": "Le Nostre Barche",
-      "subtitle": "Scoprite le nostre barche per un viaggio di relax e tranquillità.",
+      "title": "Il nostro gozzo",
+      "subtitle": "Scoprite un modo unico di navigare, tra comfort esclusivo e atmosfere rilassanti.",
       "button": "Richiedi informazioni",
+      "altroLabel": "Informazioni aggiuntive",
+      "altro": "Cancellazione gratuita fino a 48 ore prima. Cosa succede in caso di pioggia? Se non è possibile svolgere il tour per il maltempo (pioggia, mare mosso, …) verrai contattato e potrai posticipare la data o in alternativa, ottenere un rimborso completo. In caso di ritardi da parte delle compagnie di navigazione non possiamo assicurare il nostro servizio. In caso di avarie o problemi tecnici a bordo la gita viene annullata per ragioni di sicurezza e potrai ottenere un rimborso completo. Non offriamo rimborsi per le spese sostenute per arrivare alle Isole Tremiti. La direzione declina ogni responsabilità per disservizi dovuti a guasti fortuiti alle apparecchiature di bordo. Si declina ogni responsabilità per danni causati da altri ospiti, da eventi atmosferici, calamità naturali, epidemie, malattie e furti.",
+      "priceListLabel": "Prezzi:",
+      "inclusoLabel": "Incluso:",
+      "necessarioLabel": "Cosa portare:",
+      "linkLabel": "Scopri di più",
+      "backButton": "Indietro",
       "fleet": [
         {
-          "name": "Mare e Stelle",
-          "description": "Scopri la nostra barca e le sue caratteristiche.",
-          "guests": "10 Ospiti",
-          "dimension": "40×50 Dimensioni",
-          "linkLabel": "Scopri di più"
+          "id": 1,
+          "name": "Boat tour mattutino",
+          "image": "/assets/sectionImages/DJI_0943.jpg",
+          "description": "Stessa rotta, stesso spirito, ma con un’atmosfera ancora più pacifica: il pomeriggio porta con sé un mare meno affollato e una luce più calda. Tra bagni rigeneranti, relax a bordo del nostro gozzo in legno e un aperitivo con vista, è l’occasione perfetta per godersi le Tremiti con calma.",
+          "guests": "Orario | 14:30-18:30",
+          "dimension": "Lingue parlate | Italiano, Inglese",
+          "details": "Un’escursione completa intorno alle Isole Tremiti, pensata per farvi scoprire la loro essenza autentica, tra paesaggi incontaminati, acque trasparenti e storia millenaria. A bordo del nostro gozzo in legno d’epoca, navigherete lungo la costa frastagliata delle isole, con soste nelle calette più suggestive per nuotare o fare snorkeling. Durante il tour, lo skipper vi guiderà con una spiegazione dettagliata dei principali punti di interesse. Un’esperienza pensata per chi desidera conoscere davvero l’arcipelago, non solo ammirarlo. Il ritmo è lento, il mare è protagonista e ogni sosta è un invito a lasciarsi andare.",
+          "priceList": [
+            {
+              "title": "Maggio:",
+              "adult": "40€ a persona",
+              "child": "30€ a persona"
+            },
+            {
+              "title": "Giugno:",
+              "adult": "40€ a persona",
+              "child": "30€ a persona"
+            },
+            {
+              "title": "Luglio:",
+              "adult": "45€ a persona",
+              "child": "35€ a persona"
+            },
+            {
+              "title": "1 Agosto - 9 Agosto:",
+              "adult": "60€ a persona",
+              "child": "50€ a persona"
+            },
+            {
+              "title": "10 Agosto - 17 Agosto:",
+              "adult": "70€ a persona",
+              "child": "60€ a persona"
+            },
+            {
+              "title": "18 Agosto - 31 Agosto:",
+              "adult": "60€ a persona",
+              "child": "50€ a persona"
+            },
+            {
+              "title": "1 Settembre - 10 Settembre:",
+              "adult": "45€ a persona",
+              "child": "35€ a persona"
+            },
+            {
+              "title": "11 Settembre - 30 Settembre:",
+              "adult": "40€ a persona",
+              "child": "30€ a persona"
+            },
+            {
+              "title": "Ottobre:",
+              "adult": "40€ a persona",
+              "child": "25€ a persona"
+            }
+          ],
+          "durata": "4 ore",
+          "incluso": [
+            {
+              "title": "Skipper",
+              "include": true
+            },
+            {
+              "title": "Carburante",
+              "include": true
+            },
+            {
+              "title": "Cambusa",
+              "include": true
+            },
+            {
+              "title": "Traghetto per raggiungere le Isole Tremiti",
+              "include": false
+            }
+          ],
+          "necessario": "maschera, pinne e scarpe da scoglio",
+          "link": "/contatti"
         },
         {
-          "name": "Motonave Victor",
-          "description": "Scopri la nostra motonave e le sue caratteristiche.",
-          "guests": "35 Ospiti",
-          "dimension": "70×60 Dimensioni",
-          "linkLabel": "Scopri di più"
+          "id": 2,
+          "image": "/assets/sectionImages/DJI_0967.jpg",
+          "name": "Boat tour pomeridiano",
+          "description": "Un tour di 4 ore alla scoperta delle calette più belle delle Isole Tremiti. Si naviga a bordo di un gozzo in legno d’epoca, con soste per nuotare in acque cristalline, momenti di relax e un aperitivo leggero a bordo.",
+          "guests": "Orario | 10:30-14:30",
+          "dimension": "Lingue parlate | Italiano, Inglese",
+          "details": "Un’escursione completa intorno alle Isole Tremiti, pensata per farvi scoprire la loro essenza autentica, tra paesaggi incontaminati, acque trasparenti e storia millenaria. A bordo del nostro gozzo in legno d’epoca, navigherete lungo la costa frastagliata delle isole, con soste nelle calette più suggestive per nuotare o fare snorkeling. Durante il tour, lo skipper vi guiderà con una spiegazione dettagliata dei principali punti di interesse. Un’esperienza pensata per chi desidera conoscere davvero l’arcipelago, non solo ammirarlo. Il ritmo è lento, il mare è protagonista e ogni sosta è un invito a lasciarsi andare.",
+          "priceList": [
+            {
+              "title": "Maggio:",
+              "adult": "40€ a persona",
+              "child": "30€ a persona"
+            },
+            {
+              "title": "Giugno:",
+              "adult": "40€ a persona",
+              "child": "30€ a persona"
+            },
+            {
+              "title": "Luglio:",
+              "adult": "45€ a persona",
+              "child": "35€ a persona"
+            },
+            {
+              "title": "1 Agosto - 9 Agosto:",
+              "adult": "60€ a persona",
+              "child": "50€ a persona"
+            },
+            {
+              "title": "10 Agosto - 17 Agosto:",
+              "adult": "70€ a persona",
+              "child": "60€ a persona"
+            },
+            {
+              "title": "18 Agosto - 31 Agosto:",
+              "adult": "60€ a persona",
+              "child": "50€ a persona"
+            },
+            {
+              "title": "1 Settembre - 10 Settembre:",
+              "adult": "45€ a persona",
+              "child": "35€ a persona"
+            },
+            {
+              "title": "11 Settembre - 30 Settembre:",
+              "adult": "40€ a persona",
+              "child": "30€ a persona"
+            },
+            {
+              "title": "Ottobre:",
+              "adult": "40€ a persona",
+              "child": "25€ a persona"
+            }
+          ],
+          "durata": "4 ore",
+          "incluso": [
+            {
+              "title": "Skipper",
+              "include": true
+            },
+            {
+              "title": "Carburante",
+              "include": true
+            },
+            {
+              "title": "Cambusa",
+              "include": true
+            },
+            {
+              "title": "Traghetto per raggiungere le Isole Tremiti",
+              "include": false
+            }
+          ],
+          "necessario": "maschera, pinne e scarpe da scoglio",
+          "link": "/contatti"
         },
         {
-          "name": "Motonave Victor",
-          "description": "Scopri la nostra motonave e le sue caratteristiche.",
-          "guests": "35 Ospiti",
-          "dimension": "70×60 Dimensioni",
-          "linkLabel": "Scopri di più"
+          "id": 3,
+          "name": "Sunset experience",
+          "image": "/assets/sectionImages/sunset.jpg",
+          "description": "Un’esperienza intima e rilassante, pensata per chi ama la bellezza dei momenti autentici. Si parte al calar del sole con una sosta nelle cale più suggestive per un bagno rigenerante, seguita da un brindisi a bordo. Navigando tra silenzi e riflessi, si ascolta il canto delle Diomedee — uccelli notturni simbolo delle Tremiti. Quando il cielo si fa scuro, ci si ferma per osservare le stelle, lontani da ogni inquinamento luminoso.",
+          "guests": "Orario | 19:30-21:30",
+          "dimension": "Lingue parlate | Italiano, Inglese",
+          "details": "Un’escursione completa intorno alle Isole Tremiti, pensata per farvi scoprire la loro essenza autentica, tra paesaggi incontaminati, acque trasparenti e storia millenaria. A bordo del nostro gozzo in legno d’epoca, navigherete lungo la costa frastagliata delle isole, con soste nelle calette più suggestive per nuotare o fare snorkeling. Durante il tour, lo skipper vi guiderà con una spiegazione dettagliata dei principali punti di interesse. Un’esperienza pensata per chi desidera conoscere davvero l’arcipelago, non solo ammirarlo. Il ritmo è lento, il mare è protagonista e ogni sosta è un invito a lasciarsi andare.",
+          "priceList": [
+            {
+              "title": "Maggio e Giugno:",
+              "adult": "50€ a persona",
+              "child": "40€ a persona"
+            },
+            {
+              "title": "Luglio:",
+              "adult": "60€ a persona",
+              "child": "50€ a persona"
+            },
+            {
+              "title": "1 Agosto - 9 Agosto:",
+              "adult": "60€ a persona",
+              "child": "50€ a persona"
+            },
+            {
+              "title": "10 Agosto - 17 Agosto:",
+              "adult": "70€ a persona",
+              "child": "60€ a persona"
+            },
+            {
+              "title": "18 Agosto - 31 Agosto:",
+              "adult": "60€ a persona",
+              "child": "50€ a persona"
+            },
+            {
+              "title": "Settembre - Ottobre:",
+              "adult": "50€ a persona",
+              "child": "40€ a persona"
+            }
+          ],
+          "durata": "2 ore",
+          "incluso": [
+            {
+              "title": "Skipper",
+              "include": true
+            },
+            {
+              "title": "Carburante",
+              "include": true
+            },
+            {
+              "title": "Cambusa",
+              "include": true
+            },
+            {
+              "title": "Traghetto per raggiungere le Isole Tremiti",
+              "include": false
+            }
+          ],
+          "necessario": "maschera, pinne e scarpe da scoglio",
+          "link": "/contatti"        
         }
       ]
     },
@@ -61,31 +263,42 @@
       "experiences": [
         {
           "id": "01",
-          "title": "Crociera al Tramonto",
-          "description": "Concediti un momento di relax e goditi la vista mozzafiato sull’oceano che si estende davanti a te.",
-          "link": "contatti",
-          "linkLabel": "Scopri di più"
+          "title": "Boat tour di 4 ore",
+          "description": "Esplora le calette delle Isole Tremiti in un tour di 4 ore con soste per nuotare, relax e aperitivo a bordo.",
+          "link": "tour-detail/0",
+          "link2": "tour-detail/1",
+          "linkLabel": "Tour mattino",
+          "linkLabel2": "Tour pomeriggio"
         },
         {
           "id": "02",
-          "title": "Eventi Privati",
-          "description": "Festeggia compleanni e anniversari con stile a bordo di uno yacht privato, con viste spettacolari e ottima compagnia.",
-          "link": "contatti",
+          "title": "Sunset experience",
+          "description": "Un'uscita al tramonto tra bagni, brindisi e stelle, immersi nel silenzio e nella magia delle Tremiti.",
+          "link": "tour-detail/2",
           "linkLabel": "Scopri di più"
         },
         {
           "id": "03",
-          "title": "Ritiri Aziendali",
-          "description": "Stupisci i tuoi clienti e rafforza i legami del team. Rilassati e lascia un'impressione duratura.",
+          "title": "Eventi privati o tour personalizzati",
+          "description": "Crea il tuo tour su misura o organizza un evento esclusivo in barca.",
           "link": "contatti",
           "linkLabel": "Scopri di più"
         },
         {
           "id": "04",
-          "title": "Tour tra le Isole",
-          "description": "Vivi l’emozione di attività acquatiche come snorkeling e immersioni in viaggi avventurosi e rilassanti.",
+          "title": "Nuoto Open Water con barca di appoggio",
+          "description": "Allenati o partecipa a sessioni di nuoto in mare aperto con supporto barca.",
           "link": "contatti",
           "linkLabel": "Scopri di più"
+        }
+      ],
+      "services": [
+        {
+          "id": "01",
+          "title": "Nuoto open water con barca di appoggio",
+          "description": "Isole Tremiti in totale sicurezza. La nostra barca segue i nuotatori lungo il percorso concordato, offrendo assistenza continua, orientamento e supporto tecnico in ogni fase dell’attività. Perfetto per allenamenti, traversate amatoriali o nuotate in libertà, con la discreta ma attenta presenza del nostro skipper esperto.",
+          "link": "contatti",
+          "linkLabel": "Contattaci"
         }
       ]
     },
@@ -223,7 +436,44 @@
     ]
   },
   "AboutUs": {
-    "title": "Chi Siamo"
+    "title": "Chi Siamo?",
+    "subtitle": "Scopri la storia della nostra famiglia tra le onde delle Isole Tremiti.",
+    "sections": [
+      {
+        "title": "La Nostra Storia",
+        "description": "Mare e Stelle non è solo un tour in barca. È un invito a rallentare, ad assaporare il ritmo dell’isola e a vivere il mare come lo viviamo noi isolani. Ogni escursione dura il tempo giusto – circa 4 ore – per permetterti di scoprire le calette più belle via mare, ma anche di goderti del tempo libero per esplorare le isole da terra, in autonomia e senza fretta.",
+        "image": "/assets/sectionImages/DJI_0959_hero.jpg"
+      },
+      {
+        "title": "A Bordo con Riccardo",
+        "description": "A guidarti in questa esperienza c’è Riccardo, skipper e anfitrione, pronto ad accoglierti a bordo di un gozzo in legno con oltre 70 anni di storia e di vita, restaurato con amore per restare fedele alla sua identità!",
+        "image": "/assets/sectionImages/DSC02686.jpg"
+      },
+      {
+        "title": "Un’Ospitalità che Resta",
+        "description": "Ogni ospite viene seguito con cura, dalla prenotazione al check-in, fino all’ultimo saluto. Non offriamo un’esperienza “turistica” nel senso classico: offriamo qualcosa di più intimo, più personale, più vero. E forse è per questo che molti tornano. Perché qui, oltre a nuotare in un mare trasparente, si respira un’idea diversa di vacanza: quella che lascia il segno.",
+        "image": "/assets/slider/image12.jpg"
+      },
+      {
+        "title": "Perché “Mare e Stelle”?",
+        "description": "Mare e Stelle nasce da un’idea semplice ma profonda: far vivere ai nostri ospiti ogni sfumatura del tempo passato sull’isola, dal giorno alla notte. Il mare è il nostro elemento. Di giorno ti accoglie con i suoi riflessi cristallini, le calette segrete, i profumi della macchia mediterranea. Di notte, diventa silenzio e poesia: una scia che si illumina nel buio e un cielo pieno di stelle, come solo chi è lontano dalla terraferma può vedere. Con Mare e Stelle vogliamo trasmettere questo senso di meraviglia, quello che proviamo noi isolani ogni volta che navighiamo in queste acque. Invitarti a rallentare, ascoltare, guardare. A farti sentire parte di un luogo dove il tempo non corre, ma si vive. Perché qui, ogni momento è prezioso. E chi sa guardare, vedrà sempre qualcosa di più: il mare… e le stelle.",
+        "image": "/assets/slider/image20.jpg"
+      },
+      {
+        "title": "Il nostro gozzo in legno",
+        "description": "Tradizione che naviga nel presente Oggi, alle Isole Tremiti, la maggior parte delle imbarcazioni utilizzate per il turismo sono moderne, realizzate in vetroresina o gommoni di nuova generazione. Noi, invece, abbiamo fatto una scelta diversa: riportare in vita un gozzo in legno di oltre 70 anni, un tempo usato per la pesca, oggi restaurato con cura per offrirti un’esperienza autentica — con il fascino del passato e i comfort del presente. Salire a bordo non è semplicemente iniziare un’escursione: è fare un tuffo nella storia. Negli anni ’60 e ’70, qui alle Tremiti, gli scafi in legno erano ovunque: silenziosi compagni di giornate di lavoro, costruiti a mano, pezzo dopo pezzo, da maestri d’ascia locali. Dopo un lungo restauro, il nostro gozzo è tornato a solcare le acque, mantenendo intatto il suo spirito.",
+        "description2": "Ma c’è di più. Il legno ha qualcosa che nessun materiale moderno può offrire: una presenza viva, che si fa sentire sotto le dita. Navigare su un gozzo in legno è un’esperienza unica nel suo genere. Lo scafo, più pesante, offre una stabilità naturale, che lo rende perfetto anche quando il mare è leggermente mosso. Abbiamo scelto il legno non per nostalgia, ma per amore. Perché crediamo che il modo in cui si viaggia conti tanto quanto la destinazione. E su questa barca, ogni onda racconta qualcosa.",
+        "image": "/assets/barca/barca-mare-e-stelle.jpg",
+        "listLabel": "A bordo troverai:",
+        "list": [
+          "Cuscineria in ecopelle,",
+          "Tendalino ombreggiante,",
+          "Doccia d’acqua dolce,",
+          "Scaletta per la risalita,",
+          "Un piccolo frigo-bar per goderti ogni momento in relax."
+        ]
+      }
+    ]
   },
   "Contact": {
     "title": "Contatti"

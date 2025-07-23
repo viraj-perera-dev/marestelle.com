@@ -44,7 +44,7 @@ export default function Section1({ params }) {
             <div className="flex flex-col items-start gap-4 z-30">
               <div className="bg-blue-100 p-2 rounded-full">
                 {/* Replace with an actual icon if needed */}
-                <span>🚤</span>
+                <span>🌊</span>
               </div>
               <div>
                 <p className="font-semibold">{tSection1("listItem1")}</p>

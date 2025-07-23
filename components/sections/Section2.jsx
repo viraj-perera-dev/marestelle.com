@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { getMessages } from "@/lib/getMessages";
 import Image from "next/image";
@@ -26,7 +26,7 @@ export default function Section2({ params }) {
       guests: tSection2("fleet")[0]?.guests,
       dimension: tSection2("fleet")[0]?.dimension,
       image: "/assets/sectionImages/DJI_0977.jpg",
-      link: "/",
+      link: `${params.locale}/tour-detail/0`,
     },
     {
       name: tSection2("fleet")[1]?.name,
@@ -34,36 +34,43 @@ export default function Section2({ params }) {
       guests: tSection2("fleet")[1]?.guests,
       dimension: tSection2("fleet")[1]?.dimension,
       image: "/assets/sectionImages/DJI_0977.jpg",
-      link: "/",
+      link: `${params.locale}/tour-detail/1`,
     },
     {
       name: tSection2("fleet")[2]?.name,
       description: tSection2("fleet")[2]?.description,
       guests: tSection2("fleet")[2]?.guests,
       dimension: tSection2("fleet")[2]?.dimension,
-      image: "/assets/barca/Motonave-Victor_-6.jpg",
-      link: "https://motonavevictor.it/it/",
+      image: "/assets/sectionImages/tramonto.png",
+      link: `${params.locale}/tour-detail/2`,
     },
   ];
-
+  
+  
   if (!messages) return;
 
   return (
     <div className="w-full bg-white">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center items-start space-y-5 md:space-y-0 md:py-20 py-10 bg-neutral-50 px-4">
-          <div className="mx-auto max-w-7xl flex flex-col md:flex-row md:justify-between md:items-center items-start md:gap-20 gap-5">
-            <div>
-              <h2 className="md:text-4xl text-2xl font-bold text-neutral-800">{tSection2("title")}</h2>
-              <p className="md:text-lg text-md text-neutral-600">{tSection2("subtitle")}</p>
-            </div>
-            <Link href={`${params.locale}/contatti`} className="bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition">
-              {tSection2("button")}
-            </Link>
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center items-start space-y-5 md:space-y-0 md:py-20 py-10 bg-neutral-50 px-4">
+        <div className="mx-auto max-w-7xl flex flex-col md:flex-row md:justify-between md:items-center items-start md:gap-20 gap-5">
+          <div>
+            <h2 className="md:text-4xl text-2xl font-bold text-neutral-800">
+              {tSection2("title")}
+            </h2>
+            <p className="md:text-lg text-md text-neutral-600">
+              {tSection2("subtitle")}
+            </p>
           </div>
-
+          <Link
+            href={`${params.locale}/contatti`}
+            className="bg-blue-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition"
+          >
+            {tSection2("button")}
+          </Link>
         </div>
+      </div>
       <div className="mx-auto max-w-8xl">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 py-10">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 px-4 py-10">
           {fleet.map((yacht, index) => (
             <div
               key={index}
@@ -72,32 +79,37 @@ export default function Section2({ params }) {
               <div className="flex justify-center items-center gap-5 md:gap-10">
                 <div className="flex flex-col justify-between gap-4 h-full">
                   <div className="flex flex-col gap-2">
-                    <h3 className="md:text-2xl text-xl font-semibold">{yacht.name}</h3>
-                    <p className="text-neutral-600">{yacht.description}</p>
+                    <h3 className="md:text-2xl text-xl font-semibold">
+                      {yacht.name}
+                    </h3>
+                    <p className="text-neutral-600 line-clamp-2 md:line-clamp-3">
+                      {yacht.description}
+                    </p>
                   </div>
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-4">
                       <span className="bg-white p-2 rounded-full shadow">
-                        👤
+                        ⌚
                       </span>
                       <p>{yacht.guests}</p>
                     </div>
                     <hr className="border-neutral-300" />
                     <div className="flex items-center gap-4">
                       <span className="bg-white p-2 rounded-full shadow">
-                        📏
+                        🗣️
                       </span>
                       <p>{yacht.dimension}</p>
                     </div>
                   </div>
                   <Link
-                    className="self-start text-blue-600 font-medium flex items-center gap-2 border border-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
                     href={yacht.link}
+                    className="self-start text-blue-600 font-medium flex items-center gap-2 border border-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer"
                   >
-                    {tSection2("fleet")[index]?.linkLabel} <MdArrowOutward size={20} />
+                    {tSection2("linkLabel")}{" "}
+                    <MdArrowOutward size={20} />
                   </Link>
                 </div>
-                <div className="w-[15rem] h-[25rem] md:w-[25rem] md:h-[30rem]">
+                <div className="w-[60rem] h-[20rem] xl:h-[25rem]">
                   <Image
                     loading="lazy"
                     src={yacht.image}

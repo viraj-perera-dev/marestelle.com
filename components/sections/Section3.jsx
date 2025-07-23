@@ -77,7 +77,7 @@ export default function Section3({ params }) {
         ))}
       </Swiper>
 
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center items-start space-y-5 md:space-y-0 md:py-20 py-10 px-4 my-10">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center items-start space-y-5 md:space-y-0 md:py-20 py-10 px-4">
         <div className="mx-auto max-w-7xl flex flex-col md:flex-row md:justify-between md:items-center items-start md:gap-20 gap-5">
           <div>
             <h2 className="md:text-4xl text-2xl font-bold text-neutral-800">
