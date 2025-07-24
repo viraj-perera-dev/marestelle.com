@@ -2,6 +2,7 @@ import { generateSEOMetadata } from '@/components/Metadata';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MdArrowOutward } from 'react-icons/md';
+import { getMessages } from '@/lib/getMessages'; 
 
 export const metadata = generateSEOMetadata({
   contentMetadata: {
@@ -9,65 +10,37 @@ export const metadata = generateSEOMetadata({
     description: 'Segui il nostro viaggio interattivo attraverso le Isole Tremiti',
     keywords: ['Isole Tremiti', 'itinerario', 'mappa interattiva', 'diario di bordo'],
     siteColor: 'light',
-    url: '',
+    url: 'https://marestelle.com/it/diario-di-bordo',
     siteName: 'Victor Tremiti',
-    image: '',
-    imageAlt: '',
+    image: '/assets/sectionImages/IMG_1356.jpeg',
+    imageAlt: 'Diario di Bordo - Itinerario Isole Tremiti',
   }
 });
 
-const itineraries = [
-  {
-    id: 1,
-    title: 'Itinerario Completo',
-    subtitle: 'Condizioni Meteomarine Ideali',
-    image: '/assets/itinerari/itinerario.png',
-    description:
-      'Quando il mare è calmo, è possibile fare il giro completo dell’arcipelago. Ideale per esplorare ogni angolo nascosto delle isole.',
-  },
-  {
-    id: 2,
-    title: 'Venti da Sud-Est (Scirocco, Ostro, Levante)',
-    subtitle: 'Rotta Settentrionale',
-    image: '/assets/itinerari/scirocco.png',
-    description:
-      'Soste a nord: Cala dei Turchi, Cala del Cretaccio, Cala Tonda. Il versante nord è più protetto e tranquillo.',
-  },
-  {
-    id: 3,
-    title: 'Venti da Nord o Ponente (Tramontana, Maestrale)',
-    subtitle: 'Rotta Meridionale',
-    image: '/assets/itinerari/tramontana.png',
-    description:
-      'Soste relax nel sud dell’arcipelago: Cala dei Pesci, Cala Matano, Cala del Sale.',
-  },
-  {
-    id: 4,
-    title: 'Vento da Libeccio (SW)',
-    subtitle: 'Rotta Breve e Relax',
-    image: '/assets/itinerari/libeccio.png',
-    description:
-      'Itinerario più corto con soste prolungate: Cala dei Turchi, Pagliai, Cretaccio. Poche cale al riparo.',
-  },
-];
 
-export default function DiarioDiBordoPage({ params }) {
+export default async function DiarioDiBordoPage({ params }) {
+
+  const messages = await getMessages(params.locale);
+  const tSection = (key) => messages.DiarioDiBordo?.[key] ?? key;
+
+  const rawItineraries = tSection("itineraries");
+  const itineraries = Array.isArray(rawItineraries) ? rawItineraries : [];
+  
   return (
     <main className="bg-white text-gray-800">
       <section className="w-full h-[70vh] bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: `url('/assets/sectionImages/IMG_1356.jpeg')` }}>
         <div className="absolute inset-0 bg-black/40" />
         <div className="z-10 text-center px-4">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">Diario di Bordo</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white">{tSection("title")}</h1>
           <p className="mt-4 text-xl md:text-2xl text-white max-w-2xl mx-auto">
-            Come cambiano gli itinerari in base al vento? Scopri i percorsi che seguiamo per garantire sicurezza e meraviglia.
+            {tSection("subtitle")}
           </p>
         </div>
       </section>
 
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <p className="text-center text-neutral-700 max-w-3xl mx-auto mb-12 text-lg">
-          Spesso il giro delle isole varia in base ai venti.
-          A seconda delle condizioni meteomarine, l’itinerario previsto può subire variazioni. La sicurezza dei passeggeri viene sempre prima. 
+          {tSection("description")}
         </p>
 
         <div className="grid gap-10 md:grid-cols-2">

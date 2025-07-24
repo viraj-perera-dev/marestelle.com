@@ -8,6 +8,7 @@ import { supabase } from "@/utils/supabaseClient";
 import Image from "next/image";
 import Link from "next/link";
 import ProgressIndicator from "./ProgressIndicator";
+import { GoArrowUpLeft } from "react-icons/go";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,10 +46,6 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
 
         if (error) throw error;
 
-        // const normalized = data.map(({ lat, lng, ...rest }) => ({
-        //   ...rest,
-        //   coords: { lat, lng },
-        // }));
 
         const filtered = data
         .filter(item => item[`itinerary_${itineraryId}`] === true)
@@ -57,9 +54,6 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
           coords: { lat, lng },
         }));
 
-
-
-        // setItinerary(normalized);
         setItinerary(filtered);
 
       } catch (error) {
@@ -228,15 +222,16 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
                 {itinerary[activeIndex]?.title}
               </h2>
 
-              <p className="text-gray-600 md:text-xl line-clamp-4 mb-2">
+              <p className="text-gray-600 md:text-xl line-clamp-4 mb-4">
                 {itinerary[activeIndex]?.description}
               </p>
 
               {itinerary[activeIndex]?.description?.length > 250 && (
                 <Link
                   href={`/${locale}/location/${itinerary[activeIndex].id}?itinerary=${itineraryId}`}
-                  className="text-blue-600 underline text-sm mt-1 cursor-pointer"
+                  className="text-blue-600 border border-blue-600 px-4 py-2 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out flex items-center gap-2"
                 >
+                  <GoArrowUpLeft size={20} />
                   Leggi tutto
                 </Link>
               )}

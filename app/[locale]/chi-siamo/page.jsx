@@ -21,6 +21,8 @@ export default async function ChiSiamo({ params }) {
   const messages = await getMessages(params.locale);
   const tSection = (key) => messages.AboutUs?.[key] ?? key;
 
+  
+
   return (
     <main className="bg-white text-gray-800">
       {/* Hero Section */}
@@ -95,10 +97,10 @@ export default async function ChiSiamo({ params }) {
 
       {/* CTA */}
       <section className="bg-white py-20 text-center">
-        <h2 className="text-4xl font-bold mb-6">Vivi il Mare con Noi</h2>
-        <p className="text-lg mb-8">Prenota la tua esperienza autentica alle Isole Tremiti con la nostra famiglia.</p>
+        <h2 className="text-4xl font-bold mb-6">{tSection('bannerTitle')}</h2>
+        <p className="text-lg mb-8">{tSection('bannerDescription')}</p>
         <Link href="/contatti" className="flex items-center justify-center gap-2 w-fit px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition mx-auto">
-          Contattaci <MdArrowOutward size={20} />
+          {tSection('buttonLabel')} <MdArrowOutward size={20} />
         </Link>
       </section>
     </main>

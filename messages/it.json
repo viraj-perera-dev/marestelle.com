@@ -370,6 +370,8 @@
     "title": "Prenota il tuo tour",
     "subtitle": "Prenota il tuo tour in barca",
     "label": "Seleziona una data",
+    "priceLabel": "prezzo",
+    "closeLabel": "Chiudi",
     "error": "Per favore seleziona una data per proseguire.",
     "nextButton": "Prosegui",
     "timeLabel": "Seleziona orario",
@@ -438,6 +440,9 @@
   "AboutUs": {
     "title": "Chi Siamo?",
     "subtitle": "Scopri la storia della nostra famiglia tra le onde delle Isole Tremiti.",
+    "bannerTitle": "Vivi il Mare con Noi",
+    "bannerDescription": "Prenota la tua esperienza autentica alle Isole Tremiti con la nostra famiglia.",
+    "buttonLabel": "contattaci",
     "sections": [
       {
         "title": "La Nostra Storia",
@@ -476,6 +481,51 @@
     ]
   },
   "Contact": {
-    "title": "Contatti"
+    "title": "Prenota la Tua Esperienza",
+    "subtitle": "Escursioni giornaliere, gite in barca, cucina di mare e molto altro.",
+    "sectionTitle": "Come Prenotare",
+    "sectionDescription": "Compila il modulo con i tuoi dati e le tue preferenze. Ti risponderemo al più presto per confermare la disponibilità.",
+    "sectionList": [
+        "Gite Full-day con pranzo di pesce a bordo della Motonave Victor",
+        "Mini tour in gozzo intorno all’arcipelago",
+        "Eventi privati e tour personalizzati"
+    ],
+    "sectionContact": "Oppure contattaci direttamente su WhatsApp o via telefono al numero",
+    "sectionButtonLabel": "Chiama ora"
+  },
+  "DiarioDiBordo": {
+    "title": "Diario di Bordo",
+    "subtitle": "Come cambiano gli itinerari in base al vento? Scopri i percorsi che seguiamo per garantire sicurezza e meraviglia.",
+    "description": "Spesso il giro delle isole varia in base ai venti. A seconda delle condizioni meteomarine, l’itinerario previsto può subire variazioni. La sicurezza dei passeggeri viene sempre prima.",
+    "itineraries": [
+      {
+        "id": 1,
+        "title": "Itinerario Completo",
+        "subtitle": "Condizioni Meteomarine Ideali",
+        "image": "/assets/itinerari/itinerario.png",
+        "description":"Quando il mare è calmo, è possibile fare il giro completo dell’arcipelago. Ideale per esplorare ogni angolo nascosto delle isole."
+      },
+      {
+        "id": 2,
+        "title": "Venti da Sud-Est (Scirocco, Ostro, Levante)",
+        "subtitle": "Rotta Settentrionale",
+        "image": "/assets/itinerari/scirocco.png",
+        "description":"Soste a nord: Cala dei Turchi, Cala del Cretaccio, Cala Tonda. Il versante nord è più protetto e tranquillo."
+      },
+      {
+        "id": 3,
+        "title": "Venti da Nord o Ponente (Tramontana, Maestrale)",
+        "subtitle": "Rotta Meridionale",
+        "image": "/assets/itinerari/tramontana.png",
+        "description":"Soste relax nel sud dell’arcipelago: Cala dei Pesci, Cala Matano, Cala del Sale."
+      },
+      {
+        "id": 4,
+        "title": "Vento da Libeccio (SW)",
+        "subtitle": "Rotta Breve e Relax",
+        "image": "/assets/itinerari/libeccio.png",
+        "description":"Itinerario più corto con soste prolungate: Cala dei Turchi, Pagliai, Cretaccio. Poche cale al riparo."
+      }
+    ]
   }
 }

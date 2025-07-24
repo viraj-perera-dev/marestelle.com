@@ -225,7 +225,7 @@ export default function Section6({ params }) {
                 onClick={handleNext}
                 className="bg-blue-600 text-white rounded-full md:w-1/2 w-full py-4 hover:bg-blue-700 transition mt-8"
               >
-                {t("nextButton")} ( prezzo: {formData.price}€ )
+                {t("nextButton")} ( {t("priceLabel")}: {formData.price}€ )
               </button>
             </div>
           )}
@@ -363,7 +363,7 @@ export default function Section6({ params }) {
               onClick={() => setShowSuccessModal(false)}
               className="mt-2 px-20 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition cursor-pointer"
             >
-              Chiudi
+              {t("closeLabel")}
             </button>
           </div>
         </div>

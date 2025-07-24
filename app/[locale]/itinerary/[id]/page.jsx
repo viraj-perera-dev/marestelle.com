@@ -7,10 +7,10 @@ export const metadata = generateSEOMetadata({
     description: 'Segui il nostro viaggio interattivo attraverso le Isole Tremiti',
     keywords: ['Isole Tremiti', 'itinerario', 'mappa interattiva', 'diario di bordo'],
     siteColor: 'light',
-    url: '',
+    url: 'https://marestelle.com/it/itinerary/1',
     siteName: 'Victor Tremiti',
-    image: '',
-    imageAlt: '',
+    image: '/assets/sectionImages/IMG_1356.jpeg',
+    imageAlt: 'Diario di Bordo - Itinerario Isole Tremiti',
   }
 });
 

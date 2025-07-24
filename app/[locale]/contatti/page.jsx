@@ -36,10 +36,10 @@ export default async function Contact({ params }) {
         <div className="absolute inset-0 bg-black/50 z-0" />
         <div className="z-10 absolute bottom-20 md:left-10 left-2 text-start text-white px-4">
           <h1 className="text-4xl md:text-6xl font-bold">
-            Prenota la Tua Esperienza
+            {t('title')}
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-2xl">
-            Escursioni giornaliere, gite in barca, cucina di mare e molto altro.
+            {t('subtitle')}
           </p>
         </div>
       </section>
@@ -50,26 +50,24 @@ export default async function Contact({ params }) {
           {/* Info Side */}
           <div className="w-full md:w-2/3 mx-auto flex flex-col justify-center py-20 md:py-0 px-5">
             <h2 className="text-2xl md:text-4xl font-bold mb-6 uppercase">
-              Come Prenotare
+              {t('sectionTitle')}
             </h2>
             <p className="mb-4 text-lg md:text-xl font-semibold text-neutral-600">
-              Compila il modulo con i tuoi dati e le tue preferenze. Ti
-              risponderemo al più presto per confermare la disponibilità.
+              {t('sectionDescription')}
             </p>
             <ul className="list-disc list-inside mb-6">
               <li className="text-md md:text-lg font-semibold text-black">
-                Gite full-day con pranzo di pesce a bordo della Motonave Victor
+                {t('sectionList')[0]}
               </li>
               <li className="text-md md:text-lg font-semibold text-black">
-                Mini tour in gozzo intorno all’arcipelago
+                {t('sectionList')[1]}
               </li>
               <li className="text-md md:text-lg font-semibold text-black">
-                Eventi privati e tour personalizzati
+                {t('sectionList')[2]}
               </li>
             </ul>
             <p className="text-gray-600 text-md md:text-xl mb-10">
-              Oppure contattaci direttamente su WhatsApp o via telefono al
-              numero{" "}
+              {t('sectionContact')}{" "}
               <a
                 href="tel:+39123456789"
                 target="_blank"
@@ -85,7 +83,7 @@ export default async function Contact({ params }) {
               rel="noopener noreferrer"
             >
               <button className="flex items-center justify-center gap-2 font-semibold text-md md:text-xl border border-blue-500 text-blue-500 w-full py-3 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer">
-                Chiama ora <MdArrowOutward size={20} />
+                {t('sectionButtonLabel')} <MdArrowOutward size={20} />
               </button>
             </a>
           </div>
