@@ -33,7 +33,7 @@ export default function Section2({ params }) {
       description: tSection2("fleet")[1]?.description,
       guests: tSection2("fleet")[1]?.guests,
       dimension: tSection2("fleet")[1]?.dimension,
-      image: "/assets/sectionImages/DJI_0977.jpg",
+      image: "/assets/barca/DSC02867.jpg",
       link: `${params.locale}/tour-detail/1`,
     },
     {
@@ -89,14 +89,14 @@ export default function Section2({ params }) {
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-4">
                       <span className="bg-white p-2 rounded-full shadow">
-                        ⌚
+                        ⏰
                       </span>
                       <p>{yacht.guests}</p>
                     </div>
                     <hr className="border-neutral-300" />
                     <div className="flex items-center gap-4">
                       <span className="bg-white p-2 rounded-full shadow">
-                        🗣️
+                        ⌛
                       </span>
                       <p>{yacht.dimension}</p>
                     </div>

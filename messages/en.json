@@ -33,14 +33,16 @@
       "necessarioLabel": "Cosa portare:",
       "linkLabel": "Scopri di più",
       "backButton": "Indietro",
+      "adult": "Adulti",
+      "child": "Bambini (0-12 anni)",
       "fleet": [
         {
           "id": 1,
           "name": "Boat tour mattutino",
           "image": "/assets/sectionImages/DJI_0943.jpg",
-          "description": "Stessa rotta, stesso spirito, ma con un’atmosfera ancora più pacifica: il pomeriggio porta con sé un mare meno affollato e una luce più calda. Tra bagni rigeneranti, relax a bordo del nostro gozzo in legno e un aperitivo con vista, è l’occasione perfetta per godersi le Tremiti con calma.",
-          "guests": "Orario | 14:30-18:30",
-          "dimension": "Lingue parlate | Italiano, Inglese",
+          "description": "Un tour di 4 ore alla scoperta delle calette più belle delle Isole Tremiti. Si naviga a bordo di un gozzo in legno d’epoca, con soste per nuotare in acque cristalline, momenti di relax e un aperitivo leggero a bordo.",
+          "guests": "Orario | 10:30-14:30",
+          "dimension": "Durata | 4 ore",
           "details": "Un’escursione completa intorno alle Isole Tremiti, pensata per farvi scoprire la loro essenza autentica, tra paesaggi incontaminati, acque trasparenti e storia millenaria. A bordo del nostro gozzo in legno d’epoca, navigherete lungo la costa frastagliata delle isole, con soste nelle calette più suggestive per nuotare o fare snorkeling. Durante il tour, lo skipper vi guiderà con una spiegazione dettagliata dei principali punti di interesse. Un’esperienza pensata per chi desidera conoscere davvero l’arcipelago, non solo ammirarlo. Il ritmo è lento, il mare è protagonista e ogni sosta è un invito a lasciarsi andare.",
           "priceList": [
             {
@@ -115,9 +117,9 @@
           "id": 2,
           "image": "/assets/sectionImages/DJI_0967.jpg",
           "name": "Boat tour pomeridiano",
-          "description": "Un tour di 4 ore alla scoperta delle calette più belle delle Isole Tremiti. Si naviga a bordo di un gozzo in legno d’epoca, con soste per nuotare in acque cristalline, momenti di relax e un aperitivo leggero a bordo.",
-          "guests": "Orario | 10:30-14:30",
-          "dimension": "Lingue parlate | Italiano, Inglese",
+          "description": "Stessa rotta, stesso spirito, ma con un’atmosfera ancora più pacifica: il pomeriggio porta con sé un mare meno affollato e una luce più calda. Tra bagni rigeneranti, relax a bordo del nostro gozzo in legno e un aperitivo con vista, è l’occasione perfetta per godersi le Tremiti con calma.",
+          "guests": "Orario | 14:30-18:30",
+          "dimension": "Durata | 4 ore",
           "details": "Un’escursione completa intorno alle Isole Tremiti, pensata per farvi scoprire la loro essenza autentica, tra paesaggi incontaminati, acque trasparenti e storia millenaria. A bordo del nostro gozzo in legno d’epoca, navigherete lungo la costa frastagliata delle isole, con soste nelle calette più suggestive per nuotare o fare snorkeling. Durante il tour, lo skipper vi guiderà con una spiegazione dettagliata dei principali punti di interesse. Un’esperienza pensata per chi desidera conoscere davvero l’arcipelago, non solo ammirarlo. Il ritmo è lento, il mare è protagonista e ogni sosta è un invito a lasciarsi andare.",
           "priceList": [
             {
@@ -194,7 +196,7 @@
           "image": "/assets/sectionImages/sunset.jpg",
           "description": "Un’esperienza intima e rilassante, pensata per chi ama la bellezza dei momenti autentici. Si parte al calar del sole con una sosta nelle cale più suggestive per un bagno rigenerante, seguita da un brindisi a bordo. Navigando tra silenzi e riflessi, si ascolta il canto delle Diomedee — uccelli notturni simbolo delle Tremiti. Quando il cielo si fa scuro, ci si ferma per osservare le stelle, lontani da ogni inquinamento luminoso.",
           "guests": "Orario | 19:30-21:30",
-          "dimension": "Lingue parlate | Italiano, Inglese",
+          "dimension": "Durata | 2 ore",
           "details": "Un’escursione completa intorno alle Isole Tremiti, pensata per farvi scoprire la loro essenza autentica, tra paesaggi incontaminati, acque trasparenti e storia millenaria. A bordo del nostro gozzo in legno d’epoca, navigherete lungo la costa frastagliata delle isole, con soste nelle calette più suggestive per nuotare o fare snorkeling. Durante il tour, lo skipper vi guiderà con una spiegazione dettagliata dei principali punti di interesse. Un’esperienza pensata per chi desidera conoscere davvero l’arcipelago, non solo ammirarlo. Il ritmo è lento, il mare è protagonista e ogni sosta è un invito a lasciarsi andare.",
           "priceList": [
             {
@@ -248,7 +250,7 @@
             }
           ],
           "necessario": "maschera, pinne e scarpe da scoglio",
-          "link": "/contatti"        
+          "link": "/contatti"
         }
       ]
     },
@@ -267,8 +269,8 @@
           "description": "Esplora le calette delle Isole Tremiti in un tour di 4 ore con soste per nuotare, relax e aperitivo a bordo.",
           "link": "tour-detail/0",
           "link2": "tour-detail/1",
-          "linkLabel": "Tour mattino",
-          "linkLabel2": "Tour pomeriggio"
+          "linkLabel": "Tour mattutino",
+          "linkLabel2": "Tour pomeridiano"
         },
         {
           "id": "02",
@@ -377,6 +379,7 @@
     "timeLabel": "Seleziona orario",
     "morning": "Tour Mattutino",
     "afternoon": "Tour Pomeridiano",
+    "evening": "Tour Tramonto",
     "nameLabel": "Nome completo",
     "emailLabel": "Indirizzo Email",
     "phoneLabel": "Numero di Telefono",
@@ -462,13 +465,13 @@
       {
         "title": "Perché “Mare e Stelle”?",
         "description": "Mare e Stelle nasce da un’idea semplice ma profonda: far vivere ai nostri ospiti ogni sfumatura del tempo passato sull’isola, dal giorno alla notte. Il mare è il nostro elemento. Di giorno ti accoglie con i suoi riflessi cristallini, le calette segrete, i profumi della macchia mediterranea. Di notte, diventa silenzio e poesia: una scia che si illumina nel buio e un cielo pieno di stelle, come solo chi è lontano dalla terraferma può vedere. Con Mare e Stelle vogliamo trasmettere questo senso di meraviglia, quello che proviamo noi isolani ogni volta che navighiamo in queste acque. Invitarti a rallentare, ascoltare, guardare. A farti sentire parte di un luogo dove il tempo non corre, ma si vive. Perché qui, ogni momento è prezioso. E chi sa guardare, vedrà sempre qualcosa di più: il mare… e le stelle.",
-        "image": "/assets/slider/image20.jpg"
+        "image": "/assets/slider/image201.jpg"
       },
       {
         "title": "Il nostro gozzo in legno",
         "description": "Tradizione che naviga nel presente Oggi, alle Isole Tremiti, la maggior parte delle imbarcazioni utilizzate per il turismo sono moderne, realizzate in vetroresina o gommoni di nuova generazione. Noi, invece, abbiamo fatto una scelta diversa: riportare in vita un gozzo in legno di oltre 70 anni, un tempo usato per la pesca, oggi restaurato con cura per offrirti un’esperienza autentica — con il fascino del passato e i comfort del presente. Salire a bordo non è semplicemente iniziare un’escursione: è fare un tuffo nella storia. Negli anni ’60 e ’70, qui alle Tremiti, gli scafi in legno erano ovunque: silenziosi compagni di giornate di lavoro, costruiti a mano, pezzo dopo pezzo, da maestri d’ascia locali. Dopo un lungo restauro, il nostro gozzo è tornato a solcare le acque, mantenendo intatto il suo spirito.",
         "description2": "Ma c’è di più. Il legno ha qualcosa che nessun materiale moderno può offrire: una presenza viva, che si fa sentire sotto le dita. Navigare su un gozzo in legno è un’esperienza unica nel suo genere. Lo scafo, più pesante, offre una stabilità naturale, che lo rende perfetto anche quando il mare è leggermente mosso. Abbiamo scelto il legno non per nostalgia, ma per amore. Perché crediamo che il modo in cui si viaggia conti tanto quanto la destinazione. E su questa barca, ogni onda racconta qualcosa.",
-        "image": "/assets/barca/barca-mare-e-stelle.jpg",
+        "image": "/assets/slider/image20.jpg",
         "listLabel": "A bordo troverai:",
         "list": [
           "Cuscineria in ecopelle,",
@@ -486,9 +489,10 @@
     "sectionTitle": "Come Prenotare",
     "sectionDescription": "Compila il modulo con i tuoi dati e le tue preferenze. Ti risponderemo al più presto per confermare la disponibilità.",
     "sectionList": [
-        "Gite Full-day con pranzo di pesce a bordo della Motonave Victor",
-        "Mini tour in gozzo intorno all’arcipelago",
-        "Eventi privati e tour personalizzati"
+      "Gite Full-day con pranzo di pesce a bordo del gozzo",
+      "Mini tour in gozzo intorno all’arcipelago",
+      "Eventi privati e tour personalizzati",
+      "Nuoto Open Water con barca di appoggio"
     ],
     "sectionContact": "Oppure contattaci direttamente su WhatsApp o via telefono al numero",
     "sectionButtonLabel": "Chiama ora"
@@ -503,29 +507,36 @@
         "title": "Itinerario Completo",
         "subtitle": "Condizioni Meteomarine Ideali",
         "image": "/assets/itinerari/itinerario.png",
-        "description":"Quando il mare è calmo, è possibile fare il giro completo dell’arcipelago. Ideale per esplorare ogni angolo nascosto delle isole."
+        "description": "Quando il mare è calmo, è possibile fare il giro completo dell’arcipelago. Ideale per esplorare ogni angolo nascosto delle isole."
       },
       {
         "id": 2,
         "title": "Venti da Sud-Est (Scirocco, Ostro, Levante)",
         "subtitle": "Rotta Settentrionale",
         "image": "/assets/itinerari/scirocco.png",
-        "description":"Soste a nord: Cala dei Turchi, Cala del Cretaccio, Cala Tonda. Il versante nord è più protetto e tranquillo."
+        "description": "Soste a nord: Cala dei Turchi, Cala del Cretaccio, Cala Tonda. Il versante nord è più protetto e tranquillo."
       },
       {
         "id": 3,
         "title": "Venti da Nord o Ponente (Tramontana, Maestrale)",
         "subtitle": "Rotta Meridionale",
         "image": "/assets/itinerari/tramontana.png",
-        "description":"Soste relax nel sud dell’arcipelago: Cala dei Pesci, Cala Matano, Cala del Sale."
+        "description": "Soste relax nel sud dell’arcipelago: Cala dei Pesci, Cala Matano, Cala del Sale."
       },
       {
         "id": 4,
         "title": "Vento da Libeccio (SW)",
         "subtitle": "Rotta Breve e Relax",
         "image": "/assets/itinerari/libeccio.png",
-        "description":"Itinerario più corto con soste prolungate: Cala dei Turchi, Pagliai, Cretaccio. Poche cale al riparo."
+        "description": "Itinerario più corto con soste prolungate: Cala dei Turchi, Pagliai, Cretaccio. Poche cale al riparo."
       }
     ]
+  },
+  "Footer": {
+    "title": "Mare e Stelle",
+    "subtitle": "Isole Tremiti",
+    "privacy": "Privacy Policy",
+    "terms": "Termini di Servizio",
+    "contact": "Contattaci"
   }
 }

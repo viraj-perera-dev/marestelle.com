@@ -52,7 +52,7 @@ export default async function Home({ params }) {
               alt="barca"
               priority
             />
-            <h1 className="absolute top-36 md:top-auto md:bottom-20 p-5 md:left-10 text-white md:text-6xl text-[2.5rem] leading-[3rem] md:leading-[4rem] font-bold w-full max-w-xl">
+            <h1 className="absolute top-36 md:top-auto md:bottom-20 p-5 md:left-10 text-white md:text-5xl text-4xl leading-[2.5rem] md:leading-[3.5rem] font-bold w-full max-w-xl">
               {t('title')}
             </h1>
             <p className="absolute bottom-5 md:bottom-auto p-5 md:top-36 md:right-10 text-white md:text-2xl text-xl w-full max-w-xl">

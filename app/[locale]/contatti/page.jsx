@@ -65,6 +65,9 @@ export default async function Contact({ params }) {
               <li className="text-md md:text-lg font-semibold text-black">
                 {t('sectionList')[2]}
               </li>
+              <li className="text-md md:text-lg font-semibold text-black">
+                {t('sectionList')[3]}
+              </li>
             </ul>
             <p className="text-gray-600 text-md md:text-xl mb-10">
               {t('sectionContact')}{" "}

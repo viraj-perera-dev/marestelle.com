@@ -42,20 +42,35 @@ export default function Section6({ params }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const parsedValue = parseInt(value || 0);
+  
+    // Create a copy of the form data with the updated value
     const newData = {
       ...formData,
-      [name]:
-        name === "people" || name === "children" ? parseInt(value || 0) : value,
+      [name]: (name === "people" || name === "children") ? parsedValue : value,
     };
-
-    // Auto-update price if relevant fields change
+  
+    // Calculate the new total
+    const totalPeople = 
+      name === "people" 
+        ? parsedValue + formData.children 
+        : formData.people + parsedValue;
+  
+    // Prevent setting more than 14 total (adults + children)
+    if (totalPeople > 14) {
+      alert("You can't have more than 14 people");
+      return;
+    }
+  
+    // Recalculate price
     newData.price = calculatePrice(
       newData.date,
       newData.people,
       newData.children
     );
+  
     setFormData(newData);
-  };
+  };  
 
   const handleTimeSelect = (time) => {
     setFormData((prev) => ({ ...prev, time }));
@@ -145,6 +160,92 @@ export default function Section6({ params }) {
     }
   };
 
+  const reCalculatePrice = (tour) => {
+    const date = new Date(formData.date);
+    const month = date.getMonth() + 1; // 1-based month
+    const day = date.getDate();
+    let adultPrice = 0;
+    let childPrice = 0;
+
+    if (tour === "evening") {
+      if (month === 5 || month === 6) {
+        // May & June
+        adultPrice = 50;
+        childPrice = 40;
+      } else if (month === 7) {
+        // July
+        adultPrice = 60;
+        childPrice = 50;
+      } else if (month === 8) {
+        if (day >= 10 && day <= 17) {
+          // 10–17 August
+          adultPrice = 70;
+          childPrice = 60;
+        } else {
+          // 1–9 or 18–31 August
+          adultPrice = 60;
+          childPrice = 50;
+        }
+      } else if (month === 9 || month === 10) {
+        // September & October
+        adultPrice = 50;
+        childPrice = 40;
+      }
+    
+      const newData = {
+        ...formData,
+        price: formData.people * adultPrice + formData.children * childPrice,
+      };
+      setFormData(newData);
+      handleTimeSelect("evening")
+    } else if (tour === "morning") {
+      if (month === 7) {
+        adultPrice = 45;
+        childPrice = 35;
+      } else if (month === 8) {
+        if (day >= 10 && day <= 17) {
+          adultPrice = 70;
+          childPrice = 60;
+        } else {
+          adultPrice = 60;
+          childPrice = 50;
+        }
+      } else if (month === 9 && day <= 10) {
+        adultPrice = 45;
+        childPrice = 35;
+      }
+      const newData = {
+        ...formData,
+        price: formData.people * adultPrice + formData.children * childPrice,
+      };
+      setFormData(newData);
+      handleTimeSelect("morning")
+    } else {
+      if (month === 7) {
+        adultPrice = 45;
+        childPrice = 35;
+      } else if (month === 8) {
+        if (day >= 10 && day <= 17) {
+          adultPrice = 70;
+          childPrice = 60;
+        } else {
+          adultPrice = 60;
+          childPrice = 50;
+        }
+      } else if (month === 9 && day <= 10) {
+        adultPrice = 45;
+        childPrice = 35;
+      }
+      const newData = {
+        ...formData,
+        price: formData.people * adultPrice + formData.children * childPrice,
+      };
+      setFormData(newData);
+      handleTimeSelect("afternoon")
+    }
+  };
+  
+
   const calculatePrice = (dateStr, people, children) => {
     if (!dateStr) return 0;
     const date = new Date(dateStr);
@@ -179,7 +280,7 @@ export default function Section6({ params }) {
     <section className="bg-blue-50 py-24">
       <div className="max-w-3xl mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-4xl font-bold">{t("title")}</h2>
-        <p className="text-neutral-600 md:text-lg mt-2 mb-10">
+        <p className="text-neutral-600  mt-2 mb-10">
           {t("subtitle")}
         </p>
 
@@ -207,6 +308,7 @@ export default function Section6({ params }) {
                   value={formData.people}
                   onChange={handleChange}
                   min={1}
+                  max={14}
                 />
 
                 <QuantityInput
@@ -215,6 +317,7 @@ export default function Section6({ params }) {
                   value={formData.children}
                   onChange={handleChange}
                   min={0}
+                  max={14}
                 />
               </div>
 
@@ -225,23 +328,23 @@ export default function Section6({ params }) {
                 onClick={handleNext}
                 className="bg-blue-600 text-white rounded-full md:w-1/2 w-full py-4 hover:bg-blue-700 transition mt-8"
               >
-                {t("nextButton")} ( {t("priceLabel")}: {formData.price}€ )
+                {t("nextButton")}
               </button>
             </div>
           )}
 
           {step === 2 && (
-            <form onSubmit={handleSubmit} className="md:space-y-6 space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Time Selection */}
               <div>
-                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                <label className="block font-medium text-neutral-700 text-md  mb-2 uppercase">
                   {t("timeLabel")}
                   <span className="text-red-500"> *</span>
                 </label>
                 <div className="flex md:gap-4 gap-2 text-sm md:text-md">
                   <button
                     type="button"
-                    onClick={() => handleTimeSelect("morning")}
+                    onClick={() => reCalculatePrice("morning")}
                     className={`md:px-4 px-2 py-2 rounded-full w-full border border-neutral-400 transition ${
                       formData.time === "morning"
                         ? "bg-blue-600 text-white"
@@ -252,7 +355,7 @@ export default function Section6({ params }) {
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleTimeSelect("afternoon")}
+                    onClick={() => reCalculatePrice("afternoon")}
                     className={`md:px-4 px-2 py-2 rounded-full w-full border border-neutral-400 transition ${
                       formData.time === "afternoon"
                         ? "bg-blue-600 text-white"
@@ -261,12 +364,23 @@ export default function Section6({ params }) {
                   >
                     {t("afternoon")}
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => reCalculatePrice("evening")}
+                    className={`md:px-4 px-2 py-2 rounded-full w-full border border-neutral-400 transition ${
+                      formData.time === "evening"
+                        ? "bg-blue-600 text-white"
+                        : "bg-white"
+                    }`}
+                  >
+                    {t("evening")}
+                  </button>
                 </div>
               </div>
 
               {/* Name */}
               <div>
-                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                <label className="block font-medium text-neutral-700 text-md  mb-2 uppercase">
                   {t("nameLabel")}
                   <span className="text-red-500"> *</span>
                 </label>
@@ -284,7 +398,7 @@ export default function Section6({ params }) {
 
               {/* Email */}
               <div>
-                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                <label className="block font-medium text-neutral-700 text-md  mb-2 uppercase">
                   {t("emailLabel")}
                   <span className="text-red-500"> *</span>
                 </label>
@@ -302,7 +416,7 @@ export default function Section6({ params }) {
 
               {/* Phone */}
               <div>
-                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                <label className="block font-medium text-neutral-700 text-md  mb-2 uppercase">
                   {t("phoneLabel")}
                   <span className="text-red-500"> *</span>
                 </label>
@@ -320,7 +434,7 @@ export default function Section6({ params }) {
 
               {/* Message */}
               <div>
-                <label className="block font-medium text-neutral-700 text-md md:text-lg mb-2 uppercase">
+                <label className="block font-medium text-neutral-700 text-md  mb-2 uppercase">
                   {t("messageLabel")}
                 </label>
                 <textarea
@@ -345,7 +459,7 @@ export default function Section6({ params }) {
                   type="submit"
                   className="mt-6 bg-blue-600 text-white rounded-full w-full py-4 hover:bg-blue-800 transition"
                 >
-                  {loadingSubmit ? "Loading..." : t("submitButton")}
+                  {loadingSubmit ? "Loading..." : <div className="flex flex-col md:flex-row items-center justify-center md:gap-2"><span>{t("submitButton")}</span> <span>( {t("priceLabel")}: {formData.price}€ )</span></div>} 
                 </button>
               </div>
             </form>

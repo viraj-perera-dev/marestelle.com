@@ -69,7 +69,7 @@ export default function Section2({ locale, tourId }) {
             </p>
             <div className="grid grid-cols-1 gap-2 text-sm mt-4">
               <p>🕒 Orario: {selectedTour.guests}</p>
-              <p>🗣️ Lingue: {selectedTour.dimension}</p>
+              <p>🗣️ Lingue: IT - EN</p>
               <p>⏳ Durata: {selectedTour.durata}</p>
             </div>
 
@@ -77,12 +77,12 @@ export default function Section2({ locale, tourId }) {
 
             <div>
               <p className="font-bold uppercase">{tSection2("priceListLabel")}</p>
-              <ul className="list-disc list-inside mt-2 space-y-1">
+              <ul className="mt-2 space-y-1">
                 {selectedTour.priceList.map((item, index) => (
                   <>
                     <li className="font-semibold" key={index}>{item.title}</li>
-                    <li key={index}>{item.adult}</li>
-                    <li key={index}>{item.child}</li>
+                    <li className="list-disc list-inside" key={index}>{tSection2("adult")}: {item.adult}</li>
+                    <li className="list-disc list-inside" key={index}>{tSection2("child")}: {item.child}</li>
                   </>
                 ))}
               </ul>

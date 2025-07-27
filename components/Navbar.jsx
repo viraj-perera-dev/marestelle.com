@@ -168,7 +168,7 @@ export default function Navbar({ locale }) {
                   >
                     <Link
                       href={`/${route.path}`}
-                      className={`uppercase w-full text-3xl md:text-4xl font-semibold ${isActive(
+                      className={`uppercase w-full text-2xl md:text-3xl font-semibold ${isActive(
                         route.path
                       )} hover:text-black text-blue-500`}
                     >
@@ -182,7 +182,7 @@ export default function Navbar({ locale }) {
                       router.push("/login");
                       closeMenu();
                     }}
-                    className={`uppercase w-full text-3xl md:text-4xl font-semibold hover:text-black text-blue-500 cursor-pointer`}
+                    className={`uppercase w-full text-2xl md:text-3xl font-semibold hover:text-black text-blue-500 cursor-pointer`}
                   >
                     Area Riservata
                   </button>
