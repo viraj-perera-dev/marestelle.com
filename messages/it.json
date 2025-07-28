@@ -5,7 +5,8 @@
     "Contact": "Prenota Ora",
     "DiarioDiBordo": "Diario Di Bordo",
     "Faq": "Domande Frequenti",
-    "ContactUs": "Contattaci"
+    "ContactUs": "Contattaci",
+    "AreaRiservata": "Area Riservata"
   },
   "HomePage": {
     "title": "Vivi l’incanto della Riserva Marina delle Isole Tremiti",
@@ -35,6 +36,10 @@
       "backButton": "Indietro",
       "adult": "Adulti",
       "child": "Bambini (0-12 anni)",
+      "readMore": "leggi di più",
+      "readLess": "leggi di meno",
+      "resume": "Riepilogo",
+      "information": "Informazioni",
       "fleet": [
         {
           "id": 1,
@@ -110,7 +115,7 @@
               "include": false
             }
           ],
-          "necessario": "maschera, pinne e scarpe da scoglio",
+          "necessario": ["maschera", "pinne", "scarpe da scoglio"],
           "link": "/contatti"
         },
         {
@@ -187,7 +192,7 @@
               "include": false
             }
           ],
-          "necessario": "maschera, pinne e scarpe da scoglio",
+          "necessario": ["maschera", "pinne", "scarpe da scoglio"],
           "link": "/contatti"
         },
         {
@@ -249,7 +254,7 @@
               "include": false
             }
           ],
-          "necessario": "maschera, pinne e scarpe da scoglio",
+          "necessario": ["maschera", "pinne", "scarpe da scoglio"],
           "link": "/contatti"
         }
       ]
@@ -444,7 +449,7 @@
     "title": "Chi Siamo?",
     "subtitle": "Scopri la storia della nostra famiglia tra le onde delle Isole Tremiti.",
     "bannerTitle": "Vivi il Mare con Noi",
-    "bannerDescription": "Prenota la tua esperienza autentica alle Isole Tremiti con la nostra famiglia.",
+    "bannerDescription": "Prenota il boat tour alle Isole Tremiti.",
     "buttonLabel": "contattaci",
     "sections": [
       {
@@ -485,7 +490,7 @@
   },
   "Contact": {
     "title": "Prenota la Tua Esperienza",
-    "subtitle": "Escursioni giornaliere, gite in barca, cucina di mare e molto altro.",
+    "subtitle": "Tour tra le isole, sunset experience, eventi privati, nuoto open water con barca di appoggio",
     "sectionTitle": "Come Prenotare",
     "sectionDescription": "Compila il modulo con i tuoi dati e le tue preferenze. Ti risponderemo al più presto per confermare la disponibilità.",
     "sectionList": [
@@ -502,7 +507,7 @@
   "DiarioDiBordo": {
     "title": "Diario di Bordo",
     "subtitle": "Come cambiano gli itinerari in base al vento? Scopri i percorsi che seguiamo per garantire sicurezza e meraviglia.",
-    "description": "Spesso il giro delle isole varia in base ai venti. A seconda delle condizioni meteomarine, l’itinerario previsto può subire variazioni. La sicurezza dei passeggeri viene sempre prima.",
+    "description": "Spesso il giro delle isole varia in base ai venti. A seconda delle condizioni meteomarine, l’itinerario previsto può subire variazioni. La sicurezza dei passeggeri viene sempre prima. Ci impegniamo a fare 2/3 soste relax nelle cale dell'itinerario. Le soste potrebbero essere fatte in cale diverse a seconda dell'affollamento di imbarcazioni presenti nelle varie cale.",
     "itineraries": [
       {
         "id": 1,
@@ -516,11 +521,11 @@
         "title": "Venti da Sud-Est (Scirocco, Ostro, Levante)",
         "subtitle": "Rotta Settentrionale",
         "image": "/assets/itinerari/scirocco.webp",
-        "description": "Soste a nord: Cala dei Turchi, Cala del Cretaccio, Cala Tonda. Il versante nord è più protetto e tranquillo."
+        "description": "Soste a nord: Sorrentino, Cala del Cretaccio, Cala Tonda. Il versante nord è più protetto e tranquillo."
       },
       {
         "id": 3,
-        "title": "Venti da Nord o Ponente (Tramontana, Maestrale)",
+        "title": "Vento da Nord, Nord-Ovest, Ovest (Tramontana, Maestrale, Ponente)",
         "subtitle": "Rotta Meridionale",
         "image": "/assets/itinerari/tramontana.webp",
         "description": "Soste relax nel sud dell’arcipelago: Cala dei Pesci, Cala Matano, Cala del Sale."

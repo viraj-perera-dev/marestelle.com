@@ -1,367 +1,384 @@
 {
   "Navbar": {
-    "Home": "Home",
-    "About": "Chi Siamo",
-    "Contact": "Prenota Ora",
-    "DiarioDiBordo": "Diario Di Bordo",
-    "Faq": "Domande Frequenti",
-    "ContactUs": "Contattaci"
+    "Home": "Accueil",
+    "About": "À Propos",
+    "Contact": "Réserver Maintenant",
+    "DiarioDiBordo": "Journal de Bord",
+    "Faq": "Questions Fréquemment Posées",
+    "ContactUs": "Contactez-nous",
+    "AreaRiservata": "Espace Réservé"
   },
   "HomePage": {
-    "title": "Vivi l’incanto della Riserva Marina delle Isole Tremiti",
-    "subtitle": "Mare e Stelle: boat tours alle Isole Tremiti, tra natura incontaminata, accoglienza isolana e il fascino senza tempo di un gozzo in legno.",
+    "title": "Vivez la magie de la Réserve Marine des Îles Tremiti",
+    "subtitle": "Mare e Stelle : excursions en bateau aux Îles Tremiti, entre nature préservée, hospitalité insulaire et le charme intemporel d’un gozzo en bois.",
     "section1": {
-      "title": "Mare e Stelle offre diversi servizi alle Isole Tremiti",
-      "subtitle": "Che sia via mare o via terra, penseremo noi a farvi trascorrere una vacanza da sogno in pieno relax…",
-      "listItem1": "Gozzo Autentico",
-      "subItem1": "Imbarcazione in legno d’epoca, restaurata con attenzione per garantire un’esperienza autentica e raffinata.",
-      "listItem2": "Isole Tremiti da Scoprire",
-      "subItem2": "Itinerari selezionati tra calette, grotte e fondali incontaminati, per una scoperta esclusiva del territorio.",
-      "listItem3": "Esperienze Personalizzate",
-      "subItem3": "Itinerari su misura e servizio VIP.",
-      "listItem4": "Esperti del Settore",
-      "subItem4": "Professionisti della nautica al tuo fianco dal 2021"
+      "title": "Mare e Stelle propose divers services aux Îles Tremiti",
+      "subtitle": "Que ce soit par mer ou par terre, nous nous occupons de tout pour que vous passiez des vacances de rêve en toute détente…",
+      "listItem1": "Gozzo Authentique",
+      "subItem1": "Bateau en bois d'époque, restauré avec soin pour garantir une expérience authentique et raffinée.",
+      "listItem2": "Découvrez les Îles Tremiti",
+      "subItem2": "Itinéraires choisis parmi criques, grottes et fonds marins intacts pour une découverte exclusive du territoire.",
+      "listItem3": "Expériences Personnalisées",
+      "subItem3": "Itinéraires sur mesure et service VIP.",
+      "listItem4": "Experts du Secteur",
+      "subItem4": "Professionnels du nautisme à vos côtés depuis 2021"
     },
     "section2": {
-      "title": "Il nostro gozzo",
-      "subtitle": "Scoprite un modo unico di navigare, tra comfort esclusivo e atmosfere rilassanti.",
-      "button": "Richiedi informazioni",
-      "altroLabel": "Informazioni aggiuntive",
-      "altro": "Cancellazione gratuita fino a 48 ore prima. Cosa succede in caso di pioggia? Se non è possibile svolgere il tour per il maltempo (pioggia, mare mosso, …) verrai contattato e potrai posticipare la data o in alternativa, ottenere un rimborso completo. In caso di ritardi da parte delle compagnie di navigazione non possiamo assicurare il nostro servizio. In caso di avarie o problemi tecnici a bordo la gita viene annullata per ragioni di sicurezza e potrai ottenere un rimborso completo. Non offriamo rimborsi per le spese sostenute per arrivare alle Isole Tremiti. La direzione declina ogni responsabilità per disservizi dovuti a guasti fortuiti alle apparecchiature di bordo. Si declina ogni responsabilità per danni causati da altri ospiti, da eventi atmosferici, calamità naturali, epidemie, malattie e furti.",
-      "priceListLabel": "Prezzi:",
-      "inclusoLabel": "Incluso:",
-      "necessarioLabel": "Cosa portare:",
-      "linkLabel": "Scopri di più",
-      "backButton": "Indietro",
-      "adult": "Adulti",
-      "child": "Bambini (0-12 anni)",
+      "title": "Notre Gozzo",
+      "subtitle": "Découvrez une façon unique de naviguer, entre confort exclusif et ambiance relaxante.",
+      "button": "Demander des informations",
+      "altroLabel": "Informations supplémentaires",
+      "altro": "Annulation gratuite jusqu'à 48 heures avant. Que se passe-t-il en cas de pluie ? Si la visite ne peut pas avoir lieu en raison du mauvais temps (pluie, mer agitée, etc.), vous serez contacté et vous pourrez soit reporter la date, soit recevoir un remboursement complet. En cas de retards des compagnies de navigation, nous ne pouvons pas garantir notre service. En cas de panne ou de problème technique à bord, la sortie sera annulée pour des raisons de sécurité et vous pourrez obtenir un remboursement complet. Aucun remboursement ne sera accordé pour les frais de déplacement vers les Îles Tremiti. La direction décline toute responsabilité en cas de dysfonctionnement dû à des pannes fortuites de l'équipement à bord. Aucune responsabilité ne sera acceptée pour les dommages causés par d'autres invités, les événements météorologiques, les catastrophes naturelles, les épidémies, les maladies ou les vols.",
+      "priceListLabel": "Tarifs :",
+      "inclusoLabel": "Inclus :",
+      "necessarioLabel": "À apporter :",
+      "linkLabel": "En savoir plus",
+      "backButton": "Retour",
+      "adult": "Adultes",
+      "child": "Enfants (0–12 ans)",
+      "readMore": "lire plus",
+      "readLess": "lire moins",
+      "resume": "Résumé",
+      "information": "Informations",
       "fleet": [
         {
           "id": 1,
-          "name": "Boat tour mattutino",
+          "name": "Excursion en bateau du matin",
           "image": "/assets/sectionImages/DJI_0943.webp",
-          "description": "Un tour di 4 ore alla scoperta delle calette più belle delle Isole Tremiti. Si naviga a bordo di un gozzo in legno d’epoca, con soste per nuotare in acque cristalline, momenti di relax e un aperitivo leggero a bordo.",
-          "guests": "Orario | 10:30-14:30",
-          "dimension": "Durata | 4 ore",
-          "details": "Un’escursione completa intorno alle Isole Tremiti, pensata per farvi scoprire la loro essenza autentica, tra paesaggi incontaminati, acque trasparenti e storia millenaria. A bordo del nostro gozzo in legno d’epoca, navigherete lungo la costa frastagliata delle isole, con soste nelle calette più suggestive per nuotare o fare snorkeling. Durante il tour, lo skipper vi guiderà con una spiegazione dettagliata dei principali punti di interesse. Un’esperienza pensata per chi desidera conoscere davvero l’arcipelago, non solo ammirarlo. Il ritmo è lento, il mare è protagonista e ogni sosta è un invito a lasciarsi andare.",
+          "description": "Une excursion de 4 heures à la découverte des plus belles criques des Îles Tremiti. Navigation à bord d’un gozzo en bois d’époque, avec des arrêts pour nager dans des eaux cristallines, des moments de détente et un léger apéritif à bord.",
+          "guests": "Horaire | 10h30 - 14h30",
+          "dimension": "Durée | 4 heures",
+          "details": "Une excursion complète autour des Îles Tremiti, pensée pour vous faire découvrir leur essence authentique, entre paysages préservés, eaux transparentes et histoire millénaire. À bord de notre gozzo en bois d’époque, vous naviguerez le long des côtes escarpées des îles, avec des arrêts dans les criques les plus pittoresques pour nager ou faire du snorkeling. Pendant l’excursion, le skipper vous guidera avec des explications détaillées sur les principaux points d’intérêt. Une expérience conçue pour ceux qui veulent vraiment connaître l’archipel, et pas seulement l’admirer. Le rythme est lent, la mer est la protagoniste, et chaque arrêt est une invitation à se laisser aller.",
           "priceList": [
             {
-              "title": "Maggio:",
-              "adult": "40€ a persona",
-              "child": "30€ a persona"
+              "title": "Mai :",
+              "adult": "40€ par personne",
+              "child": "30€ par personne"
             },
             {
-              "title": "Giugno:",
-              "adult": "40€ a persona",
-              "child": "30€ a persona"
+              "title": "Juin :",
+              "adult": "40€ par personne",
+              "child": "30€ par personne"
             },
             {
-              "title": "Luglio:",
-              "adult": "45€ a persona",
-              "child": "35€ a persona"
+              "title": "Juillet :",
+              "adult": "45€ par personne",
+              "child": "35€ par personne"
             },
             {
-              "title": "1 Agosto - 9 Agosto:",
-              "adult": "60€ a persona",
-              "child": "50€ a persona"
+              "title": "1 Août - 9 Août :",
+              "adult": "60€ par personne",
+              "child": "50€ par personne"
             },
             {
-              "title": "10 Agosto - 17 Agosto:",
-              "adult": "70€ a persona",
-              "child": "60€ a persona"
+              "title": "10 Août - 17 Août :",
+              "adult": "70€ par personne",
+              "child": "60€ par personne"
             },
             {
-              "title": "18 Agosto - 31 Agosto:",
-              "adult": "60€ a persona",
-              "child": "50€ a persona"
+              "title": "18 Août - 31 Août :",
+              "adult": "60€ par personne",
+              "child": "50€ par personne"
             },
             {
-              "title": "1 Settembre - 10 Settembre:",
-              "adult": "45€ a persona",
-              "child": "35€ a persona"
+              "title": "1 Septembre - 10 Septembre :",
+              "adult": "45€ par personne",
+              "child": "35€ par personne"
             },
             {
-              "title": "11 Settembre - 30 Settembre:",
-              "adult": "40€ a persona",
-              "child": "30€ a persona"
+              "title": "11 Septembre - 30 Septembre :",
+              "adult": "40€ par personne",
+              "child": "30€ par personne"
             },
             {
-              "title": "Ottobre:",
-              "adult": "40€ a persona",
-              "child": "25€ a persona"
+              "title": "Octobre :",
+              "adult": "40€ par personne",
+              "child": "25€ par personne"
             }
           ],
-          "durata": "4 ore",
+          "durata": "4 heures",
           "incluso": [
             {
               "title": "Skipper",
               "include": true
             },
             {
-              "title": "Carburante",
+              "title": "Carburant",
               "include": true
             },
             {
-              "title": "Cambusa",
+              "title": "Ravitaillement",
               "include": true
             },
             {
-              "title": "Traghetto per raggiungere le Isole Tremiti",
+              "title": "Ferry vers les Îles Tremiti",
               "include": false
             }
           ],
-          "necessario": "maschera, pinne e scarpe da scoglio",
+          "necessario": [
+            "masque",
+            "palmes",
+            "chaussures d’eau"
+          ],
           "link": "/contatti"
         },
         {
           "id": 2,
           "image": "/assets/sectionImages/DJI_0967.webp",
-          "name": "Boat tour pomeridiano",
-          "description": "Stessa rotta, stesso spirito, ma con un’atmosfera ancora più pacifica: il pomeriggio porta con sé un mare meno affollato e una luce più calda. Tra bagni rigeneranti, relax a bordo del nostro gozzo in legno e un aperitivo con vista, è l’occasione perfetta per godersi le Tremiti con calma.",
-          "guests": "Orario | 14:30-18:30",
-          "dimension": "Durata | 4 ore",
-          "details": "Un’escursione completa intorno alle Isole Tremiti, pensata per farvi scoprire la loro essenza autentica, tra paesaggi incontaminati, acque trasparenti e storia millenaria. A bordo del nostro gozzo in legno d’epoca, navigherete lungo la costa frastagliata delle isole, con soste nelle calette più suggestive per nuotare o fare snorkeling. Durante il tour, lo skipper vi guiderà con una spiegazione dettagliata dei principali punti di interesse. Un’esperienza pensata per chi desidera conoscere davvero l’arcipelago, non solo ammirarlo. Il ritmo è lento, il mare è protagonista e ogni sosta è un invito a lasciarsi andare.",
+          "name": "Excursion en bateau de l’après-midi",
+          "description": "Même itinéraire, même esprit, mais dans une ambiance encore plus paisible : l’après-midi offre une mer moins fréquentée et une lumière plus douce. Entre baignades revigorantes, détente à bord de notre gozzo en bois et apéritif avec vue, c’est l’occasion parfaite de profiter des Tremiti en toute tranquillité.",
+          "guests": "Horaire | 14h30 - 18h30",
+          "dimension": "Durée | 4 heures",
+          "details": "Une excursion complète autour des Îles Tremiti, conçue pour vous faire découvrir leur essence authentique, entre paysages vierges, eaux transparentes et histoire millénaire. À bord de notre gozzo en bois d’époque, vous longerez la côte déchiquetée des îles, avec des arrêts dans les criques les plus charmantes pour nager ou faire du snorkeling. Pendant l’excursion, le skipper vous offrira des explications détaillées sur les principaux points d’intérêt. Une expérience destinée à ceux qui veulent vraiment connaître l’archipel, et pas seulement l’admirer. Le rythme est lent, la mer est la protagoniste, et chaque arrêt est une invitation à se laisser porter.",
           "priceList": [
             {
-              "title": "Maggio:",
-              "adult": "40€ a persona",
-              "child": "30€ a persona"
+              "title": "Mai :",
+              "adult": "40€ par personne",
+              "child": "30€ par personne"
             },
             {
-              "title": "Giugno:",
-              "adult": "40€ a persona",
-              "child": "30€ a persona"
+              "title": "Juin :",
+              "adult": "40€ par personne",
+              "child": "30€ par personne"
             },
             {
-              "title": "Luglio:",
-              "adult": "45€ a persona",
-              "child": "35€ a persona"
+              "title": "Juillet :",
+              "adult": "45€ par personne",
+              "child": "35€ par personne"
             },
             {
-              "title": "1 Agosto - 9 Agosto:",
-              "adult": "60€ a persona",
-              "child": "50€ a persona"
+              "title": "1 Août - 9 Août :",
+              "adult": "60€ par personne",
+              "child": "50€ par personne"
             },
             {
-              "title": "10 Agosto - 17 Agosto:",
-              "adult": "70€ a persona",
-              "child": "60€ a persona"
+              "title": "10 Août - 17 Août :",
+              "adult": "70€ par personne",
+              "child": "60€ par personne"
             },
             {
-              "title": "18 Agosto - 31 Agosto:",
-              "adult": "60€ a persona",
-              "child": "50€ a persona"
+              "title": "18 Août - 31 Août :",
+              "adult": "60€ par personne",
+              "child": "50€ par personne"
             },
             {
-              "title": "1 Settembre - 10 Settembre:",
-              "adult": "45€ a persona",
-              "child": "35€ a persona"
+              "title": "1 Septembre - 10 Septembre :",
+              "adult": "45€ par personne",
+              "child": "35€ par personne"
             },
             {
-              "title": "11 Settembre - 30 Settembre:",
-              "adult": "40€ a persona",
-              "child": "30€ a persona"
+              "title": "11 Septembre - 30 Septembre :",
+              "adult": "40€ par personne",
+              "child": "30€ par personne"
             },
             {
-              "title": "Ottobre:",
-              "adult": "40€ a persona",
-              "child": "25€ a persona"
+              "title": "Octobre :",
+              "adult": "40€ par personne",
+              "child": "25€ par personne"
             }
           ],
-          "durata": "4 ore",
+          "durata": "4 heures",
           "incluso": [
             {
               "title": "Skipper",
               "include": true
             },
             {
-              "title": "Carburante",
+              "title": "Carburant",
               "include": true
             },
             {
-              "title": "Cambusa",
+              "title": "Ravitaillement",
               "include": true
             },
             {
-              "title": "Traghetto per raggiungere le Isole Tremiti",
+              "title": "Ferry vers les Îles Tremiti",
               "include": false
             }
           ],
-          "necessario": "maschera, pinne e scarpe da scoglio",
+          "necessario": [
+            "masque",
+            "palmes",
+            "chaussures d’eau"
+          ],
           "link": "/contatti"
         },
         {
           "id": 3,
-          "name": "Sunset experience",
+          "name": "Expérience au coucher du soleil",
           "image": "/assets/sectionImages/sunset.webp",
-          "description": "Un’esperienza intima e rilassante, pensata per chi ama la bellezza dei momenti autentici. Si parte al calar del sole con una sosta nelle cale più suggestive per un bagno rigenerante, seguita da un brindisi a bordo. Navigando tra silenzi e riflessi, si ascolta il canto delle Diomedee — uccelli notturni simbolo delle Tremiti. Quando il cielo si fa scuro, ci si ferma per osservare le stelle, lontani da ogni inquinamento luminoso.",
-          "guests": "Orario | 19:30-21:30",
-          "dimension": "Durata | 2 ore",
-          "details": "Un’escursione completa intorno alle Isole Tremiti, pensata per farvi scoprire la loro essenza autentica, tra paesaggi incontaminati, acque trasparenti e storia millenaria. A bordo del nostro gozzo in legno d’epoca, navigherete lungo la costa frastagliata delle isole, con soste nelle calette più suggestive per nuotare o fare snorkeling. Durante il tour, lo skipper vi guiderà con una spiegazione dettagliata dei principali punti di interesse. Un’esperienza pensata per chi desidera conoscere davvero l’arcipelago, non solo ammirarlo. Il ritmo è lento, il mare è protagonista e ogni sosta è un invito a lasciarsi andare.",
+          "description": "Une expérience intime et relaxante, pensée pour ceux qui aiment la beauté des moments authentiques. Le départ a lieu au coucher du soleil avec un arrêt dans les criques les plus pittoresques pour une baignade rafraîchissante, suivi d’un toast à bord. En naviguant entre silences et reflets, on écoute le chant des Diomédées — oiseaux nocturnes symboles des Tremiti. Lorsque le ciel s’assombrit, on s’arrête pour observer les étoiles, loin de toute pollution lumineuse.",
+          "guests": "Horaire | 19h30 - 21h30",
+          "dimension": "Durée | 2 heures",
+          "details": "Une excursion complète autour des Îles Tremiti, conçue pour vous faire découvrir leur essence authentique, entre paysages vierges, eaux cristallines et histoire millénaire. À bord de notre gozzo en bois d’époque, vous longerez la côte déchiquetée des îles, avec des arrêts dans les criques les plus charmantes pour nager ou faire du snorkeling. Pendant l’excursion, le skipper vous offrira des explications détaillées sur les principaux points d’intérêt. Une expérience destinée à ceux qui veulent vraiment connaître l’archipel, et pas seulement l’admirer. Le rythme est lent, la mer est la protagoniste, et chaque arrêt est une invitation à se détendre.",
           "priceList": [
             {
-              "title": "Maggio e Giugno:",
-              "adult": "50€ a persona",
-              "child": "40€ a persona"
+              "title": "Mai & Juin :",
+              "adult": "50€ par personne",
+              "child": "40€ par personne"
             },
             {
-              "title": "Luglio:",
-              "adult": "60€ a persona",
-              "child": "50€ a persona"
+              "title": "Juillet :",
+              "adult": "60€ par personne",
+              "child": "50€ par personne"
             },
             {
-              "title": "1 Agosto - 9 Agosto:",
-              "adult": "60€ a persona",
-              "child": "50€ a persona"
+              "title": "1 Août - 9 Août :",
+              "adult": "60€ par personne",
+              "child": "50€ par personne"
             },
             {
-              "title": "10 Agosto - 17 Agosto:",
-              "adult": "70€ a persona",
-              "child": "60€ a persona"
+              "title": "10 Août - 17 Août :",
+              "adult": "70€ par personne",
+              "child": "60€ par personne"
             },
             {
-              "title": "18 Agosto - 31 Agosto:",
-              "adult": "60€ a persona",
-              "child": "50€ a persona"
+              "title": "18 Août - 31 Août :",
+              "adult": "60€ par personne",
+              "child": "50€ par personne"
             },
             {
-              "title": "Settembre - Ottobre:",
-              "adult": "50€ a persona",
-              "child": "40€ a persona"
+              "title": "Septembre - Octobre :",
+              "adult": "50€ par personne",
+              "child": "40€ par personne"
             }
           ],
-          "durata": "2 ore",
+          "durata": "2 heures",
           "incluso": [
             {
               "title": "Skipper",
               "include": true
             },
             {
-              "title": "Carburante",
+              "title": "Carburant",
               "include": true
             },
             {
-              "title": "Cambusa",
+              "title": "Ravitaillement",
               "include": true
             },
             {
-              "title": "Traghetto per raggiungere le Isole Tremiti",
+              "title": "Ferry vers les Îles Tremiti",
               "include": false
             }
           ],
-          "necessario": "maschera, pinne e scarpe da scoglio",
+          "necessario": [
+            "masque",
+            "palmes",
+            "chaussures d’eau"
+          ],
           "link": "/contatti"
         }
       ]
     },
     "section3": {
-      "title": "Seguici sui nostri canali social",
-      "subtitle": "Condividi la tua esperienza e sarai ricondiviso."
+      "title": "Suivez-nous sur nos réseaux sociaux",
+      "subtitle": "Partagez votre expérience et soyez mis en avant."
     },
     "section4": {
-      "title": "Esperienze che Offriamo",
-      "subtitle": "Esperienze su misura per ogni occasione",
-      "button": "Scopri di più",
+      "title": "Expériences que nous proposons",
+      "subtitle": "Des expériences sur mesure pour chaque occasion",
+      "button": "En savoir plus",
       "experiences": [
         {
           "id": "01",
-          "title": "Boat tour di 4 ore",
-          "description": "Esplora le calette delle Isole Tremiti in un tour di 4 ore con soste per nuotare, relax e aperitivo a bordo.",
+          "title": "Tour en bateau de 4 heures",
+          "description": "Explorez les criques des îles Tremiti lors d’un tour de 4 heures avec des arrêts baignade, détente et apéritif à bord.",
           "link": "tour-detail/0",
           "link2": "tour-detail/1",
-          "linkLabel": "Tour mattutino",
-          "linkLabel2": "Tour pomeridiano"
+          "linkLabel": "Tour du matin",
+          "linkLabel2": "Tour de l'après-midi"
         },
         {
           "id": "02",
-          "title": "Sunset experience",
-          "description": "Un'uscita al tramonto tra bagni, brindisi e stelle, immersi nel silenzio e nella magia delle Tremiti.",
+          "title": "Expérience au coucher du soleil",
+          "description": "Une sortie au coucher du soleil entre baignades, toasts et étoiles, plongés dans le silence et la magie des Tremiti.",
           "link": "tour-detail/2",
-          "linkLabel": "Scopri di più"
+          "linkLabel": "En savoir plus"
         },
         {
           "id": "03",
-          "title": "Eventi privati o tour personalizzati",
-          "description": "Crea il tuo tour su misura o organizza un evento esclusivo in barca.",
+          "title": "Événements privés ou tours personnalisés",
+          "description": "Créez votre propre tour sur mesure ou organisez un événement exclusif à bord.",
           "link": "contatti",
-          "linkLabel": "Scopri di più"
+          "linkLabel": "En savoir plus"
         },
         {
           "id": "04",
-          "title": "Nuoto Open Water con barca di appoggio",
-          "description": "Allenati o partecipa a sessioni di nuoto in mare aperto con supporto barca.",
+          "title": "Nage en eau libre avec bateau de soutien",
+          "description": "Entraînez-vous ou participez à des sessions de nage en mer avec l’assistance d’un bateau.",
           "link": "contatti",
-          "linkLabel": "Scopri di più"
+          "linkLabel": "En savoir plus"
         }
       ],
       "services": [
         {
           "id": "01",
-          "title": "Nuoto open water con barca di appoggio",
-          "description": "Isole Tremiti in totale sicurezza. La nostra barca segue i nuotatori lungo il percorso concordato, offrendo assistenza continua, orientamento e supporto tecnico in ogni fase dell’attività. Perfetto per allenamenti, traversate amatoriali o nuotate in libertà, con la discreta ma attenta presenza del nostro skipper esperto.",
+          "title": "Nage en eau libre avec bateau de soutien",
+          "description": "Îles Tremiti en toute sécurité. Notre bateau accompagne les nageurs tout au long du parcours convenu, offrant une assistance continue, une orientation et un soutien technique à chaque étape. Parfait pour les entraînements, les traversées amateurs ou les baignades libres, avec la présence discrète mais attentive de notre skipper expérimenté.",
           "link": "contatti",
-          "linkLabel": "Contattaci"
+          "linkLabel": "Contactez-nous"
         }
       ]
     },
     "section5": {
-      "title": "Cosa dicono i nostri clienti",
-      "subtitle": "Esperienze uniche e indimenticabili",
-      "rating": "Recensione Verificata",
-      "showMore": "Mostra di più",
-      "showLess": "Mostra meno",
+      "title": "Ce que disent nos clients",
+      "subtitle": "Des expériences uniques et inoubliables",
+      "rating": "Avis vérifié",
+      "showMore": "Voir plus",
+      "showLess": "Voir moins",
       "testimonials": [
         {
           "name": "P R B",
-          "location": "Roma, Italia",
+          "location": "Rome, Italie",
           "image": "/assets/testimonials/PRB.webp",
-          "title": "Altamente raccomandato",
-          "text": "Riccardo è una guida attenta e ha grande cura degli ospiti, il suo racconto è interessante e mai invadente. È figlio d'arte ed ama le sue isole. Ci ha servito un aperitivo unico, con pesce apprezzatissimo, frutta e vino ghiacciato. Lo consigliamo con certezza, e cercheremo anche noi di tornare presto e farci un altro giro tra calette e grotte, capperi e gabbiani.",
-          "date": "3/06/2025",
+          "title": "Fortement recommandé",
+          "text": "Riccardo est un guide attentionné qui prend grand soin de ses invités. Son récit est intéressant et jamais envahissant. Héritier d’une tradition familiale, il aime profondément ses îles. Il nous a servi un apéritif unique avec du poisson délicieux, des fruits et du vin bien frais. Nous le recommandons sans hésiter et nous reviendrons bientôt pour un autre tour entre criques et grottes, câpres et mouettes.",
+          "date": "03/06/2025",
           "rating": 5
         },
         {
           "name": "Ornella B",
-          "location": "Italia",
+          "location": "Italie",
           "image": "/assets/testimonials/OrnellaB.webp",
-          "title": "Bellissima!",
-          "text": "Gran bel giro in barca e vista spettacolare.Riccardo è stato veramente fantastico. Consiglio molto se andate alle Tremiti giro in barca con MARE E STELLE,TOP😊",
+          "title": "Magnifique !",
+          "text": "Superbe tour en bateau avec une vue spectaculaire. Riccardo a été vraiment fantastique. Si vous allez aux Tremiti, je vous recommande fortement un tour en bateau avec MARE E STELLE, TOP 😊",
           "date": "25/09/2024",
           "rating": 5
         },
         {
           "name": "fm1270",
-          "location": "Livorno, Italia",
+          "location": "Livourne, Italie",
           "image": "/assets/testimonials/fm1270.webp",
-          "title": "Esperienza consigliata",
-          "text": "Giornata alle Tremiti con mia figlia di 20 anni. Nonostante il forte vento di maestrale Riccardo ci ha guidato per le calette, illustrandoci le bellezze dell'Isola. professionale e gentile. Buono l'aperitivo; cibo e vino. Ottimo rapporto qualità/prezzo. Consigliato!",
+          "title": "Expérience recommandée",
+          "text": "Journée aux Tremiti avec ma fille de 20 ans. Malgré le fort vent de Mistral, Riccardo nous a guidées à travers les criques, en expliquant les beautés de l’île. Professionnel et aimable. Bon apéritif : nourriture et vin. Excellent rapport qualité/prix. Recommandé !",
           "date": "10/09/2024",
           "rating": 5
         },
         {
           "name": "Nadia C",
-          "location": "Tremiti, Italia",
+          "location": "Tremiti, Italie",
           "image": "/assets/testimonials/NadiaC.webp",
-          "title": "Super top!!!!",
-          "text": "Riccardo super top!!!! Una guida attenta, scrupolosa e molto informata ma allo stesso tempo che ti permette di divertirti e passare del tempo in sicurezza in barca!!! Super consigliato sicuramente torneremo dall'Abruzzo la prossima volta per stare qualche giorno in loro compagnia!!!!! Voto 10",
+          "title": "Super top !!!!",
+          "text": "Riccardo est super top !!!! Un guide attentif, méticuleux et très informé, mais qui sait aussi laisser place à la détente et à l’amusement en toute sécurité ! Fortement recommandé, nous reviendrons certainement depuis les Abruzzes pour passer quelques jours avec eux !!!!! Note 10",
           "date": "18/08/2024",
           "rating": 5
         },
         {
           "name": "salutoni",
-          "location": "Italia",
+          "location": "Italie",
           "image": "/assets/testimonials/salutoni.webp",
-          "title": "Tremiti affascinanti con uno skipper doc",
-          "text": "Fin dalla prenotazione avevo intuito che c’era grande professionalità sia nel fornire informazioni che nel richiederle per meglio gestire il giro. La professionalità era motivata dalla passione e amore per la propria terra e il giro poi si è trasformato in stupore e conoscenza il tutto condito dall’ottimo aperitivo servito a bordo. Posso solo dire grazie per il calore sentito nei racconti e descrizioni di queste isole che sono stupende e che vanno visitate con rispetto per assaporarle completamente. Grazie a Riccardo per aver mantenuto intatta la tradizione e competenza marinaresca",
+          "title": "Tremiti fascinantes avec un vrai skipper",
+          "text": "Dès la réservation, j’ai perçu un grand professionnalisme, tant dans la fourniture d'informations que dans leur demande pour mieux organiser le tour. Ce professionnalisme était motivé par la passion et l’amour pour sa terre. La sortie s’est transformée en émerveillement et découverte, accompagnée d’un excellent apéritif servi à bord. Merci pour la chaleur ressentie dans les récits et les descriptions de ces îles magnifiques, à visiter avec respect pour les apprécier pleinement. Merci à Riccardo pour avoir préservé la tradition et le savoir-faire marin.",
           "date": "17/08/2024",
           "rating": 5
         },
         {
           "name": "Andrea",
-          "location": "Monza, Italia",
+          "location": "Monza, Italie",
           "image": "/assets/testimonials/andrea.webp",
-          "title": "Alla scoperta delle Tremiti",
-          "text": "Gita fantastica in barca di quattro ore alla scoperta delle Tremiti con tre soste bagno! Maschere per snorkeling indispensabili per godere questa bellezza! Bravo Riccardo per averci accompagnato, spiegato e preparato un ottimo ed abbondante aperitivo in barca e per averci fatto assaggiare il caffè del marinaio…di cui non sveliamo l’ingrediente misterioso :)",
+          "title": "À la découverte des Tremiti",
+          "text": "Excursion en bateau fantastique de quatre heures à la découverte des Tremiti, avec trois arrêts baignade ! Les masques de snorkeling sont indispensables pour profiter pleinement de cette beauté ! Bravo à Riccardo pour nous avoir guidés, expliqués, et pour l’excellent apéritif copieux servi à bord—sans oublier le café du marin… dont nous ne révélerons pas l’ingrédient secret :)",
           "date": "11/08/2024",
           "rating": 5
         }
@@ -369,176 +386,176 @@
     }
   },
   "BookingForm": {
-    "title": "Prenota il tuo tour",
-    "subtitle": "Prenota il tuo tour in barca",
-    "label": "Seleziona una data",
-    "priceLabel": "prezzo",
-    "closeLabel": "Chiudi",
-    "error": "Per favore seleziona una data per proseguire.",
-    "nextButton": "Prosegui",
-    "timeLabel": "Seleziona orario",
-    "morning": "Tour Mattutino",
-    "afternoon": "Tour Pomeridiano",
-    "evening": "Tour Tramonto",
-    "nameLabel": "Nome completo",
-    "emailLabel": "Indirizzo Email",
-    "phoneLabel": "Numero di Telefono",
-    "messageLabel": "Messaggio (Opzionale)",
-    "nameRequired": "Il nome è obbligatorio.",
-    "emailRequired": "L’email è obbligatoria.",
-    "phoneRequired": "Il telefono è obbligatorio.",
-    "dateRequired": "La data è obbligatoria.",
-    "backButton": "Indietro",
-    "submitButton": "Prenota Ora",
-    "alertSuccess": "Prenotazione inviata!",
-    "successTitle": "Richiesta inviata!",
-    "successMessage": "Riceverai una email di conferma per procedere."
+    "title": "Réservez votre tour",
+    "subtitle": "Réservez votre excursion en bateau",
+    "label": "Sélectionnez une date",
+    "priceLabel": "prix",
+    "closeLabel": "Fermer",
+    "error": "Veuillez sélectionner une date pour continuer.",
+    "nextButton": "Suivant",
+    "timeLabel": "Sélectionnez l’horaire",
+    "morning": "Tour du matin",
+    "afternoon": "Tour de l’après-midi",
+    "evening": "Tour au coucher du soleil",
+    "nameLabel": "Nom complet",
+    "emailLabel": "Adresse e-mail",
+    "phoneLabel": "Numéro de téléphone",
+    "messageLabel": "Message (Optionnel)",
+    "nameRequired": "Le nom est requis.",
+    "emailRequired": "L’e-mail est requis.",
+    "phoneRequired": "Le numéro de téléphone est requis.",
+    "dateRequired": "La date est requise.",
+    "backButton": "Retour",
+    "submitButton": "Réserver maintenant",
+    "alertSuccess": "Réservation envoyée !",
+    "successTitle": "Demande envoyée !",
+    "successMessage": "Vous recevrez un e-mail de confirmation pour continuer."
   },
   "FAQ": {
-    "title": "Domande Frequenti",
-    "subtitle": "Scopri le nostre domande più frequenti.",
+    "title": "Foire Aux Questions",
+    "subtitle": "Découvrez nos questions les plus fréquentes.",
     "questions": [
       {
-        "question": "Da dove parte l’escursione?",
-        "answer": "Dal porto dell’Isola di San Domino. Scendendo dal traghetto, sulla sinistra trovate ormeggiato il nostro gozzo."
+        "question": "D'où part l’excursion ?",
+        "answer": "Du port de l'île de San Domino. En descendant du ferry, notre goélette en bois est amarrée sur la gauche."
       },
       {
-        "question": "L’escursione può partire da San Nicola?",
-        "answer": "L’escursione parte dal porto dell’isola di San Domino. Tuttavia, se preferite iniziare l’escursione da San Nicola, possiamo organizzare il prelievo da lì, previo avviso anticipato tramite cellulare o email. È importante comunicarlo con almeno qualche ora di anticipo per consentirci di gestire al meglio l’organizzazione."
+        "question": "L’excursion peut-elle partir de San Nicola ?",
+        "answer": "L’excursion part du port de l’île de San Domino. Cependant, si vous préférez commencer depuis San Nicola, nous pouvons organiser le ramassage à cet endroit, à condition de nous prévenir à l’avance par téléphone ou par email. Il est important de nous en informer quelques heures à l’avance pour que nous puissions nous organiser au mieux."
       },
       {
-        "question": "Come possiamo raggiungere le isole per fare l’escursione?",
-        "answer": "Noi partiamo dal porto di San Domino, per cui per raggiungerci potete prenotare il traghetto da Termoli con la NLG, dal Gargano con il Gruppo Armatori Garganici o l’elicottero da Foggia con Alidaunia."
+        "question": "Comment rejoindre les îles pour l’excursion ?",
+        "answer": "Nous partons du port de San Domino. Pour nous rejoindre, vous pouvez réserver le ferry depuis Termoli avec NLG, depuis le Gargano avec le Groupe Armatori Garganici, ou l’hélicoptère depuis Foggia avec Alidaunia."
       },
       {
-        "question": "Si parcheggia facilmente al porto di Termoli?",
-        "answer": "C’è un parcheggio a pagamento. In alta stagione (luglio e agosto) conviene prenotarlo. Potete farlo contattando la biglietteria del porto."
+        "question": "Est-il facile de se garer au port de Termoli ?",
+        "answer": "Il y a un parking payant. En haute saison (juillet et août), il est conseillé de le réserver. Vous pouvez le faire en contactant la billetterie du port."
       },
       {
-        "question": "È possibile tuffarsi dalla barca?",
-        "answer": "Per motivi di sicurezza, non è consentito tuffarsi dalla barca. Le superfici della barca possono risultare scivolose, soprattutto quando sono bagnate, aumentando notevolmente il rischio di cadute accidentali, urti con strutture rigide (come il bordo o il motore) o immersioni in punti non sicuri. Anche in presenza di fondali apparentemente profondi, non è sempre possibile garantire l’assenza di ostacoli sommersi o variazioni improvvise della profondità. Inoltre, da un punto di vista legale e assicurativo, in caso di incidente derivante da tuffi non autorizzati, la responsabilità ricade interamente sull’autore del gesto. L’equipaggio ha il dovere di far rispettare tutte le misure previste per la tutela della salute e dell’incolumità degli ospiti. Per vivere l’esperienza in totale serenità, sono previste soste bagno in rada o in punti sicuri, dove sarà possibile scendere comodamente in acqua utilizzando la scaletta o accompagnati dal personale, sempre nel rispetto delle normative e delle condizioni del mare."
+        "question": "Est-il possible de plonger depuis le bateau ?",
+        "answer": "Pour des raisons de sécurité, il est interdit de plonger depuis le bateau. Les surfaces peuvent être glissantes, surtout mouillées, augmentant le risque de chutes, de chocs ou de plongeons dans des zones dangereuses. Même avec des fonds marins apparemment profonds, on ne peut garantir l’absence d’obstacles ou de variations soudaines. D’un point de vue légal et assurantiel, tout incident dû à une plongée non autorisée est sous la responsabilité exclusive de la personne concernée. L’équipage doit veiller au respect des mesures de sécurité. Pour profiter de l’expérience en toute sérénité, des arrêts baignade sont prévus dans des zones sûres, où il est possible d’entrer dans l’eau confortablement grâce à l’échelle ou avec l’aide de l’équipage, selon les conditions maritimes."
       },
       {
-        "question": "Devo togliere le scarpe per salire in barca?",
-        "answer": "Sì, è obbligatorio togliere le scarpe prima di salire a bordo. Questa regola è adottata per due motivi principali: Igiene e rispetto degli spazi comuni: la barca è uno spazio condiviso e, proprio come in casa, mantenere il ponte pulito è importante per il comfort di tutti. Le suole delle scarpe portano sabbia, sporco e detriti che possono danneggiare le superfici o renderle scivolose. Sicurezza: camminare scalzi o con calzature adatte (tipo calzari nautici antiscivolo approvati dall’equipaggio) riduce il rischio di scivolamenti o inciampi sul ponte, soprattutto in presenza di superfici bagnate. Scarpe con suola dura o inadatta possono compromettere l’equilibrio e aumentare il pericolo di cadute."
+        "question": "Dois-je enlever mes chaussures pour monter à bord ?",
+        "answer": "Oui, il est obligatoire d’enlever ses chaussures avant de monter. Cette règle est en place pour deux raisons : hygiène et respect de l’espace commun — le bateau est un espace partagé, comme à la maison, et garder le pont propre est essentiel pour le confort de tous. De plus, pour la sécurité : marcher pieds nus ou avec des chaussures adaptées (type chaussons antidérapants nautiques) réduit les risques de glissade, surtout sur surfaces mouillées."
       },
       {
-        "question": "È possibile portare animali a bordo?",
-        "answer": "No, non è possibile portare animali a bordo. La nostra imbarcazione è condivisa da più ospiti e, per garantire il comfort e il benessere di tutti, non è consentito l'accesso agli animali domestici. La scelta è dettata da motivi igienici, ma anche da considerazioni legate a spazi limitati, possibili allergie e al rispetto di chi potrebbe non sentirsi a proprio agio in presenza di animali. Inoltre, la permanenza in barca può essere stressante per gli animali, soprattutto in presenza di caldo, rumori, movimento e contesti non familiari, per cui non sarebbe un’esperienza sicura o piacevole nemmeno per loro."
+        "question": "Puis-je emmener des animaux à bord ?",
+        "answer": "Non, les animaux ne sont pas autorisés à bord. Le bateau étant partagé entre plusieurs invités, pour garantir le confort et le bien-être de tous, l’accès aux animaux domestiques est interdit. Cette règle est justifiée par des raisons d’hygiène, d’espace limité, d’allergies potentielles et du respect de ceux qui pourraient ne pas se sentir à l’aise avec des animaux. De plus, un environnement nautique peut être stressant pour les animaux à cause de la chaleur, des bruits, du mouvement et de l’environnement inconnu."
       },
       {
-        "question": "Cosa mi consigliate di portare a bordo?",
-        "answer": "Per goderti al meglio la giornata in barca ti consigliamo di portare: Costume, Crema solare (meglio se eco-friendly), occhiali da sole, telo mare, maschera e boccaglio per lo snorkeling e le scarpe da scoglio. Lo spazio a bordo è limitato, quindi è meglio portare solo l’essenziale in una borsa morbida e compatta."
+        "question": "Que dois-je apporter à bord ?",
+        "answer": "Pour profiter pleinement de votre journée en mer, nous vous conseillons d’apporter : maillot de bain, crème solaire (de préférence écologique), lunettes de soleil, serviette de plage, masque et tuba pour le snorkeling, et chaussures d’eau. L’espace à bord étant limité, il vaut mieux n’emporter que l’essentiel dans un sac souple et compact."
       },
       {
-        "question": "È possibile ricevere o noleggiare attrezzatura da snorkeling a bordo?",
-        "answer": "No, l’attrezzatura da snorkeling non viene fornita a bordo. Per motivi igienico-sanitari, non mettiamo a disposizione maschere, boccagli o pinne. Si tratta infatti di oggetti a stretto contatto con bocca, naso e viso, e anche con un’accurata sanificazione non possiamo garantire gli standard di sicurezza e comfort che desideriamo offrire a tutti i nostri ospiti. Inoltre, per ragioni logistiche e di spazio, la barca non è attrezzata per gestire il trasporto, la distribuzione o la manutenzione di attrezzature personali. Ti consigliamo quindi di portare con te la tua maschera, se desideri fare snorkeling durante le soste bagno. È l’opzione più sicura, comoda e sostenibile per vivere al meglio l’esperienza tra le meraviglie marine delle Isole Tremiti."
+        "question": "Le matériel de snorkeling est-il fourni à bord ?",
+        "answer": "Non, l’équipement de snorkeling n’est pas fourni. Pour des raisons d’hygiène, nous ne mettons pas à disposition de masques, tubas ou palmes. Ces équipements sont en contact direct avec la bouche, le nez et le visage, et même avec une désinfection soignée, nous ne pouvons garantir le niveau de sécurité souhaité. Par ailleurs, pour des raisons de logistique et d’espace, le bateau n’est pas équipé pour gérer ces accessoires. Nous vous recommandons donc d’apporter votre propre matériel si vous souhaitez faire du snorkeling pendant les pauses baignade."
       },
       {
-        "question": "Posso pescare durante l’escursione in barca?",
-        "answer": "No."
+        "question": "Puis-je pêcher pendant l’excursion ?",
+        "answer": "Non."
       }
     ]
   },
   "AboutUs": {
-    "title": "Chi Siamo?",
-    "subtitle": "Scopri la storia della nostra famiglia tra le onde delle Isole Tremiti.",
-    "bannerTitle": "Vivi il Mare con Noi",
-    "bannerDescription": "Prenota la tua esperienza autentica alle Isole Tremiti con la nostra famiglia.",
-    "buttonLabel": "contattaci",
+    "title": "Qui Sommes-Nous ?",
+    "subtitle": "Découvrez l’histoire de notre famille parmi les vagues des Îles Tremiti.",
+    "bannerTitle": "Vivez la Mer avec Nous",
+    "bannerDescription": "Réservez votre excursion en bateau aux Îles Tremiti.",
+    "buttonLabel": "contactez-nous",
     "sections": [
       {
-        "title": "La Nostra Storia",
-        "description": "Mare e Stelle non è solo un tour in barca. È un invito a rallentare, ad assaporare il ritmo dell’isola e a vivere il mare come lo viviamo noi isolani. Ogni escursione dura il tempo giusto – circa 4 ore – per permetterti di scoprire le calette più belle via mare, ma anche di goderti del tempo libero per esplorare le isole da terra, in autonomia e senza fretta.",
+        "title": "Notre Histoire",
+        "description": "Mare e Stelle n’est pas seulement une excursion en bateau. C’est une invitation à ralentir, à savourer le rythme de l’île et à vivre la mer comme nous, les insulaires. Chaque excursion dure environ 4 heures — juste assez pour découvrir les plus belles criques par la mer, mais aussi pour profiter d’un moment libre pour explorer les îles à votre rythme.",
         "image": "/assets/sectionImages/DJI_0959_hero.webp"
       },
       {
-        "title": "A Bordo con Riccardo",
-        "description": "A guidarti in questa esperienza c’è Riccardo, skipper e anfitrione, pronto ad accoglierti a bordo di un gozzo in legno con oltre 70 anni di storia e di vita, restaurato con amore per restare fedele alla sua identità!",
+        "title": "À Bord avec Riccardo",
+        "description": "Votre guide dans cette aventure est Riccardo — skipper et hôte — prêt à vous accueillir à bord d’un gozzo en bois de plus de 70 ans, restauré avec amour pour rester fidèle à son identité !",
         "image": "/assets/sectionImages/DSC02686.webp"
       },
       {
-        "title": "Un’Ospitalità che Resta",
-        "description": "Ogni ospite viene seguito con cura, dalla prenotazione al check-in, fino all’ultimo saluto. Non offriamo un’esperienza “turistica” nel senso classico: offriamo qualcosa di più intimo, più personale, più vero. E forse è per questo che molti tornano. Perché qui, oltre a nuotare in un mare trasparente, si respira un’idea diversa di vacanza: quella che lascia il segno.",
+        "title": "Une Hospitalité Inoubliable",
+        "description": "Chaque invité est accompagné avec soin, de la réservation au check-in, jusqu’au dernier au revoir. Nous n’offrons pas une expérience “touristique” au sens classique, mais quelque chose de plus intime, plus personnel, plus authentique. Et c’est peut-être pour cela que beaucoup reviennent. Car ici, en plus de nager dans une mer cristalline, on respire une autre idée des vacances : celle qui laisse une empreinte.",
         "image": "/assets/slider/image12.webp"
       },
       {
-        "title": "Perché “Mare e Stelle”?",
-        "description": "Mare e Stelle nasce da un’idea semplice ma profonda: far vivere ai nostri ospiti ogni sfumatura del tempo passato sull’isola, dal giorno alla notte. Il mare è il nostro elemento. Di giorno ti accoglie con i suoi riflessi cristallini, le calette segrete, i profumi della macchia mediterranea. Di notte, diventa silenzio e poesia: una scia che si illumina nel buio e un cielo pieno di stelle, come solo chi è lontano dalla terraferma può vedere. Con Mare e Stelle vogliamo trasmettere questo senso di meraviglia, quello che proviamo noi isolani ogni volta che navighiamo in queste acque. Invitarti a rallentare, ascoltare, guardare. A farti sentire parte di un luogo dove il tempo non corre, ma si vive. Perché qui, ogni momento è prezioso. E chi sa guardare, vedrà sempre qualcosa di più: il mare… e le stelle.",
+        "title": "Pourquoi « Mare e Stelle » ?",
+        "description": "Mare e Stelle est née d’une idée simple mais profonde : faire vivre à nos hôtes toutes les nuances de l’île, du jour à la nuit. La mer est notre élément. Le jour, elle vous accueille avec ses reflets cristallins, ses criques secrètes et ses senteurs méditerranéennes. La nuit, elle devient silence et poésie : une traînée lumineuse dans l’obscurité et un ciel étoilé comme seuls les lieux loin de la terre peuvent offrir. Avec Mare e Stelle, nous voulons transmettre ce sentiment d’émerveillement que nous, insulaires, ressentons à chaque navigation. Vous inviter à ralentir, écouter, observer. À vous sentir partie prenante d’un endroit où le temps ne court pas, mais se vit pleinement. Car ici, chaque instant est précieux. Et ceux qui savent regarder, verront toujours plus : la mer… et les étoiles.",
         "image": "/assets/slider/image201.webp"
       },
       {
-        "title": "Il nostro gozzo in legno",
-        "description": "Tradizione che naviga nel presente Oggi, alle Isole Tremiti, la maggior parte delle imbarcazioni utilizzate per il turismo sono moderne, realizzate in vetroresina o gommoni di nuova generazione. Noi, invece, abbiamo fatto una scelta diversa: riportare in vita un gozzo in legno di oltre 70 anni, un tempo usato per la pesca, oggi restaurato con cura per offrirti un’esperienza autentica — con il fascino del passato e i comfort del presente. Salire a bordo non è semplicemente iniziare un’escursione: è fare un tuffo nella storia. Negli anni ’60 e ’70, qui alle Tremiti, gli scafi in legno erano ovunque: silenziosi compagni di giornate di lavoro, costruiti a mano, pezzo dopo pezzo, da maestri d’ascia locali. Dopo un lungo restauro, il nostro gozzo è tornato a solcare le acque, mantenendo intatto il suo spirito.",
-        "description2": "Ma c’è di più. Il legno ha qualcosa che nessun materiale moderno può offrire: una presenza viva, che si fa sentire sotto le dita. Navigare su un gozzo in legno è un’esperienza unica nel suo genere. Lo scafo, più pesante, offre una stabilità naturale, che lo rende perfetto anche quando il mare è leggermente mosso. Abbiamo scelto il legno non per nostalgia, ma per amore. Perché crediamo che il modo in cui si viaggia conti tanto quanto la destinazione. E su questa barca, ogni onda racconta qualcosa.",
+        "title": "Notre Gozzo en Bois",
+        "description": "Une tradition qui vogue dans le présent. Aujourd’hui, la plupart des bateaux touristiques aux Îles Tremiti sont modernes, en fibre de verre ou des pneumatiques. Nous avons fait un autre choix : redonner vie à un gozzo en bois de plus de 70 ans, autrefois utilisé pour la pêche, et restauré avec soin pour vous offrir une expérience authentique — le charme du passé avec le confort du présent. Monter à bord, ce n’est pas seulement commencer une excursion : c’est plonger dans l’histoire. Dans les années 60 et 70, les coques en bois étaient omniprésentes ici : compagnons silencieux des journées de travail, construits à la main, pièce par pièce, par des artisans locaux. Après une longue restauration, notre gozzo navigue à nouveau, avec son esprit intact.",
+        "description2": "Mais ce n’est pas tout. Le bois a quelque chose qu’aucun matériau moderne ne peut offrir : une présence vivante, que l’on sent sous les doigts. Naviguer sur un gozzo en bois est une expérience unique. La coque, plus lourde, offre une stabilité naturelle, idéale même en mer légèrement agitée. Nous avons choisi le bois non pas par nostalgie, mais par amour. Parce que la manière de voyager compte autant que la destination. Et sur ce bateau, chaque vague raconte une histoire.",
         "image": "/assets/slider/image20.webp",
-        "listLabel": "A bordo troverai:",
+        "listLabel": "À bord, vous trouverez :",
         "list": [
-          "Cuscineria in ecopelle,",
-          "Tendalino ombreggiante,",
-          "Doccia d’acqua dolce,",
-          "Scaletta per la risalita,",
-          "Un piccolo frigo-bar per goderti ogni momento in relax."
+          "Coussins en similicuir,",
+          "Toit ombragé,",
+          "Douche à eau douce,",
+          "Échelle pour remonter,",
+          "Un petit frigo-bar pour savourer chaque moment en toute détente."
         ]
       }
     ]
   },
   "Contact": {
-    "title": "Prenota la Tua Esperienza",
-    "subtitle": "Escursioni giornaliere, gite in barca, cucina di mare e molto altro.",
-    "sectionTitle": "Come Prenotare",
-    "sectionDescription": "Compila il modulo con i tuoi dati e le tue preferenze. Ti risponderemo al più presto per confermare la disponibilità.",
+    "title": "Réservez Votre Expérience",
+    "subtitle": "Tours autour des îles, expérience au coucher du soleil, événements privés, nage en eau libre avec bateau d’assistance",
+    "sectionTitle": "Comment Réserver",
+    "sectionDescription": "Remplissez le formulaire avec vos coordonnées et vos préférences. Nous vous répondrons dans les plus brefs délais pour confirmer la disponibilité.",
     "sectionList": [
-      "Mini tour in gozzo intorno all’arcipelago",
-      "Sunset experience",
-      "Eventi privati e tour personalizzati",
-      "Nuoto Open Water con barca di appoggio"
+      "Mini tour en bateau autour de l’archipel",
+      "Expérience au coucher du soleil",
+      "Événements privés et tours personnalisés",
+      "Nage en eau libre avec bateau d’assistance"
     ],
-    "sectionContact": "Oppure contattaci direttamente su WhatsApp o via telefono al numero",
-    "sectionButtonLabel": "Chiama ora",
-    "downloadButtonLabel": "Scarica il contratto di noleggio",
+    "sectionContact": "Ou contactez-nous directement sur WhatsApp ou par téléphone au",
+    "sectionButtonLabel": "Appeler maintenant",
+    "downloadButtonLabel": "Télécharger le contrat de location",
     "downloadButtonLink": "/assets/pdf/CONTRATTO DI NOLEGGIO DI UNITÀ DA DIPORTO.pdf"
   },
   "DiarioDiBordo": {
-    "title": "Diario di Bordo",
-    "subtitle": "Come cambiano gli itinerari in base al vento? Scopri i percorsi che seguiamo per garantire sicurezza e meraviglia.",
-    "description": "Spesso il giro delle isole varia in base ai venti. A seconda delle condizioni meteomarine, l’itinerario previsto può subire variazioni. La sicurezza dei passeggeri viene sempre prima.",
+    "title": "Journal de Bord",
+    "subtitle": "Comment les itinéraires changent-ils selon le vent ? Découvrez les parcours que nous suivons pour garantir sécurité et émerveillement.",
+    "description": "Souvent, le tour des îles varie en fonction des vents. Selon les conditions météorologiques et marines, l’itinéraire prévu peut être modifié. La sécurité des passagers est toujours la priorité. Nous nous engageons à faire 2 ou 3 arrêts détente dans les criques de l’itinéraire. Les arrêts peuvent varier selon la fréquentation des différentes criques.",
     "itineraries": [
       {
         "id": 1,
-        "title": "Itinerario Completo",
-        "subtitle": "Condizioni Meteomarine Ideali",
+        "title": "Itinéraire Complet",
+        "subtitle": "Conditions Météo Idéales",
         "image": "/assets/itinerari/itinerario.webp",
-        "description": "Quando il mare è calmo, è possibile fare il giro completo dell’arcipelago. Ideale per esplorare ogni angolo nascosto delle isole."
+        "description": "Lorsque la mer est calme, il est possible de faire le tour complet de l’archipel. Idéal pour explorer chaque recoin caché des îles."
       },
       {
         "id": 2,
-        "title": "Venti da Sud-Est (Scirocco, Ostro, Levante)",
-        "subtitle": "Rotta Settentrionale",
+        "title": "Vents du Sud-Est (Sirocco, Ostro, Levant)",
+        "subtitle": "Route Nord",
         "image": "/assets/itinerari/scirocco.webp",
-        "description": "Soste a nord: Cala dei Turchi, Cala del Cretaccio, Cala Tonda. Il versante nord è più protetto e tranquillo."
+        "description": "Arrêts au nord : Sorrentino, Cala del Cretaccio, Cala Tonda. Le côté nord est plus abrité et calme."
       },
       {
         "id": 3,
-        "title": "Venti da Nord o Ponente (Tramontana, Maestrale)",
-        "subtitle": "Rotta Meridionale",
+        "title": "Vents du Nord, Nord-Ouest, Ouest (Tramontane, Mistral, Ponant)",
+        "subtitle": "Route Sud",
         "image": "/assets/itinerari/tramontana.webp",
-        "description": "Soste relax nel sud dell’arcipelago: Cala dei Pesci, Cala Matano, Cala del Sale."
+        "description": "Arrêts détente au sud de l’archipel : Cala dei Pesci, Cala Matano, Cala del Sale."
       },
       {
         "id": 4,
-        "title": "Vento da Libeccio (SW)",
-        "subtitle": "Rotta Breve e Relax",
+        "title": "Vent de Libeccio (Sud-Ouest)",
+        "subtitle": "Route Courte et Détente",
         "image": "/assets/itinerari/libeccio.webp",
-        "description": "Itinerario più corto con soste prolungate: Cala dei Turchi, Pagliai, Cretaccio. Poche cale al riparo."
+        "description": "Itinéraire plus court avec des arrêts prolongés : Cala dei Turchi, Pagliai, Cretaccio. Peu de criques abritées disponibles."
       }
     ]
   },
   "Footer": {
-    "title": "Mare e Stelle",
-    "subtitle": "Isole Tremiti",
-    "privacy": "Privacy Policy",
-    "terms": "Termini di Servizio",
-    "contact": "Contattaci"
+    "title": "Mer et Étoiles",
+    "subtitle": "Îles Tremiti",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d’Utilisation",
+    "contact": "Contactez-nous"
   }
 }
