@@ -7,7 +7,7 @@ async function setupStripeProduct() {
     const product = await stripe.products.create({
       name: 'Marestelle Boat Tour',
       description: 'Private boat tour experience',
-      images: ['https://your-domain.com/boat-tour-image.jpg'], // Optional
+      images: ['https://marestelle.com/assets/sectionImages/DJI_0943.webp'], // Optional
     });
 
     console.log('Product created:', product.id);

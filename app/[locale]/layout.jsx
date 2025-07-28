@@ -18,7 +18,6 @@ export default async function LocaleLayout({ children, params }) {
       <NextIntlClientProvider locale={locale} messages={messages}>
         <Navbar locale={locale} />
         {children}
-        <Footer locale={locale} />
       </NextIntlClientProvider>
     </LenisProvider>
   );

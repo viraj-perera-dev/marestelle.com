@@ -25,7 +25,7 @@ export default function Section2({ params }) {
       description: tSection2("fleet")[0]?.description,
       guests: tSection2("fleet")[0]?.guests,
       dimension: tSection2("fleet")[0]?.dimension,
-      image: "/assets/sectionImages/DJI_0977.jpg",
+      image: "/assets/sectionImages/DJI_0977.webp",
       link: `${params.locale}/tour-detail/0`,
     },
     {
@@ -33,7 +33,7 @@ export default function Section2({ params }) {
       description: tSection2("fleet")[1]?.description,
       guests: tSection2("fleet")[1]?.guests,
       dimension: tSection2("fleet")[1]?.dimension,
-      image: "/assets/barca/DSC02867.jpg",
+      image: "/assets/sectionImages/DSC02867.webp",
       link: `${params.locale}/tour-detail/1`,
     },
     {
@@ -41,7 +41,7 @@ export default function Section2({ params }) {
       description: tSection2("fleet")[2]?.description,
       guests: tSection2("fleet")[2]?.guests,
       dimension: tSection2("fleet")[2]?.dimension,
-      image: "/assets/sectionImages/tramonto.png",
+      image: "/assets/sectionImages/tramonto.webp",
       link: `${params.locale}/tour-detail/2`,
     },
   ];
