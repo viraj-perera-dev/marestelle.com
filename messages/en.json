@@ -409,7 +409,10 @@
     "submitButton": "Book Now",
     "alertSuccess": "Booking sent!",
     "successTitle": "Request submitted!",
-    "successMessage": "You will receive a confirmation email to proceed."
+    "successMessage": "You will receive a confirmation email to proceed.",
+    "requiredFields": "rental contract to be signed and returned at check-in in the boat",
+    "downloadButtonLabel": "Download Document",
+    "downloadButtonLink": "/assets/pdf/CONTRATTO DI NOLEGGIO DI UNITÀ DA DIPORTO.pdf"
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
@@ -505,6 +508,13 @@
     "subtitle": "Island tours, sunset experience, private events, open water swimming with support boat",
     "sectionTitle": "How to Book",
     "sectionDescription": "Fill out the form with your details and preferences. We’ll get back to you as soon as possible to confirm availability.",
+    "sectionMapNote": "The pickup point for the experience is marked on the map",
+    "questions": [
+      {
+        "question": "Are we on the island of San Nicola?",
+        "answer": "Leave a note in the reservation so we come to pick you up there (not after 10:40)."
+      }
+    ],
     "sectionList": [
       "Mini boat tour around the archipelago",
       "Sunset experience",

@@ -397,7 +397,10 @@
     "submitButton": "Prenota Ora",
     "alertSuccess": "Prenotazione inviata!",
     "successTitle": "Richiesta inviata!",
-    "successMessage": "Riceverai una email di conferma per procedere."
+    "successMessage": "Riceverai una email di conferma per procedere.",
+    "requiredFields": "contratto di noleggio da consegnare compilato e firmato al check-in in barca",
+    "downloadButtonLabel": "Scarica Documento",
+    "downloadButtonLink": "/assets/pdf/CONTRATTO DI NOLEGGIO DI UNITÀ DA DIPORTO.pdf"
   },
   "FAQ": {
     "title": "Domande Frequenti",
@@ -493,6 +496,13 @@
     "subtitle": "Tour tra le isole, sunset experience, eventi privati, nuoto open water con barca di appoggio",
     "sectionTitle": "Come Prenotare",
     "sectionDescription": "Compila il modulo con i tuoi dati e le tue preferenze. Ti risponderemo al più presto per confermare la disponibilità.",
+    "sectionMapNote": "Il punto di ritrovo per l'esperienza è indicato sulla mappa",
+    "questions": [
+      {
+        "question": "Sei sull'isola di San Nicola?",
+        "answer": "Lascia una nota nella prenotazione così veniamo a prenderti lì (non oltre le 10:40)."
+      }
+    ],
     "sectionList": [
       "Mini tour in gozzo intorno all’arcipelago",
       "Sunset experience",

@@ -1,5 +1,5 @@
 import { getMessages } from "@/lib/getMessages";
-import FAQList from "./components/FAQList"; // Client component
+import FAQList from "@/components/FAQList"; // Client component
 import { generateSEOMetadata } from "@/components/Metadata";
 import Footer from "@/components/Footer";
 
@@ -37,8 +37,9 @@ export default async function FAQ({ params }) {
           <p className="mt-4 text-xl md:text-2xl max-w-2xl">{t("subtitle")}</p>
         </div>
       </section>
-
-      <FAQList questions={questions} />
+      <div className="mt-8 w-11/12 md:w-1/2 mx-auto pt-20 pb-36">
+        <FAQList questions={questions} searchBar={true}/>
+      </div>
     </main>
     <Footer locale={params.locale} />
     </>

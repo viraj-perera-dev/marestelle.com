@@ -409,7 +409,10 @@
     "submitButton": "Réserver maintenant",
     "alertSuccess": "Réservation envoyée !",
     "successTitle": "Demande envoyée !",
-    "successMessage": "Vous recevrez un e-mail de confirmation pour continuer."
+    "successMessage": "Vous recevrez un e-mail de confirmation pour continuer.",
+    "requiredFields": "contratto de location à signer et à signer au check-in en barque",
+    "downloadButtonLabel": "Télécharger le contrat",
+    "downloadButtonLink": "/assets/pdf/CONTRATTO DI NOLEGGIO DI UNITÀ DA DIPORTO.pdf"
   },
   "FAQ": {
     "title": "Foire Aux Questions",
@@ -505,6 +508,13 @@
     "subtitle": "Tours autour des îles, expérience au coucher du soleil, événements privés, nage en eau libre avec bateau d’assistance",
     "sectionTitle": "Comment Réserver",
     "sectionDescription": "Remplissez le formulaire avec vos coordonnées et vos préférences. Nous vous répondrons dans les plus brefs délais pour confirmer la disponibilité.",
+    "sectionMapNote": "Le point de retrait pour l'expérience est indiqué sur la carte",
+    "questions": [
+      {
+        "question": "Est-ce que nous sommes sur l'île de San Nicola?",
+        "answer": "Laissez une note dans la réservation pour nous venir chercher là-bas (pas après 10h40)."
+      }
+    ],
     "sectionList": [
       "Mini tour en bateau autour de l’archipel",
       "Expérience au coucher du soleil",

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FiChevronRight } from "react-icons/fi";
 
-export default function FAQList({ questions }) {
+export default function FAQList({ questions, searchBar }) {
   const [openIndex, setOpenIndex] = useState(null);
   const [search, setSearch] = useState("");
 
@@ -16,15 +16,17 @@ export default function FAQList({ questions }) {
   );
 
   return (
-    <div className="mt-8 w-11/12 md:w-1/2 mx-auto pt-20 pb-36">
+    <div className="w-full">
       {/* Search Input */}
-      <input
-        type="text"
-        placeholder="Cerca una domanda..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="w-full px-4 py-2 mb-6 border border-neutral-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+      {searchBar && (
+        <input
+          type="text"
+          placeholder="Cerca una domanda..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full px-4 py-2 mb-6 border border-neutral-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      )}
 
       {filteredQuestions.length === 0 ? (
         <p className="text-neutral-600">
