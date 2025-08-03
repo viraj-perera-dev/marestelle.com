@@ -41,7 +41,7 @@ export default function Section2({ params }) {
       description: tSection2("fleet")[2]?.description,
       guests: tSection2("fleet")[2]?.guests,
       dimension: tSection2("fleet")[2]?.dimension,
-      image: "/assets/sectionImages/tramonto.webp",
+      image: "/assets/sectionImages/tramonto.jpg",
       link: `${params.locale}/tour-detail/2`,
     },
   ];

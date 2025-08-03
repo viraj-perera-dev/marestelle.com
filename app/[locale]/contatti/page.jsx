@@ -75,17 +75,17 @@ export default async function Contact({ params }) {
               <p className="text-gray-600 text-md md:text-xl mb-10">
                 {t("sectionContact")}{" "}
                 <a
-                  href="tel:+39123456789"
+                  href="tel:+393714891806"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 font-semibold"
                 >
-                  +39 123456789
+                  +39 3714891806
                 </a>
               </p>
               <div className="flex flex-col gap-4">
                 <Link
-                  href="tel:+39123456789"
+                  href="tel:+393714891806"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
