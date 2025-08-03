@@ -31,7 +31,7 @@ export default function Section1({ params }) {
             className="rounded-3xl h-full w-full object-cover z-40"
             width={500}
             height={500}
-            src="/assets/sectionImages/DJI_0967.jpg"
+            src="/assets/sectionImages/DJI_0967.webp"
             alt="barca"
           />
         </div>

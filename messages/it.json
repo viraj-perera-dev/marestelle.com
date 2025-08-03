@@ -5,7 +5,8 @@
     "Contact": "Prenota Ora",
     "DiarioDiBordo": "Diario Di Bordo",
     "Faq": "Domande Frequenti",
-    "ContactUs": "Contattaci"
+    "ContactUs": "Contattaci",
+    "AreaRiservata": "Area Riservata"
   },
   "HomePage": {
     "title": "Vivi l’incanto della Riserva Marina delle Isole Tremiti",
@@ -35,11 +36,15 @@
       "backButton": "Indietro",
       "adult": "Adulti",
       "child": "Bambini (0-12 anni)",
+      "readMore": "leggi di più",
+      "readLess": "leggi di meno",
+      "resume": "Riepilogo",
+      "information": "Informazioni",
       "fleet": [
         {
           "id": 1,
           "name": "Boat tour mattutino",
-          "image": "/assets/sectionImages/DJI_0943.jpg",
+          "image": "/assets/sectionImages/DJI_0943.webp",
           "description": "Un tour di 4 ore alla scoperta delle calette più belle delle Isole Tremiti. Si naviga a bordo di un gozzo in legno d’epoca, con soste per nuotare in acque cristalline, momenti di relax e un aperitivo leggero a bordo.",
           "guests": "Orario | 10:30-14:30",
           "dimension": "Durata | 4 ore",
@@ -110,12 +115,12 @@
               "include": false
             }
           ],
-          "necessario": "maschera, pinne e scarpe da scoglio",
+          "necessario": ["maschera", "pinne", "scarpe da scoglio"],
           "link": "/contatti"
         },
         {
           "id": 2,
-          "image": "/assets/sectionImages/DJI_0967.jpg",
+          "image": "/assets/sectionImages/DJI_0967.webp",
           "name": "Boat tour pomeridiano",
           "description": "Stessa rotta, stesso spirito, ma con un’atmosfera ancora più pacifica: il pomeriggio porta con sé un mare meno affollato e una luce più calda. Tra bagni rigeneranti, relax a bordo del nostro gozzo in legno e un aperitivo con vista, è l’occasione perfetta per godersi le Tremiti con calma.",
           "guests": "Orario | 14:30-18:30",
@@ -187,13 +192,13 @@
               "include": false
             }
           ],
-          "necessario": "maschera, pinne e scarpe da scoglio",
+          "necessario": ["maschera", "pinne", "scarpe da scoglio"],
           "link": "/contatti"
         },
         {
           "id": 3,
           "name": "Sunset experience",
-          "image": "/assets/sectionImages/sunset.jpg",
+          "image": "/assets/sectionImages/sunset.webp",
           "description": "Un’esperienza intima e rilassante, pensata per chi ama la bellezza dei momenti autentici. Si parte al calar del sole con una sosta nelle cale più suggestive per un bagno rigenerante, seguita da un brindisi a bordo. Navigando tra silenzi e riflessi, si ascolta il canto delle Diomedee — uccelli notturni simbolo delle Tremiti. Quando il cielo si fa scuro, ci si ferma per osservare le stelle, lontani da ogni inquinamento luminoso.",
           "guests": "Orario | 19:30-21:30",
           "dimension": "Durata | 2 ore",
@@ -249,7 +254,7 @@
               "include": false
             }
           ],
-          "necessario": "maschera, pinne e scarpe da scoglio",
+          "necessario": ["maschera", "pinne", "scarpe da scoglio"],
           "link": "/contatti"
         }
       ]
@@ -314,7 +319,7 @@
         {
           "name": "P R B",
           "location": "Roma, Italia",
-          "image": "/assets/testimonials/PRB.jpg",
+          "image": "/assets/testimonials/PRB.webp",
           "title": "Altamente raccomandato",
           "text": "Riccardo è una guida attenta e ha grande cura degli ospiti, il suo racconto è interessante e mai invadente. È figlio d'arte ed ama le sue isole. Ci ha servito un aperitivo unico, con pesce apprezzatissimo, frutta e vino ghiacciato. Lo consigliamo con certezza, e cercheremo anche noi di tornare presto e farci un altro giro tra calette e grotte, capperi e gabbiani.",
           "date": "3/06/2025",
@@ -323,7 +328,7 @@
         {
           "name": "Ornella B",
           "location": "Italia",
-          "image": "/assets/testimonials/OrnellaB.jpg",
+          "image": "/assets/testimonials/OrnellaB.webp",
           "title": "Bellissima!",
           "text": "Gran bel giro in barca e vista spettacolare.Riccardo è stato veramente fantastico. Consiglio molto se andate alle Tremiti giro in barca con MARE E STELLE,TOP😊",
           "date": "25/09/2024",
@@ -332,7 +337,7 @@
         {
           "name": "fm1270",
           "location": "Livorno, Italia",
-          "image": "/assets/testimonials/fm1270.jpg",
+          "image": "/assets/testimonials/fm1270.webp",
           "title": "Esperienza consigliata",
           "text": "Giornata alle Tremiti con mia figlia di 20 anni. Nonostante il forte vento di maestrale Riccardo ci ha guidato per le calette, illustrandoci le bellezze dell'Isola. professionale e gentile. Buono l'aperitivo; cibo e vino. Ottimo rapporto qualità/prezzo. Consigliato!",
           "date": "10/09/2024",
@@ -341,7 +346,7 @@
         {
           "name": "Nadia C",
           "location": "Tremiti, Italia",
-          "image": "/assets/testimonials/NadiaC.jpg",
+          "image": "/assets/testimonials/NadiaC.webp",
           "title": "Super top!!!!",
           "text": "Riccardo super top!!!! Una guida attenta, scrupolosa e molto informata ma allo stesso tempo che ti permette di divertirti e passare del tempo in sicurezza in barca!!! Super consigliato sicuramente torneremo dall'Abruzzo la prossima volta per stare qualche giorno in loro compagnia!!!!! Voto 10",
           "date": "18/08/2024",
@@ -350,7 +355,7 @@
         {
           "name": "salutoni",
           "location": "Italia",
-          "image": "/assets/testimonials/salutoni.jpg",
+          "image": "/assets/testimonials/salutoni.webp",
           "title": "Tremiti affascinanti con uno skipper doc",
           "text": "Fin dalla prenotazione avevo intuito che c’era grande professionalità sia nel fornire informazioni che nel richiederle per meglio gestire il giro. La professionalità era motivata dalla passione e amore per la propria terra e il giro poi si è trasformato in stupore e conoscenza il tutto condito dall’ottimo aperitivo servito a bordo. Posso solo dire grazie per il calore sentito nei racconti e descrizioni di queste isole che sono stupende e che vanno visitate con rispetto per assaporarle completamente. Grazie a Riccardo per aver mantenuto intatta la tradizione e competenza marinaresca",
           "date": "17/08/2024",
@@ -359,7 +364,7 @@
         {
           "name": "Andrea",
           "location": "Monza, Italia",
-          "image": "/assets/testimonials/andrea.jpg",
+          "image": "/assets/testimonials/andrea.webp",
           "title": "Alla scoperta delle Tremiti",
           "text": "Gita fantastica in barca di quattro ore alla scoperta delle Tremiti con tre soste bagno! Maschere per snorkeling indispensabili per godere questa bellezza! Bravo Riccardo per averci accompagnato, spiegato e preparato un ottimo ed abbondante aperitivo in barca e per averci fatto assaggiare il caffè del marinaio…di cui non sveliamo l’ingrediente misterioso :)",
           "date": "11/08/2024",
@@ -392,7 +397,10 @@
     "submitButton": "Prenota Ora",
     "alertSuccess": "Prenotazione inviata!",
     "successTitle": "Richiesta inviata!",
-    "successMessage": "Riceverai una email di conferma per procedere."
+    "successMessage": "Riceverai una email di conferma per procedere.",
+    "requiredFields": "contratto di noleggio da consegnare compilato e firmato al check-in in barca",
+    "downloadButtonLabel": "Scarica Documento",
+    "downloadButtonLink": "/assets/pdf/CONTRATTO DI NOLEGGIO DI UNITÀ DA DIPORTO.pdf"
   },
   "FAQ": {
     "title": "Domande Frequenti",
@@ -444,34 +452,34 @@
     "title": "Chi Siamo?",
     "subtitle": "Scopri la storia della nostra famiglia tra le onde delle Isole Tremiti.",
     "bannerTitle": "Vivi il Mare con Noi",
-    "bannerDescription": "Prenota la tua esperienza autentica alle Isole Tremiti con la nostra famiglia.",
+    "bannerDescription": "Prenota il boat tour alle Isole Tremiti.",
     "buttonLabel": "contattaci",
     "sections": [
       {
         "title": "La Nostra Storia",
         "description": "Mare e Stelle non è solo un tour in barca. È un invito a rallentare, ad assaporare il ritmo dell’isola e a vivere il mare come lo viviamo noi isolani. Ogni escursione dura il tempo giusto – circa 4 ore – per permetterti di scoprire le calette più belle via mare, ma anche di goderti del tempo libero per esplorare le isole da terra, in autonomia e senza fretta.",
-        "image": "/assets/sectionImages/DJI_0959_hero.jpg"
+        "image": "/assets/sectionImages/DJI_0959_hero.webp"
       },
       {
         "title": "A Bordo con Riccardo",
         "description": "A guidarti in questa esperienza c’è Riccardo, skipper e anfitrione, pronto ad accoglierti a bordo di un gozzo in legno con oltre 70 anni di storia e di vita, restaurato con amore per restare fedele alla sua identità!",
-        "image": "/assets/sectionImages/DSC02686.jpg"
+        "image": "/assets/sectionImages/DSC02686.webp"
       },
       {
         "title": "Un’Ospitalità che Resta",
         "description": "Ogni ospite viene seguito con cura, dalla prenotazione al check-in, fino all’ultimo saluto. Non offriamo un’esperienza “turistica” nel senso classico: offriamo qualcosa di più intimo, più personale, più vero. E forse è per questo che molti tornano. Perché qui, oltre a nuotare in un mare trasparente, si respira un’idea diversa di vacanza: quella che lascia il segno.",
-        "image": "/assets/slider/image12.jpg"
+        "image": "/assets/slider/image12.webp"
       },
       {
         "title": "Perché “Mare e Stelle”?",
         "description": "Mare e Stelle nasce da un’idea semplice ma profonda: far vivere ai nostri ospiti ogni sfumatura del tempo passato sull’isola, dal giorno alla notte. Il mare è il nostro elemento. Di giorno ti accoglie con i suoi riflessi cristallini, le calette segrete, i profumi della macchia mediterranea. Di notte, diventa silenzio e poesia: una scia che si illumina nel buio e un cielo pieno di stelle, come solo chi è lontano dalla terraferma può vedere. Con Mare e Stelle vogliamo trasmettere questo senso di meraviglia, quello che proviamo noi isolani ogni volta che navighiamo in queste acque. Invitarti a rallentare, ascoltare, guardare. A farti sentire parte di un luogo dove il tempo non corre, ma si vive. Perché qui, ogni momento è prezioso. E chi sa guardare, vedrà sempre qualcosa di più: il mare… e le stelle.",
-        "image": "/assets/slider/image201.jpg"
+        "image": "/assets/slider/image201.webp"
       },
       {
         "title": "Il nostro gozzo in legno",
         "description": "Tradizione che naviga nel presente Oggi, alle Isole Tremiti, la maggior parte delle imbarcazioni utilizzate per il turismo sono moderne, realizzate in vetroresina o gommoni di nuova generazione. Noi, invece, abbiamo fatto una scelta diversa: riportare in vita un gozzo in legno di oltre 70 anni, un tempo usato per la pesca, oggi restaurato con cura per offrirti un’esperienza autentica — con il fascino del passato e i comfort del presente. Salire a bordo non è semplicemente iniziare un’escursione: è fare un tuffo nella storia. Negli anni ’60 e ’70, qui alle Tremiti, gli scafi in legno erano ovunque: silenziosi compagni di giornate di lavoro, costruiti a mano, pezzo dopo pezzo, da maestri d’ascia locali. Dopo un lungo restauro, il nostro gozzo è tornato a solcare le acque, mantenendo intatto il suo spirito.",
         "description2": "Ma c’è di più. Il legno ha qualcosa che nessun materiale moderno può offrire: una presenza viva, che si fa sentire sotto le dita. Navigare su un gozzo in legno è un’esperienza unica nel suo genere. Lo scafo, più pesante, offre una stabilità naturale, che lo rende perfetto anche quando il mare è leggermente mosso. Abbiamo scelto il legno non per nostalgia, ma per amore. Perché crediamo che il modo in cui si viaggia conti tanto quanto la destinazione. E su questa barca, ogni onda racconta qualcosa.",
-        "image": "/assets/slider/image20.jpg",
+        "image": "/assets/slider/image20.webp",
         "listLabel": "A bordo troverai:",
         "list": [
           "Cuscineria in ecopelle,",
@@ -485,49 +493,58 @@
   },
   "Contact": {
     "title": "Prenota la Tua Esperienza",
-    "subtitle": "Escursioni giornaliere, gite in barca, cucina di mare e molto altro.",
+    "subtitle": "Tour tra le isole, sunset experience, eventi privati, nuoto open water con barca di appoggio",
     "sectionTitle": "Come Prenotare",
     "sectionDescription": "Compila il modulo con i tuoi dati e le tue preferenze. Ti risponderemo al più presto per confermare la disponibilità.",
+    "sectionMapNote": "Il punto di ritrovo per l'esperienza è indicato sulla mappa",
+    "questions": [
+      {
+        "question": "Sei sull'isola di San Nicola?",
+        "answer": "Lascia una nota nella prenotazione così veniamo a prenderti lì (non oltre le 10:40)."
+      }
+    ],
     "sectionList": [
-      "Gite Full-day con pranzo di pesce a bordo del gozzo",
       "Mini tour in gozzo intorno all’arcipelago",
+      "Sunset experience",
       "Eventi privati e tour personalizzati",
       "Nuoto Open Water con barca di appoggio"
     ],
     "sectionContact": "Oppure contattaci direttamente su WhatsApp o via telefono al numero",
-    "sectionButtonLabel": "Chiama ora"
+    "sectionButtonLabel": "Chiama ora",
+    "downloadButtonLabel": "Scarica il contratto di noleggio",
+    "downloadButtonLink": "/assets/pdf/CONTRATTO DI NOLEGGIO DI UNITÀ DA DIPORTO.pdf"
   },
   "DiarioDiBordo": {
     "title": "Diario di Bordo",
     "subtitle": "Come cambiano gli itinerari in base al vento? Scopri i percorsi che seguiamo per garantire sicurezza e meraviglia.",
-    "description": "Spesso il giro delle isole varia in base ai venti. A seconda delle condizioni meteomarine, l’itinerario previsto può subire variazioni. La sicurezza dei passeggeri viene sempre prima.",
+    "description": "Spesso il giro delle isole varia in base ai venti. A seconda delle condizioni meteomarine, l’itinerario previsto può subire variazioni. La sicurezza dei passeggeri viene sempre prima. Ci impegniamo a fare 2/3 soste relax nelle cale dell'itinerario. Le soste potrebbero essere fatte in cale diverse a seconda dell'affollamento di imbarcazioni presenti nelle varie cale.",
     "itineraries": [
       {
         "id": 1,
         "title": "Itinerario Completo",
         "subtitle": "Condizioni Meteomarine Ideali",
-        "image": "/assets/itinerari/Itinerario.png",
+        "image": "/assets/itinerari/Itinerario.webp",
         "description": "Quando il mare è calmo, è possibile fare il giro completo dell’arcipelago. Ideale per esplorare ogni angolo nascosto delle isole."
       },
       {
         "id": 2,
         "title": "Venti da Sud-Est (Scirocco, Ostro, Levante)",
         "subtitle": "Rotta Settentrionale",
-        "image": "/assets/itinerari/scirocco.png",
-        "description": "Soste a nord: Cala dei Turchi, Cala del Cretaccio, Cala Tonda. Il versante nord è più protetto e tranquillo."
+        "image": "/assets/itinerari/scirocco.webp",
+        "description": "Soste a nord: Sorrentino, Cala del Cretaccio, Cala Tonda. Il versante nord è più protetto e tranquillo."
       },
       {
         "id": 3,
-        "title": "Venti da Nord o Ponente (Tramontana, Maestrale)",
+        "title": "Vento da Nord, Nord-Ovest, Ovest (Tramontana, Maestrale, Ponente)",
         "subtitle": "Rotta Meridionale",
-        "image": "/assets/itinerari/tramontana.png",
+        "image": "/assets/itinerari/tramontana.webp",
         "description": "Soste relax nel sud dell’arcipelago: Cala dei Pesci, Cala Matano, Cala del Sale."
       },
       {
         "id": 4,
         "title": "Vento da Libeccio (SW)",
         "subtitle": "Rotta Breve e Relax",
-        "image": "/assets/itinerari/libeccio.png",
+        "image": "/assets/itinerari/libeccio.webp",
         "description": "Itinerario più corto con soste prolungate: Cala dei Turchi, Pagliai, Cretaccio. Poche cale al riparo."
       }
     ]

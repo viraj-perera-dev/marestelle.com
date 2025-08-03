@@ -8,6 +8,7 @@ import Section3 from '@/components/sections/Section3';
 import Section4 from '@/components/sections/Section4';
 import Section5 from '@/components/sections/Section5';
 import ContactSection from '@/components/sections/ContactSection';
+import Footer from '@/components/Footer';
 
 export async function generateMetadata({ params }) {
   return generateSEOMetadata({
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }) {
       siteColor: 'light',
       url: '',
       siteName: 'Mare e Stelle',
-      image: '/assets/sectionImages/DJI_0956.jpg',
+      image: '/assets/sectionImages/DJI_0956.webp',
       imageAlt: 'Isole Tremiti vista dal mare',
     }
   });
@@ -48,7 +49,7 @@ export default async function Home({ params }) {
               className="mask-radial-[95%_95%] mask-radial-from-0% mask-radial-circle w-full h-full object-cover" 
               width={1920} 
               height={1080} 
-              src="/assets/sectionImages/DJI_0956.jpg" 
+              src="/assets/sectionImages/DJI_0956.webp" 
               alt="barca"
               priority
             />
@@ -67,6 +68,7 @@ export default async function Home({ params }) {
         <Section4 params={params} />
         <Section5 params={params} />
         <ContactSection params={params} />
+        <Footer locale={params.locale} />
       </>
     );
   } catch (error) {

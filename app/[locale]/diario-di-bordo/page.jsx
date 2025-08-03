@@ -28,7 +28,7 @@ export default async function DiarioDiBordoPage({ params }) {
   
   return (
     <main className="bg-white text-gray-800">
-      <section className="w-full h-[70vh] bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: `url('/assets/sectionImages/IMG_1356.jpeg')` }}>
+      <section className="w-full h-[70vh] bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: `url('/assets/sectionImages/IMG_1356.webp')` }}>
         <div className="absolute inset-0 bg-black/40" />
         <div className="z-10 text-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold text-white">{tSection("title")}</h1>

@@ -8,6 +8,9 @@ import { getMessages } from "@/lib/getMessages";
 import { useLocale } from "next-intl";
 import { supabase } from "@/utils/supabaseClient";
 import QuantityInput from "@/components/QuantityInput";
+import Link from "next/link";
+import { FaFilePdf } from "react-icons/fa";
+
 
 export default function Section6({ params }) {
   const [step, setStep] = useState(1);
@@ -42,35 +45,74 @@ export default function Section6({ params }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const parsedValue = parseInt(value || 0);
   
-    // Create a copy of the form data with the updated value
-    const newData = {
-      ...formData,
-      [name]: (name === "people" || name === "children") ? parsedValue : value,
-    };
+    if (name === "people" || name === "children") {
+      const parsedValue = parseInt(value || 0);
   
-    // Calculate the new total
-    const totalPeople = 
-      name === "people" 
-        ? parsedValue + formData.children 
-        : formData.people + parsedValue;
+      const totalPeople =
+        name === "people"
+          ? parsedValue + formData.children
+          : formData.people + parsedValue;
   
-    // Prevent setting more than 14 total (adults + children)
-    if (totalPeople > 14) {
-      alert("You can't have more than 14 people");
-      return;
+      if (totalPeople > 14) {
+        alert("You can't have more than 14 people");
+        return;
+      }
+  
+      // Build new formData with updated value
+      const newData = {
+        ...formData,
+        [name]: parsedValue,
+      };
+  
+      // Recalculate price based on updated people/children count
+      newData.price = calculatePrice(
+        newData.date,
+        newData.people,
+        newData.children
+      );
+  
+      setFormData(newData);
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
     }
+  };
   
-    // Recalculate price
-    newData.price = calculatePrice(
-      newData.date,
-      newData.people,
-      newData.children
-    );
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   const parsedValue = parseInt(value || 0);
   
-    setFormData(newData);
-  };  
+  //   // Create a copy of the form data with the updated value
+  //   const newData = {
+  //     ...formData,
+  //     [name]: (name === "people" || name === "children") ? parsedValue : value,
+  //   };
+  
+  //   // Calculate the new total
+  //   const totalPeople = 
+  //     name === "people" 
+  //       ? parsedValue + formData.children 
+  //       : formData.people + parsedValue;
+  
+  //   // Prevent setting more than 14 total (adults + children)
+  //   if (totalPeople > 14) {
+  //     alert("You can't have more than 14 people");
+  //     return;
+  //   }
+  
+  //   // Recalculate price
+  //   newData.price = calculatePrice(
+  //     newData.date,
+  //     newData.people,
+  //     newData.children
+  //   );
+  
+  //   setFormData(newData);
+  // };  
 
   const handleTimeSelect = (time) => {
     setFormData((prev) => ({ ...prev, time }));
@@ -446,6 +488,17 @@ export default function Section6({ params }) {
                   placeholder="Let us know anything else..."
                 />
               </div>
+
+              <p className="text-sm text-neutral-600 mt-2"><span className="text-red-500">*</span> {t("requiredFields")}</p>
+
+              <a
+                  href={t("downloadButtonLink")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 font-semibold text-md md:text-xl border border-blue-500 text-blue-500 w-full py-3 rounded-full hover:bg-blue-600 hover:text-white transition duration-300 cursor-pointer m-0"
+                >
+                  {t("downloadButtonLabel")} <FaFilePdf className="text-red-800" size={20} />
+                </a>
 
               <div className="flex justify-between gap-5">
                 <button

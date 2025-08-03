@@ -78,8 +78,26 @@ async function sendPaymentSuccessEmails(booking) {
       <li>Porta con te un documento di identità</li>
       <li>Arriva almeno 15 minuti prima dell’orario stabilito</li>
       <li>In caso di maltempo verrai contattato</li>
+      <li>Porta con te il contratto di noleggio compilato</li>
     </ul>
+    <a href="https://${process.env.NEXT_PUBLIC_APP_URL}/assets/pdf/CONTRATTO%20DI%20NOLEGGIO%20DI%20UNITA%CC%80%20DA%20DIPORTO.pdf" target="_blank" style="display: inline-block; margin-top: 12px; padding: 10px 16px; background-color: #2563eb; color: white; font-weight: 600; border-radius: 6px; text-decoration: none;">
+      📄 Scarica il contratto di noleggio
+    </a>
   </div>
+
+  <div style="background-color: #fff7ed; padding: 20px; border-radius: 10px; border-left: 4px solid #f97316; margin-bottom: 24px;">
+    <h3 style="color: #c2410c; font-size: 17px; margin-top: 0; margin-bottom: 10px;">📍 Punto di Ritrovo</h3>
+    <p style="color: #78350f; font-size: 15px; margin: 0 0 10px;">
+      <strong>Strada Del Porto, 71040 Isola di San Domino FG</strong><br/>
+    </p>
+
+    <!-- Optional static map image preview -->
+    <div style="margin-top: 14px; text-align: center;">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.439506608454!2d15.497471599999999!3d42.120222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1336e14a15663445%3A0xa21772f3c12abb0!2sMare%20e%20Stelle%20-%20Escursioni%20in%20gozzo%20alle%20Isole%20Tremiti!5e1!3m2!1sit!2sit!4v1753695594092!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+    </div>
+  </div>
+
+
 
   <div style="background-color: #eff6ff; padding: 16px; border-radius: 8px; margin-bottom: 24px;">
     <p style="color: #1e40af; margin: 0 0 6px; font-size: 14px;">

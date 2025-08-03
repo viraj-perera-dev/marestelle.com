@@ -1,6 +1,7 @@
 import { getMessages } from "@/lib/getMessages";
-import FAQList from "./components/FAQList"; // Client component
+import FAQList from "@/components/FAQList"; // Client component
 import { generateSEOMetadata } from "@/components/Metadata";
+import Footer from "@/components/Footer";
 
 export const metadata = generateSEOMetadata({
   contentMetadata: {
@@ -21,12 +22,13 @@ export default async function FAQ({ params }) {
   const questions = messages.FAQ?.questions ?? [];
 
   return (
+    <>
     <main className="bg-neutral-100 text-gray-800">
       {/* Hero Section */}
       <section
         className="relative h-svh flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: "url('/assets/sectionImages/DJI_0959_hero.jpg')",
+          backgroundImage: "url('/assets/sectionImages/DJI_0959_hero.webp')",
         }}
       >
         <div className="bg-black/50 absolute inset-0" />
@@ -35,8 +37,11 @@ export default async function FAQ({ params }) {
           <p className="mt-4 text-xl md:text-2xl max-w-2xl">{t("subtitle")}</p>
         </div>
       </section>
-
-      <FAQList questions={questions} />
+      <div className="mt-8 w-11/12 md:w-1/2 mx-auto pt-20 pb-36">
+        <FAQList questions={questions} searchBar={true}/>
+      </div>
     </main>
+    <Footer locale={params.locale} />
+    </>
   );
 }

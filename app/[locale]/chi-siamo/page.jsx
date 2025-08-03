@@ -3,6 +3,7 @@ import { generateSEOMetadata } from '@/components/Metadata';
 import Image from 'next/image';
 import { MdArrowOutward } from 'react-icons/md';
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 export const metadata = generateSEOMetadata({
   contentMetadata: {
@@ -24,9 +25,10 @@ export default async function ChiSiamo({ params }) {
   
 
   return (
+    <>
     <main className="bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative h-svh flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/sectionImages/DJI_0959_hero.jpg')" }}>
+      <section className="relative h-svh flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/sectionImages/DJI_0959_hero.webp')" }}>
         <div className="bg-black/50 absolute inset-0" />
         <div className="absolute bottom-20 md:left-10 left-2 z-10 text-start text-white px-4">
           <h1 className="text-4xl md:text-6xl font-bold">{tSection('title')}</h1>
@@ -104,5 +106,7 @@ export default async function ChiSiamo({ params }) {
         </Link>
       </section>
     </main>
+    <Footer locale={params.locale} />
+    </>
   );
 }
