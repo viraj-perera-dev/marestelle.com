@@ -168,6 +168,7 @@ export default function Navbar({ locale }) {
                   >
                     <Link
                       href={`/${route.path}`}
+                      onClick={closeMenu}
                       className={`uppercase w-full text-2xl md:text-3xl font-semibold ${isActive(
                         route.path
                       )} hover:text-black text-blue-500`}
