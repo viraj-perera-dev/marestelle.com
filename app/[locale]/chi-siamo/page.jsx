@@ -9,7 +9,7 @@ export const metadata = generateSEOMetadata({
   contentMetadata: {
     title: 'Chi Siamo - Mare e Stelle',
     description: 'Scopri la storia della nostra famiglia tra le onde delle Isole Tremiti.',
-    keywords: ['Isole Tremiti', 'Mare e Stelle', 'escursioni mare', 'tour Isole Tremiti', 'tour mare', 'tour Isole Tremiti'],
+    keywords: ['Isole Tremiti', 'Mare e Stelle', 'escursioni mare', 'tour Isole Tremiti', 'tour mare'],
     siteColor: 'light',
     url: 'https://marestelle.com/it/chi-siamo',
     siteName: 'Mare e Stelle',
