@@ -7,7 +7,7 @@ export const metadata = generateSEOMetadata({
     description: 'Segui il nostro viaggio interattivo attraverso le Isole Tremiti',
     keywords: ['Isole Tremiti', 'Mare e Stelle', 'escursioni mare', 'tour Isole Tremiti', 'tour mare'],
     siteColor: 'light',
-    url: `https://marestelle.com/${params.locale}/tour-detail/${params.id}`,
+    url: `https://marestelle.com/it/tour-detail/1`,
     siteName: 'Mare e Stelle',
     image: '/assets/sectionImages/DJI_0956.jpeg',
     imageAlt: 'escursioni alle Isole Tremiti',

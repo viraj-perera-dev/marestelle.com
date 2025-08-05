@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
         description: data.description?.substring(0, 160) || 'Scopri di più sul nostro itinerario alle Isole Tremiti',
         keywords: ['Isole Tremiti', 'itinerario', 'mappa interattiva', 'diario di bordo'],
         siteColor: 'light',
-        url: `https://marestelle.com/${params.locale}/location/${params.id}`,
+        url: `https://marestelle.com/it/location/1`,
         siteName: 'Mare e Stelle',
         image: '/assets/sectionImages/itinerario.jpeg',
         imageAlt: 'diario di bordo mare e stelle',
