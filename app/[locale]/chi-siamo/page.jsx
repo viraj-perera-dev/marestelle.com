@@ -7,14 +7,14 @@ import Footer from '@/components/Footer';
 
 export const metadata = generateSEOMetadata({
   contentMetadata: {
-    title: 'Chi Siamo - Motonave Victor',
+    title: 'Chi Siamo - Mare e Stelle',
     description: 'Scopri la storia della nostra famiglia tra le onde delle Isole Tremiti.',
-    keywords: ['Isole Tremiti', 'Motonave Victor', 'escursioni mare', 'pesce fresco'],
+    keywords: ['Isole Tremiti', 'Mare e Stelle', 'escursioni mare', 'tour Isole Tremiti', 'tour mare', 'tour Isole Tremiti'],
     siteColor: 'light',
-    url: '',
-    siteName: 'Victor Tremiti',
-    image: '',
-    imageAlt: '',
+    url: 'https://marestelle.com/it/chi-siamo',
+    siteName: 'Mare e Stelle',
+    image: '/assets/sectionImages/DJI_0956.jpeg',
+    imageAlt: 'escursioni alle Isole Tremiti',
   }
 });
 

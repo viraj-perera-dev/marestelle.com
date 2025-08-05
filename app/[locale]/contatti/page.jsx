@@ -10,18 +10,13 @@ export const metadata = generateSEOMetadata({
   contentMetadata: {
     title: "Prenota Ora - Esperienze in Barca alle Tremiti",
     description:
-      "Prenota la tua escursione in barca o un tour completo alle Isole Tremiti con la Motonave Victor.",
-    keywords: [
-      "prenota",
-      "escursioni tremiti",
-      "gite in barca",
-      "motonave Victor",
-    ],
-    siteColor: "light",
-    url: "",
-    siteName: "Victor Tremiti",
-    image: "",
-    imageAlt: "",
+      "Prenota la tua escursione in barca o un tour completo alle Isole Tremiti con il nostro gozzo in legno.",
+      keywords: ['Isole Tremiti', 'Mare e Stelle', 'escursioni mare', 'tour Isole Tremiti', 'tour mare'],
+      siteColor: 'light',
+      url: 'https://marestelle.com/it/contatti',
+      siteName: 'Mare e Stelle',
+      image: '/assets/sectionImages/hero_ragazza.jpeg',
+      imageAlt: 'contatti mare e stelle',
   },
 });
 

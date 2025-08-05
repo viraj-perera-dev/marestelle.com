@@ -145,7 +145,6 @@ export default function Section3({ params }) {
               width={500}
               height={500 }
               className="rounded-xl object-cover md:h-[400px] h-[250px] w-auto pointer-events-none"
-              loading="eager"
               priority={i < 10}
               draggable={false}
             />

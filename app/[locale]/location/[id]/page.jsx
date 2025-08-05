@@ -27,12 +27,12 @@ export async function generateMetadata({ params }) {
       contentMetadata: {
         title: `${data.title} - Diario di Bordo`,
         description: data.description?.substring(0, 160) || 'Scopri di più sul nostro itinerario alle Isole Tremiti',
-        keywords: ['Isole Tremiti', 'itinerario', data.title],
+        keywords: ['Isole Tremiti', 'itinerario', 'mappa interattiva', 'diario di bordo'],
         siteColor: 'light',
-        url: '',
-        siteName: 'Victor Tremiti',
-        image: '',
-        imageAlt: data.title,
+        url: `https://marestelle.com/${params.locale}/location/${params.id}`,
+        siteName: 'Mare e Stelle',
+        image: '/assets/sectionImages/itinerario.jpeg',
+        imageAlt: 'diario di bordo mare e stelle',
       }
     });
   } catch (error) {

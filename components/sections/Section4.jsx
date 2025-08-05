@@ -115,7 +115,7 @@ export default function ExperiencesSection({ params }) {
               {/* Right: Image */}
               <div className="w-full md:w-1/2 max-w-sm h-56 md:h-64 relative rounded-xl overflow-hidden shadow-md">
                 <Image
-                  loading="lazy"
+                  priority
                   src={item.image}
                   alt={item.title}
                   fill

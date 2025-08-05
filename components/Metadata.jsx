@@ -23,7 +23,7 @@ export function generateSEOMetadata({ contentMetadata }) {
           width: 1200,
           height: 630,
           alt: contentMetadata?.imageAlt,
-          type: 'image/webp',
+          type: 'image/jpeg',
         },
       ],      
     },

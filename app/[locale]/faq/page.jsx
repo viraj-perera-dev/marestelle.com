@@ -7,12 +7,12 @@ export const metadata = generateSEOMetadata({
   contentMetadata: {
     title: "FAQ - Marestelle",
     description: "Scopri le nostre domande più frequenti.",
-    keywords: ["Isole Tremiti", "Marestelle", "escursioni mare", "pesce fresco"],
-    siteColor: "light",
-    url: "marestelle.com/faq",
-    siteName: "Marestelle",
-    image: "",
-    imageAlt: "",
+    keywords: ['Isole Tremiti', 'Mare e Stelle', 'escursioni mare', 'tour Isole Tremiti', 'tour mare', 'domande frequenti', 'domande'],
+    siteColor: 'light',
+    url: 'https://marestelle.com/it/faq',
+    siteName: 'Mare e Stelle',
+    image: '/assets/sectionImages/DJI_0956.jpeg',
+    imageAlt: 'faq mare e stelle',
   },
 });
 

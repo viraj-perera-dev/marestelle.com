@@ -17,10 +17,10 @@ export async function generateMetadata({ params }) {
       description: 'Scopri la storia della nostra famiglia tra le onde delle Isole Tremiti.',
       keywords: ['Isole Tremiti', 'Motonave Victor', 'escursioni mare', 'pesce fresco'],
       siteColor: 'light',
-      url: '',
+      url: 'https://marestelle.com/it',
       siteName: 'Mare e Stelle',
-      image: '/assets/sectionImages/DJI_0956.webp',
-      imageAlt: 'Isole Tremiti vista dal mare',
+      image: '/assets/sectionImages/DJI_0956.jpeg',
+      imageAlt: 'escursioni alle Isole Tremiti',
     }
   });
 }
