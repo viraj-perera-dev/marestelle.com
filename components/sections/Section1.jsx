@@ -18,8 +18,6 @@ export default function Section1({ params }) {
 
   const tSection1 = (key) => messages?.HomePage?.section1?.[key] ?? key;
 
-  if (!messages) return;
-
   return (
     <div className="w-full md:h-screen flex items-center justify-center bg-white px-5 py-10 z-0 overflow-hidden">
       <div className="max-w-7xl w-full flex flex-col md:flex-row items-start justify-between gap-10">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
@@ -8,13 +8,11 @@ import { getMessages } from "@/lib/getMessages";
 import { useLocale } from "next-intl";
 import { supabase } from "@/utils/supabaseClient";
 import QuantityInput from "@/components/QuantityInput";
-import Link from "next/link";
 import { FaFilePdf } from "react-icons/fa";
 
 
-export default function Section6({ params }) {
+export default async function Section6({ params }) {
   const [step, setStep] = useState(1);
-  const locale = useLocale();
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -30,18 +28,11 @@ export default function Section6({ params }) {
 
   const [selectedDate, setSelectedDate] = useState(null);
   const [errors, setErrors] = useState({});
-  const [messages, setMessages] = useState(null);
   const [loadingSubmit, setLoadingSubmit] = useState(false);
-
-  useEffect(() => {
-    const fetchMessages = async () => {
-      const messages = await getMessages(locale);
-      setMessages(messages);
-    };
-    fetchMessages();
-  }, [locale]);
-
+  const locale = useLocale();
+  const messages = await getMessages(locale);
   const t = (key) => messages?.BookingForm?.[key] ?? key;
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,38 +72,6 @@ export default function Section6({ params }) {
     }
   };
   
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   const parsedValue = parseInt(value || 0);
-  
-  //   // Create a copy of the form data with the updated value
-  //   const newData = {
-  //     ...formData,
-  //     [name]: (name === "people" || name === "children") ? parsedValue : value,
-  //   };
-  
-  //   // Calculate the new total
-  //   const totalPeople = 
-  //     name === "people" 
-  //       ? parsedValue + formData.children 
-  //       : formData.people + parsedValue;
-  
-  //   // Prevent setting more than 14 total (adults + children)
-  //   if (totalPeople > 14) {
-  //     alert("You can't have more than 14 people");
-  //     return;
-  //   }
-  
-  //   // Recalculate price
-  //   newData.price = calculatePrice(
-  //     newData.date,
-  //     newData.people,
-  //     newData.children
-  //   );
-  
-  //   setFormData(newData);
-  // };  
 
   const handleTimeSelect = (time) => {
     setFormData((prev) => ({ ...prev, time }));

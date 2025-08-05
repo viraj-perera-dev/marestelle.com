@@ -116,8 +116,6 @@ export default function Section3({ params }) {
 
   const tSection3 = (key) => messages?.HomePage?.section3?.[key] ?? key;
 
-  if (!messages) return null;
-
   return (
     <div className="overflow-hidden relative px-0 pt-10 md:pt-36 z-0 bg-white">
       <motion.div

@@ -52,8 +52,6 @@ export default function ExperiencesSection({ params }) {
     },
   ];
 
-  if (!messages) return;
-
   return (
     <section className="bg-blue-50 py-20">
       <div className="max-w-7xl mx-auto px-6">
