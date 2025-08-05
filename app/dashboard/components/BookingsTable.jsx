@@ -255,7 +255,7 @@ export default function BookingsTable() {
               <td className="px-4 py-3">{booking.price} €</td>
               <td className="px-4 py-3">
                 {booking.confirmed === 0 ? (
-                  <div className="flex gap-2 items-center justify-center">
+                  <div className="flex gap-2 items-center justify-start">
                     {processingBookings.has(booking.id) ? (
                       <Loader2 className="w-4 h-4 animate-spin" />
                     ) : (
