@@ -109,7 +109,7 @@ export default function Section2({ params }) {
                 </div>
                 <div className="w-[60rem] h-[20rem] xl:h-[25rem]">
                   <Image
-                    src={'/assets/sectionImages/DJI_0943.webp'}
+                    src={yacht.image}
                     alt={yacht.name || 'Yacht Image'}
                     width={500}
                     height={500}
