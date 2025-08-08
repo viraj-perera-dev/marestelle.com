@@ -1,11 +1,9 @@
 // app/[locale]/[...not-found]/page.jsx
 import { redirect } from 'next/navigation';
 
-export default function CatchAllPage({ params }) {
-  const { locale } = params;
-  
+export default function CatchAllPage() {
   // Option 1: Always redirect to home
-  redirect(`/${locale}`);
+  redirect(`/it`);
   
   // Option 2: Smart redirect based on the path
   // const path = params['not-found']?.join('/') || '';
