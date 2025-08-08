@@ -1,7 +1,7 @@
 "use client";
 
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { supabase } from "@/utils/supabaseClient";
@@ -19,26 +19,46 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
   const [visibleMarkers, setVisibleMarkers] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Use ref to track if component is mounted
+  const isMountedRef = useRef(true);
+  const sectionsRef = useRef([]);
+  const contentRef = useRef(null);
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
+  // Memoized mobile check function
+  const checkMobile = useCallback(() => {
+    if (isMountedRef.current) {
+      setIsMobile(window.innerWidth < 768);
+    }
+  }, []);
+
   // Check if mobile on mount
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
+    isMountedRef.current = true;
     checkMobile();
-    window.addEventListener("resize", checkMobile);
+    
+    const handleResize = () => checkMobile();
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+    return () => {
+      isMountedRef.current = false;
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [checkMobile]);
 
   // Fetch itinerary data
   useEffect(() => {
+    let cancelled = false;
+    
     async function fetchItinerary() {
       try {
+        if (!isMountedRef.current || cancelled) return;
+        
+        setLoading(true);
+        
         const { data, error } = await supabase
           .from("itinerary")
           .select("*")
@@ -46,37 +66,47 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
 
         if (error) throw error;
 
+        if (!isMountedRef.current || cancelled) return;
 
         const filtered = data
-        .filter(item => item[`itinerary_${itineraryId}`] === true)
-        .map(({ lat, lng, ...rest }) => ({
-          ...rest,
-          coords: { lat, lng },
-        }));
+          .filter(item => item[`itinerary_${itineraryId}`] === true)
+          .map(({ lat, lng, ...rest }) => ({
+            ...rest,
+            coords: { lat, lng },
+          }));
 
-        setItinerary(filtered);
-
+        if (isMountedRef.current && !cancelled) {
+          setItinerary(filtered);
+        }
       } catch (error) {
         console.error("Error fetching itinerary:", error);
       } finally {
-        setLoading(false);
+        if (isMountedRef.current && !cancelled) {
+          setLoading(false);
+        }
       }
     }
 
     fetchItinerary();
-  }, []);
+    
+    return () => {
+      cancelled = true;
+    };
+  }, [itineraryId]);
 
   // Handle URL hash navigation
   useEffect(() => {
-    if (!loading && itinerary.length > 0) {
+    if (!loading && itinerary.length > 0 && isMountedRef.current) {
       const hash = window.location.hash;
       if (hash.startsWith("#stop-")) {
         const index = parseInt(hash.replace("#stop-", ""), 10);
         if (index >= 0 && index < itinerary.length) {
           setTimeout(() => {
-            const element = document.getElementById(`stop-${index}`);
-            if (element) {
-              element.scrollIntoView({ behavior: "auto" });
+            if (isMountedRef.current) {
+              const element = document.getElementById(`stop-${index}`);
+              if (element) {
+                element.scrollIntoView({ behavior: "auto" });
+              }
             }
           }, 100);
         }
@@ -84,17 +114,15 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
     }
   }, [loading, itinerary]);
 
-  const sectionsRef = useRef([]);
-  const contentRef = useRef(null);
-
-  // Setup ScrollTrigger
+  // Setup ScrollTrigger with proper cleanup
   useEffect(() => {
-    if (!isLoaded || loading || itinerary.length === 0) return;
+    if (!isLoaded || loading || itinerary.length === 0 || !isMountedRef.current) return;
 
     const triggers = [];
 
-    // Small delay to ensure DOM is ready
     const timer = setTimeout(() => {
+      if (!isMountedRef.current) return;
+
       itinerary.forEach((_, i) => {
         const element = sectionsRef.current[i];
         if (!element) return;
@@ -104,11 +132,15 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
           start: "top center",
           end: "bottom center",
           onEnter: () => {
-            setActiveIndex(i);
-            setVisibleMarkers((prev) => [...new Set([...prev, i])]);
+            if (isMountedRef.current) {
+              setActiveIndex(i);
+              setVisibleMarkers((prev) => [...new Set([...prev, i])]);
+            }
           },
           onEnterBack: () => {
-            setActiveIndex(i);
+            if (isMountedRef.current) {
+              setActiveIndex(i);
+            }
           },
         });
 
@@ -124,7 +156,7 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
 
   // Animate content changes
   useEffect(() => {
-    if (contentRef.current) {
+    if (contentRef.current && isMountedRef.current) {
       gsap.fromTo(
         contentRef.current,
         { opacity: 0, y: 10 },
@@ -132,6 +164,13 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
       );
     }
   }, [activeIndex]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
 
   if (loading) {
     return (
