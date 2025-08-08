@@ -27,16 +27,6 @@ export function generateSEOMetadata({ contentMetadata }) {
         },
       ],      
     },
-    twitter: {
-      card: 'summary_large_image',
-      title: contentMetadata?.title,
-      description: contentMetadata?.description,
-      ...(contentMetadata?.twitterSite && { site: contentMetadata?.twitterSite }),
-      ...(contentMetadata?.twitterCreator && { creator: contentMetadata?.twitterCreator }),
-          images: [
-        contentMetadata?.image,
-      ],
-    },
   };
 }
 
