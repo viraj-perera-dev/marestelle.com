@@ -107,7 +107,7 @@ export async function POST(req) {
   try {
     // Send to admin
     await resend.emails.send({
-      from: "Prenotazioni Marestelle <noreply@marestelle.com>",
+      from: "Prenotazioni Marestelle <info@marestelle.com>",
       to: ["info@marestelle.com"],
       subject: `📩 Nuova prenotazione da ${name}`,
       html: adminHtml,
@@ -115,7 +115,7 @@ export async function POST(req) {
 
     // Send to client
     await resend.emails.send({
-      from: "Marestelle <noreply@marestelle.com>",
+      from: "Marestelle <info@marestelle.com>",
       to: [email],
       subject: "Abbiamo ricevuto la tua prenotazione",
       html: clientHtml,

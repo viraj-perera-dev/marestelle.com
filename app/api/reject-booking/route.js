@@ -108,7 +108,7 @@ export async function POST(req) {
     `;
 
     await resend.emails.send({
-      from: "Marestelle <noreply@marestelle.com>",
+      from: "Marestelle <info@marestelle.com>",
       to: [booking.email],
       subject: "😔 Prenotazione Non Disponibile - Alternative disponibili",
       html: clientHtml,

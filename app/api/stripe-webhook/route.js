@@ -168,7 +168,7 @@ async function sendPaymentConfirmationEmail(booking, session) {
   try {
     // Send to client
     await resend.emails.send({
-      from: 'Marestelle <noreply@marestelle.com>',
+      from: 'Marestelle <info@marestelle.com>',
       to: [booking.email],
       subject: '✅ Pagamento Confermato - Prenotazione Completata',
       html: clientHtml,
@@ -176,7 +176,7 @@ async function sendPaymentConfirmationEmail(booking, session) {
 
     // Send to admin
     await resend.emails.send({
-      from: 'Marestelle <noreply@marestelle.com>',
+      from: 'Marestelle <info@marestelle.com>',
       to: ['info@marestelle.com'],
       subject: `💰 Pagamento ricevuto da ${booking.name}`,
       html: adminHtml,
