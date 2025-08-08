@@ -4,14 +4,14 @@ import { useState } from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { getMessages } from "@/lib/getMessages";
-import { useLocale } from "next-intl";
 import { supabase } from "@/utils/supabaseClient";
 import QuantityInput from "@/components/QuantityInput";
 import { FaFilePdf } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 
-export default async function Section6({ params }) {
+
+export default function Section6({ params }) {
   const [step, setStep] = useState(1);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -29,9 +29,8 @@ export default async function Section6({ params }) {
   const [selectedDate, setSelectedDate] = useState(null);
   const [errors, setErrors] = useState({});
   const [loadingSubmit, setLoadingSubmit] = useState(false);
-  const locale = useLocale();
-  const messages = await getMessages(locale);
-  const t = (key) => messages?.BookingForm?.[key] ?? key;
+  const t = useTranslations('BookingForm');
+
 
 
   const handleChange = (e) => {
@@ -275,7 +274,6 @@ export default async function Section6({ params }) {
     return people * adultPrice + children * childPrice;
   };
 
-  if (!messages) return;
 
   return (
     <section className="bg-blue-50 py-24">
