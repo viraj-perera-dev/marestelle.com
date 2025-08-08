@@ -111,7 +111,7 @@ const adminText = htmlToText(adminHtml);
     // Send to admin
     await resend.emails.send({
       from: "Prenotazioni Marestelle <info@marestelle.com>",
-      to: ["info@marestelle.com"],
+      to: ["tremitimarestelle@gmail.com"],
       subject: `📩 Nuova prenotazione da ${name}`,
       html: adminHtml,
       text: adminText,

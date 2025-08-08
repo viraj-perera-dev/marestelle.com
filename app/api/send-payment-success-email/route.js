@@ -214,7 +214,7 @@ async function sendPaymentSuccessEmails(booking) {
     // Send to admin
     await resend.emails.send({
       from: "Marestelle <info@marestelle.com>",
-      to: ["info@marestelle.com"],
+      to: ["tremitimarestelle@gmail.com"],
       subject: `💰 Pagamento ricevuto da ${booking.name}`,
       html: adminHtml,
       text: adminText,
