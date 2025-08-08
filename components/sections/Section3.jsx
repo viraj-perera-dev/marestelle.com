@@ -138,12 +138,12 @@ export default function Section3({ params }) {
         {multipliedImages.map((url, i) => (
           <div key={`${url}-${i}`} className="shrink-0 px-2">
             <Image
-              src={url || '/assets/sectionImages/DJI_0977.webp'}
+              src={url}
               alt={`Image ${i}` || 'Image'}
               width={500}
               height={500 }
               className="rounded-xl object-cover md:h-[400px] h-[250px] w-auto pointer-events-none"
-              priority={i < 10}
+              loading="lazy"
               draggable={false}
             />
           </div>

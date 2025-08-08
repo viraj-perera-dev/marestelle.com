@@ -113,11 +113,11 @@ export default function ExperiencesSection({ params }) {
               {/* Right: Image */}
               <div className="w-full md:w-1/2 max-w-sm h-56 md:h-64 relative rounded-xl overflow-hidden shadow-md">
                 <Image
-                  priority
-                  src={item.image || '/assets/sectionImages/DJI_0977.webp'}
+                  src={item.image}
                   alt={item.title || 'Experience Image'}
                   fill
                   className="object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -114,12 +114,12 @@ export default function Section5({ params }) {
               <SwiperSlide key={idx}>
                 <div className="bg-blue-50 rounded-3xl px-6 py-10 flex flex-col items-center text-center shadow-sm h-full mx-auto max-w-md">
                   <Image
-                    priority
-                    src={item.image || '/assets/sectionImages/DJI_0977.webp'}
+                    src={item.image}
                     alt={item.name || 'Testimonial Image'}
                     width={60}
                     height={60}
                     className="rounded-full object-cover mb-4"
+                    loading="lazy"
                   />
                   <h4 className="text-lg font-semibold">{item.name}</h4>
                   <p className="text-sm text-neutral-500">{item.location}</p>

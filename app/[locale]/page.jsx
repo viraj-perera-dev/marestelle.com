@@ -59,7 +59,6 @@ export default async function Home({ params }) {
               height={1080} 
               src="/assets/sectionImages/DJI_0956.webp" 
               alt="barca"
-              priority
             />
             <h1 className="absolute top-36 md:top-auto md:bottom-20 p-5 md:left-10 text-white md:text-5xl text-4xl leading-[2.5rem] md:leading-[3.5rem] font-bold w-full max-w-xl">
               {t('title')}
