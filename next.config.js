@@ -15,7 +15,7 @@ const nextConfig = {
   },  
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
-  // generateBuildId: async () => 'build', // 🚫 Try disabling this
+  // generateBuildId: async () => 'build',
   output: 'standalone' // ✅ helps with Vercel production deployment
 };
 

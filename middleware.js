@@ -14,7 +14,9 @@ export async function middleware(req) {
     pathname.startsWith('/_next') ||
     pathname.startsWith('/favicon.ico') ||
     pathname.startsWith('/assets') ||
-    pathname.includes('.')
+    pathname.includes('.') ||
+    pathname === '/robots.txt' ||
+    pathname === '/sitemap.xml'
   ) {
     return res;
   }
@@ -23,16 +25,26 @@ export async function middleware(req) {
   const excludeFromLocale = ['/dashboard', '/login', '/payment-success'];
   const isExcluded = excludeFromLocale.some(path => pathname.startsWith(path));
 
-
-  // Redirect if no locale is present in pathname (only for non-excluded routes)
+  // Handle locale redirects only for non-excluded routes
   if (!isExcluded) {
-    const hasLocale = pathname.startsWith('/it') || pathname.startsWith('/en') || pathname.startsWith('/fr');
+    const supportedLocales = ['it', 'en', 'fr'];
+    const hasLocale = supportedLocales.some(locale => pathname.startsWith(`/${locale}`));
     
-    if (!hasLocale) {
+    // Only redirect if:
+    // 1. No locale is present
+    // 2. It's exactly the root path or doesn't start with a locale
+    // 3. Avoid redirect loops
+    if (!hasLocale && pathname === '/') {
       const locale = 'it'; // default locale
-      return NextResponse.redirect(
-        new URL(`/${locale}${pathname === '/' ? '' : pathname}`, req.url)
-      );
+      const url = new URL(`/${locale}`, req.url);
+      return NextResponse.redirect(url);
+    }
+    
+    // For other paths without locale, redirect them too
+    if (!hasLocale && pathname !== '/') {
+      const locale = 'it';
+      const url = new URL(`/${locale}${pathname}`, req.url);
+      return NextResponse.redirect(url);
     }
   }
 
@@ -41,6 +53,7 @@ export async function middleware(req) {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|assets).*)',
+    // More specific matcher to avoid catching everything
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|assets).*)',
   ],
 };
