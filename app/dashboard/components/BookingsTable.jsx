@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { supabase } from "@/utils/supabaseClient";
 import {
   CheckCircleIcon,
@@ -19,50 +19,81 @@ export default function BookingsTable() {
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
   const [processingBookings, setProcessingBookings] = useState(new Set());
-  const pageSize = 10;
   const [selectedMessage, setSelectedMessage] = useState(null);
+  const pageSize = 10;
 
-  useEffect(() => {
-    setMounted(true);
+  // Track component mount status
+  const isMountedRef = useRef(false);
+
+  // Safe state setter
+  const safeSetState = useCallback((setter) => {
+    if (isMountedRef.current) {
+      setter();
+    }
   }, []);
 
+  // Memoized fetch function with proper error handling
+  const fetchBookings = useCallback(async (pageNum) => {
+    if (!isMountedRef.current) return;
+
+    try {
+      const from = (pageNum - 1) * pageSize;
+      const to = from + pageSize - 1;
+
+      // Get total count
+      const { count } = await supabase
+        .from("bookings")
+        .select("*", { count: "exact", head: true });
+
+      if (!isMountedRef.current) return;
+
+      // Get paginated data
+      const { data, error } = await supabase
+        .from("bookings")
+        .select("*")
+        .order("confirmed", { ascending: true })
+        .order("created_at", { ascending: false })
+        .range(from, to);
+
+      if (!isMountedRef.current) return;
+
+      if (error) {
+        console.error("Error fetching bookings:", error);
+      } else {
+        safeSetState(() => {
+          setBookings(data);
+          setTotalCount(count || 0);
+        });
+      }
+    } catch (error) {
+      console.error("Error in fetchBookings:", error);
+    }
+  }, [safeSetState]);
+
+  // Mount effect
   useEffect(() => {
-    if (mounted) {
+    isMountedRef.current = true;
+    safeSetState(() => setMounted(true));
+
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, [safeSetState]);
+
+  // Effect for fetching bookings when mounted or page changes
+  useEffect(() => {
+    if (mounted && isMountedRef.current) {
       fetchBookings(page);
     }
-  }, [page, mounted]);
+  }, [page, mounted, fetchBookings]);
 
-  const fetchBookings = async (page) => {
-    const from = (page - 1) * pageSize;
-    const to = from + pageSize - 1;
+  // Safe async booking handlers
+  const handleAcceptBooking = useCallback(async (bookingId) => {
+    if (!isMountedRef.current) return;
 
-    // Get total count
-    const { count } = await supabase
-      .from("bookings")
-      .select("*", { count: "exact", head: true });
-
-    // Get paginated data
-    const { data, error } = await supabase
-      .from("bookings")
-      .select("*")
-      .order("confirmed", { ascending: true })
-      .order("created_at", { ascending: false })
-      .range(from, to);
-
-    if (error) {
-      console.error("Error fetching bookings:", error);
-    } else {
-      setBookings(data);
-      setTotalCount(count || 0);
-    }
-  };
-
-  useEffect(() => {
-    fetchBookings(page);
-  }, [page]);
-
-  const handleAcceptBooking = async (bookingId) => {
-    setProcessingBookings((prev) => new Set(prev).add(bookingId));
+    safeSetState(() => {
+      setProcessingBookings((prev) => new Set(prev).add(bookingId));
+    });
 
     try {
       const response = await fetch("/api/accept-booking", {
@@ -71,27 +102,41 @@ export default function BookingsTable() {
         body: JSON.stringify({ bookingId }),
       });
 
+      if (!isMountedRef.current) return;
+
       if (response.ok) {
         // Refresh the bookings table
         await fetchBookings(page);
-        alert("Prenotazione accettata! Email di conferma inviata.");
+        if (isMountedRef.current) {
+          alert("Prenotazione accettata! Email di conferma inviata.");
+        }
       } else {
-        alert("Errore nell'accettare la prenotazione.");
+        if (isMountedRef.current) {
+          alert("Errore nell'accettare la prenotazione.");
+        }
       }
     } catch (error) {
       console.error("Error accepting booking:", error);
-      alert("Errore nell'accettare la prenotazione.");
+      if (isMountedRef.current) {
+        alert("Errore nell'accettare la prenotazione.");
+      }
     } finally {
-      setProcessingBookings((prev) => {
-        const newSet = new Set(prev);
-        newSet.delete(bookingId);
-        return newSet;
+      safeSetState(() => {
+        setProcessingBookings((prev) => {
+          const newSet = new Set(prev);
+          newSet.delete(bookingId);
+          return newSet;
+        });
       });
     }
-  };
+  }, [fetchBookings, page, safeSetState]);
 
-  const handleRejectBooking = async (bookingId) => {
-    setProcessingBookings((prev) => new Set(prev).add(bookingId));
+  const handleRejectBooking = useCallback(async (bookingId) => {
+    if (!isMountedRef.current) return;
+
+    safeSetState(() => {
+      setProcessingBookings((prev) => new Set(prev).add(bookingId));
+    });
 
     try {
       const response = await fetch("/api/reject-booking", {
@@ -100,26 +145,36 @@ export default function BookingsTable() {
         body: JSON.stringify({ bookingId }),
       });
 
+      if (!isMountedRef.current) return;
+
       if (response.ok) {
         // Refresh the bookings table
         await fetchBookings(page);
-        alert("Prenotazione rifiutata. Email di notifica inviata.");
+        if (isMountedRef.current) {
+          alert("Prenotazione rifiutata. Email di notifica inviata.");
+        }
       } else {
-        alert("Errore nel rifiutare la prenotazione.");
+        if (isMountedRef.current) {
+          alert("Errore nel rifiutare la prenotazione.");
+        }
       }
     } catch (error) {
       console.error("Error rejecting booking:", error);
-      alert("Errore nel rifiutare la prenotazione.");
+      if (isMountedRef.current) {
+        alert("Errore nel rifiutare la prenotazione.");
+      }
     } finally {
-      setProcessingBookings((prev) => {
-        const newSet = new Set(prev);
-        newSet.delete(bookingId);
-        return newSet;
+      safeSetState(() => {
+        setProcessingBookings((prev) => {
+          const newSet = new Set(prev);
+          newSet.delete(bookingId);
+          return newSet;
+        });
       });
     }
-  };
+  }, [fetchBookings, page, safeSetState]);
 
-  const renderStatus = (status, paid) => {
+  const renderStatus = useCallback((status, paid) => {
     switch (status) {
       case 0:
         return (
@@ -144,9 +199,32 @@ export default function BookingsTable() {
       default:
         return "Unknown";
     }
-  };
+  }, []);
+
+  // Safe pagination handlers
+  const handlePrevPage = useCallback(() => {
+    safeSetState(() => {
+      setPage((prev) => Math.max(prev - 1, 1));
+    });
+  }, [safeSetState]);
+
+  const handleNextPage = useCallback(() => {
+    const totalPages = Math.ceil(totalCount / pageSize);
+    safeSetState(() => {
+      setPage((prev) => Math.min(prev + 1, totalPages));
+    });
+  }, [totalCount, safeSetState]);
 
   const totalPages = Math.ceil(totalCount / pageSize);
+
+  // Don't render until mounted
+  if (!mounted) {
+    return (
+      <div className="flex items-center justify-center min-h-64">
+        <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="overflow-x-auto">
@@ -227,7 +305,7 @@ export default function BookingsTable() {
                 {booking.message ? (
                   <div className="flex items-center gap-2">
                     <button
-                      onClick={() => setSelectedMessage(booking.message)}
+                      onClick={() => safeSetState(() => setSelectedMessage(booking.message))}
                       className="text-blue-500 hover:text-blue-700 cursor-pointer flex gap-2 items-center"
                       title="View full message"
                     >
@@ -303,7 +381,7 @@ export default function BookingsTable() {
       <div className="flex justify-between items-center mt-4 px-2">
         <button
           disabled={page === 1}
-          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+          onClick={handlePrevPage}
           className="px-4 py-2 bg-gray-100 text-sm rounded disabled:opacity-50"
         >
           ← Previous
@@ -313,7 +391,7 @@ export default function BookingsTable() {
         </span>
         <button
           disabled={page === totalPages}
-          onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+          onClick={handleNextPage}
           className="px-4 py-2 bg-gray-100 text-sm rounded disabled:opacity-50"
         >
           Next →
@@ -325,7 +403,7 @@ export default function BookingsTable() {
         <div className="fixed inset-0 z-50 glassmorphism flex items-center justify-center">
           <div className="bg-white rounded-lg shadow-lg px-6 pb-6 max-w-md w-full relative">
             <button
-              onClick={() => setSelectedMessage(null)}
+              onClick={() => safeSetState(() => setSelectedMessage(null))}
               className="absolute top-2 right-2 text-gray-500 hover:text-black"
             >
               ✕

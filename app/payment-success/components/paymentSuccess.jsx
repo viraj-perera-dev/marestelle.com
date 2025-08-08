@@ -10,17 +10,24 @@ export default function PaymentSuccessComponent() {
   const searchParams = useSearchParams();
   const bookingId = searchParams.get("booking_id");
   
-  // Use ref to track if component is mounted
-  const isMountedRef = useRef(true);
+  // Single mounted ref to track component lifecycle
+  const isMountedRef = useRef(false);
   const hasProcessedRef = useRef(false);
 
+  // Memoized safe state setter
+  const safeSetState = useCallback((setter) => {
+    if (isMountedRef.current) {
+      setter();
+    }
+  }, []);
+
   const confirmPayment = useCallback(async () => {
-    // Prevent multiple executions
-    if (hasProcessedRef.current || !bookingId) {
-      if (!bookingId) {
-        setError("No booking ID provided");
+    // Prevent multiple executions and check if component is mounted
+    if (hasProcessedRef.current || !bookingId || !isMountedRef.current) {
+      if (!bookingId && isMountedRef.current) {
+        safeSetState(() => setError("No booking ID provided"));
       }
-      setIsProcessing(false);
+      safeSetState(() => setIsProcessing(false));
       return;
     }
 
@@ -34,13 +41,15 @@ export default function PaymentSuccessComponent() {
         .update({ paid: true })
         .eq("id", bookingId);
 
-      // Check if component is still mounted before state updates
+      // Always check mount status before any state updates
       if (!isMountedRef.current) return;
 
       if (updateError) {
         console.error("❌ Failed to update booking:", updateError);
-        setError("Failed to update booking status");
-        setIsProcessing(false);
+        safeSetState(() => {
+          setError("Failed to update booking status");
+          setIsProcessing(false);
+        });
         return;
       }
 
@@ -55,7 +64,6 @@ export default function PaymentSuccessComponent() {
         body: JSON.stringify({ bookingId }),
       });
 
-      // Check if component is still mounted before state updates
       if (!isMountedRef.current) return;
 
       const data = await response.json();
@@ -64,42 +72,51 @@ export default function PaymentSuccessComponent() {
         console.log("✅ Payment success emails sent");
       } else {
         console.error("❌ Error sending payment success emails:", data.error);
-        setError("Failed to send confirmation emails");
+        safeSetState(() => setError("Failed to send confirmation emails"));
       }
     } catch (err) {
       console.error("❌ API call error:", err.message);
-      // Check if component is still mounted before state updates
-      if (!isMountedRef.current) return;
-      setError("Network error occurred");
-    } finally {
-      // Check if component is still mounted before state updates
       if (isMountedRef.current) {
-        setIsProcessing(false);
+        safeSetState(() => setError("Network error occurred"));
       }
+    } finally {
+      safeSetState(() => setIsProcessing(false));
     }
-  }, [bookingId]);
+  }, [bookingId, safeSetState]);
 
+  // Single effect to handle mounting and payment processing
   useEffect(() => {
-    // Reset mounted ref
     isMountedRef.current = true;
     
-    // Only run if we have a bookingId and haven't processed yet
+    // Only process if we have booking ID and haven't processed yet
     if (bookingId && !hasProcessedRef.current) {
-      confirmPayment();
+      // Use setTimeout to ensure this runs after the current render cycle
+      const timer = setTimeout(() => {
+        if (isMountedRef.current) {
+          confirmPayment();
+        }
+      }, 0);
+
+      return () => {
+        clearTimeout(timer);
+        isMountedRef.current = false;
+      };
+    } else if (!bookingId) {
+      // Handle no booking ID case
+      setError("No booking ID provided");
+      setIsProcessing(false);
     }
 
     // Cleanup function
     return () => {
       isMountedRef.current = false;
     };
-  }, [confirmPayment, bookingId]);
+  }, [bookingId, confirmPayment]);
 
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      isMountedRef.current = false;
-    };
-  }, []);
+  // Early return - no render if not processing and no error
+  if (!isProcessing && !error) {
+    return null;
+  }
 
   if (isProcessing) {
     return (

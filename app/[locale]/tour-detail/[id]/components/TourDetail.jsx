@@ -2,7 +2,7 @@
 
 import { getMessages } from "@/lib/getMessages";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { MdArrowBack } from "react-icons/md";
 import ContactSection from "@/components/sections/ContactSection";
 import Link from "next/link";
@@ -11,16 +11,61 @@ export default function Section2({ locale, tourId }) {
   const [messages, setMessages] = useState(null);
   const [showDetails, setShowDetails] = useState(false);
   const [showAltro, setShowAltro] = useState(false);
+  
+  // Track component mount status
+  const isMountedRef = useRef(false);
+
+  // Safe state setter
+  const safeSetState = useCallback((setter) => {
+    if (isMountedRef.current) {
+      setter();
+    }
+  }, []);
+
+  const fetchMessages = useCallback(async () => {
+    if (!isMountedRef.current) return;
+    
+    try {
+      const messages = await getMessages(locale);
+      safeSetState(() => setMessages(messages));
+    } catch (error) {
+      console.error("Error fetching messages:", error);
+    }
+  }, [locale, safeSetState]);
 
   useEffect(() => {
-    const fetchMessages = async () => {
-      const messages = await getMessages(locale);
-      setMessages(messages);
-    };
+    isMountedRef.current = true;
+    
+    // Fetch messages on mount
     fetchMessages();
-  }, [locale]);
 
-  const tSection2 = (key) => messages?.HomePage?.section2?.[key] ?? key;
+    // Cleanup
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, [fetchMessages]);
+
+  // Safe toggle functions
+  const handleToggleDetails = useCallback(() => {
+    safeSetState(() => setShowDetails(prev => !prev));
+  }, [safeSetState]);
+
+  const handleToggleAltro = useCallback(() => {
+    safeSetState(() => setShowAltro(prev => !prev));
+  }, [safeSetState]);
+
+  const tSection2 = useCallback((key) => {
+    return messages?.HomePage?.section2?.[key] ?? key;
+  }, [messages]);
+
+  // Don't render until messages are loaded
+  if (!messages) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
 
   const selectedTour = {
     id: tSection2("fleet")[Number(tourId)]?.id,
@@ -37,8 +82,6 @@ export default function Section2({ locale, tourId }) {
     incluso: tSection2("fleet")[Number(tourId)]?.incluso,
     altro: tSection2("altro")?.altro,
   };
-
-  if (!messages) return null;
 
   return (
     <>
@@ -71,7 +114,7 @@ export default function Section2({ locale, tourId }) {
                 <p>{selectedTour.details}</p>
                 <button
                   className="cursor-pointer border-neutral-500 border px-10 py-1 text-neutral-500 rounded-full flex items-center gap-2 w-fit"
-                  onClick={() => setShowDetails(false)}
+                  onClick={handleToggleDetails}
                 >
                   {tSection2("readLess")}
                 </button>
@@ -79,7 +122,7 @@ export default function Section2({ locale, tourId }) {
             ) : (
               <button
                 className="cursor-pointer border-neutral-500 border px-10 py-1 text-neutral-500 rounded-full flex items-center gap-2 w-fit"
-                onClick={() => setShowDetails(true)}
+                onClick={handleToggleDetails}
               >
                 {tSection2("readMore")}
               </button>
@@ -99,7 +142,7 @@ export default function Section2({ locale, tourId }) {
               <p className="font-bold uppercase">{tSection2("resume")}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-4">
                 <ul className="list-disc list-inside mt-2">
-                  {selectedTour.incluso.map((item, index) => (
+                  {selectedTour.incluso?.map((item, index) => (
                     <li className="flex gap-2" key={index}>
                       {item.include && <span className="w-2 h-2">✅</span>}
                       <span className="font-semibold ms-2">
@@ -109,7 +152,7 @@ export default function Section2({ locale, tourId }) {
                   ))}
                 </ul>
                 <ul className="list-disc list-inside mt-2">
-                  {selectedTour.incluso.map((item, index) => (
+                  {selectedTour.incluso?.map((item, index) => (
                     <li className="flex gap-2" key={index}>
                       {!item.include && <span className="w-2 h-2">❌</span>}
                       <span className="font-semibold ms-2">
@@ -126,7 +169,7 @@ export default function Section2({ locale, tourId }) {
                 {tSection2("necessarioLabel")}
               </p>
               <ul className="mt-2 font-semibold text-gray-700 flex gap-5">
-                {selectedTour.necessario.map((item, index) => (
+                {selectedTour.necessario?.map((item, index) => (
                   <li key={index}>🔹{item}</li>
                 ))}
               </ul>
@@ -145,7 +188,7 @@ export default function Section2({ locale, tourId }) {
               </p>
               <button
                 className="cursor-pointer border-neutral-500 border px-10 py-1 text-neutral-500 rounded-full flex items-center gap-2 w-fit mt-5"
-                onClick={() => setShowAltro(!showAltro)}
+                onClick={handleToggleAltro}
               >
                 {showAltro ? tSection2("readLess") : tSection2("readMore")}
               </button>
@@ -158,7 +201,7 @@ export default function Section2({ locale, tourId }) {
                 {tSection2("priceListLabel")}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {selectedTour.priceList.map((item, index) => (
+                {selectedTour.priceList?.map((item, index) => (
                   <div
                     key={index}
                     className="p-4 border border-gray-200 rounded-xl shadow-sm bg-white"
