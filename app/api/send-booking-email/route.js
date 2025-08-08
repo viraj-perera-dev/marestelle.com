@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { htmlToText } from 'html-to-text';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -103,6 +104,8 @@ export async function POST(req) {
 </div>
 `;
 
+const clientText = htmlToText(clientHtml);
+const adminText = htmlToText(adminHtml);
 
   try {
     // Send to admin
@@ -111,6 +114,7 @@ export async function POST(req) {
       to: ["info@marestelle.com"],
       subject: `📩 Nuova prenotazione da ${name}`,
       html: adminHtml,
+      text: adminText,
     });
 
     // Send to client
@@ -119,6 +123,7 @@ export async function POST(req) {
       to: [email],
       subject: "Abbiamo ricevuto la tua prenotazione",
       html: clientHtml,
+      text: clientText,
     });
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });

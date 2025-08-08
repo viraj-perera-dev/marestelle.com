@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { supabase } from "@/utils/supabaseClient";
+import { htmlToText } from 'html-to-text';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -107,11 +108,14 @@ export async function POST(req) {
 </div>
     `;
 
+    const clientText = htmlToText(clientHtml);
+
     await resend.emails.send({
       from: "Marestelle <info@marestelle.com>",
       to: [booking.email],
       subject: "😔 Prenotazione Non Disponibile - Alternative disponibili",
       html: clientHtml,
+      text: clientText,
     });
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });

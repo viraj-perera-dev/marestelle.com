@@ -2,6 +2,7 @@ import { headers } from 'next/headers';
 import Stripe from 'stripe';
 import { supabase } from '@/utils/supabaseClient';
 import { Resend } from 'resend';
+import { htmlToText } from 'html-to-text';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -165,6 +166,9 @@ async function sendPaymentConfirmationEmail(booking, session) {
     </div>
   `;
 
+  const clientText = htmlToText(clientHtml);
+  const adminText = htmlToText(adminHtml);
+
   try {
     // Send to client
     await resend.emails.send({
@@ -172,6 +176,7 @@ async function sendPaymentConfirmationEmail(booking, session) {
       to: [booking.email],
       subject: '✅ Pagamento Confermato - Prenotazione Completata',
       html: clientHtml,
+      text: clientText,
     });
 
     // Send to admin
@@ -180,6 +185,7 @@ async function sendPaymentConfirmationEmail(booking, session) {
       to: ['info@marestelle.com'],
       subject: `💰 Pagamento ricevuto da ${booking.name}`,
       html: adminHtml,
+      text: adminText,
     });
 
     console.log('Payment confirmation emails sent successfully');

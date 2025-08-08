@@ -1,6 +1,8 @@
 // app/api/send-payment-success-email/route.js
 import { Resend } from "resend";
 import { supabase } from "@/utils/supabaseClient";
+import { htmlToText } from 'html-to-text';
+
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -196,6 +198,9 @@ async function sendPaymentSuccessEmails(booking) {
 </div>
   `;
 
+  const clientText = htmlToText(clientHtml);
+  const adminText = htmlToText(adminHtml);
+
   try {
     // Send to client
     await resend.emails.send({
@@ -203,6 +208,7 @@ async function sendPaymentSuccessEmails(booking) {
       to: [booking.email],
       subject: "✅ Pagamento Confermato - Prenotazione Completata",
       html: clientHtml,
+      text: clientText,
     });
 
     // Send to admin
@@ -211,6 +217,7 @@ async function sendPaymentSuccessEmails(booking) {
       to: ["info@marestelle.com"],
       subject: `💰 Pagamento ricevuto da ${booking.name}`,
       html: adminHtml,
+      text: adminText,
     });
 
     console.log("✅ Payment success emails sent successfully");
