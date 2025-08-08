@@ -1,8 +1,8 @@
 import './main.css';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { Analytics } from "@vercel/analytics/next";
-import { Suspense } from 'react';
-import Loading from './loading';
+// import { Suspense } from 'react';
+// import Loading from './loading';
 
 
 export default function RootLayout({ children }) {
@@ -16,9 +16,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className="overflow-x-hidden">
         <AuthProvider>
-          <Suspense fallback={<Loading />}>
+          {/* <Suspense fallback={<Loading />}> */}
             {children}
-          </Suspense>
+          {/* </Suspense> */}
         </AuthProvider>
         <Analytics />
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
