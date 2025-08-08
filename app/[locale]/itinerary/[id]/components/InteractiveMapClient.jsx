@@ -209,8 +209,8 @@ export default function InteractiveMapClient({ locale, itineraryId }) {
             {itinerary[activeIndex]?.image && (
               <Image
                 loading="lazy"
-                src={`/assets/diario/${itinerary[activeIndex].image}`}
-                alt={itinerary[activeIndex].title}
+                src={`/assets/diario/${itinerary[activeIndex].image}` || '/assets/sectionImages/DJI_0977.webp'}
+                alt={itinerary[activeIndex].title || 'Location Image'}
                 width={500}
                 height={500}
                 className="rounded-lg object-cover h-[20rem] w-full hidden md:block"

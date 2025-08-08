@@ -44,13 +44,13 @@ export default async function ChiSiamo({ params }) {
             <p className="mb-4">{tSection('sections')[0]?.description}</p>
           </div>
           <div className="w-full h-[30rem]">
-            <Image priority src={tSection('sections')[0]?.image} alt={tSection('sections')[0]?.title} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
+            <Image priority src={tSection('sections')[0]?.image || '/assets/sectionImages/DJI_0959_hero.webp'} alt={tSection('sections')[0]?.title || 'Location Image'} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
           </div>
         </div>
 
         <div className="mt-20 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="w-full h-[30rem]">
-            <Image loading="lazy" src={tSection('sections')[1]?.image} alt={tSection('sections')[1]?.title} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
+            <Image loading="lazy" src={tSection('sections')[1]?.image || '/assets/sectionImages/DSC02686.webp'} alt={tSection('sections')[1]?.title || 'Location Image'} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
           </div>
           <div>
             <h2 className="text-3xl font-bold mb-4">{tSection('sections')[1]?.title}</h2>
@@ -64,13 +64,13 @@ export default async function ChiSiamo({ params }) {
             <p className="mb-4">{tSection('sections')[2]?.description}</p>
           </div>
           <div className="w-full h-[30rem]">
-            <Image loading="lazy" src={tSection('sections')[2]?.image} alt={tSection('sections')[2]?.title} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
+            <Image loading="lazy" src={tSection('sections')[2]?.image || '/assets/slider/image12.webp'} alt={tSection('sections')[2]?.title || 'Location Image'} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
           </div>
         </div>
 
         <div className="mt-20 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="w-full h-[30rem]">
-            <Image loading="lazy" src={tSection('sections')[3]?.image} alt={tSection('sections')[3]?.title} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
+            <Image loading="lazy" src={tSection('sections')[3]?.image || '/assets/sectionImages/DJI_0084.webp'} alt={tSection('sections')[3]?.title || 'Location Image'} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
           </div>
           <div>
             <h2 className="text-3xl font-bold mb-4">{tSection('sections')[3]?.title}</h2>
@@ -91,7 +91,7 @@ export default async function ChiSiamo({ params }) {
             <p className="mt-5">{tSection('sections')[4]?.description2}</p>
           </div>
           <div className="w-full h-[30rem]">
-            <Image loading="lazy" src={tSection('sections')[4]?.image} alt={tSection('sections')[4]?.title} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
+            <Image loading="lazy" src={tSection('sections')[4]?.image || '/assets/slider/image20.webp'} alt={tSection('sections')[4]?.title || 'Location Image'} width={500} height={500} className="rounded-xl shadow-lg w-full h-full object-cover" />
           </div>
         </div>
 

@@ -63,9 +63,9 @@ export default function ExperiencesSection({ params }) {
         </p>
 
         <div className="space-y-16">
-          {experiences.map((item) => (
+          {experiences.map((item, index) => (
             <div
-              key={item.id}
+              key={index}
               className="flex flex-col md:flex-row justify-center items-center gap-8 border-b border-neutral-200 pb-10"
             >
               {/* Left: Text Content */}
@@ -114,8 +114,8 @@ export default function ExperiencesSection({ params }) {
               <div className="w-full md:w-1/2 max-w-sm h-56 md:h-64 relative rounded-xl overflow-hidden shadow-md">
                 <Image
                   priority
-                  src={item.image}
-                  alt={item.title}
+                  src={item.image || '/assets/sectionImages/DJI_0977.webp'}
+                  alt={item.title || 'Experience Image'}
                   fill
                   className="object-cover"
                 />

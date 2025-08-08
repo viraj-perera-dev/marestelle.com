@@ -44,7 +44,7 @@ export default function Section2({ locale, tourId }) {
     <>
       <div className="flex flex-row gap-4">
         <Image
-          src={selectedTour.image}
+          src={selectedTour.image || '/assets/sectionImages/DJI_0977.webp'}
           alt="tour"
           width={1920}
           height={1080}

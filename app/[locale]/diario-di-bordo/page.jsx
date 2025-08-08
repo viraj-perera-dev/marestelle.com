@@ -48,8 +48,8 @@ export default async function DiarioDiBordoPage({ params }) {
             <div key={item.id} className="rounded-xl overflow-hidden shadow hover:shadow-lg transition bg-blue-50">
               <div className="relative h-56 md:h-[28rem]">
                 <Image
-                  src={item.image}
-                  alt={item.title}
+                  src={item.image || '/assets/sectionImages/DJI_0977.webp'}
+                  alt={item.title || 'Location Image'}
                   fill
                   className="object-cover"
                 />

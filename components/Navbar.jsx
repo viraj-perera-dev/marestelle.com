@@ -97,7 +97,7 @@ export default function Navbar({ locale }) {
           priority
           src="/assets/logo/logo_max_white.png"
           className={`md:w-46 md:h-auto w-32 h-auto object-contain`}
-          alt="cloud"
+          alt="logo"
           width={500}
           height={500}
         />

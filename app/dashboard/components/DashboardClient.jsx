@@ -50,7 +50,7 @@ export default function DashboardClient() {
                   priority
                   src="/assets/logo/logo_max_white.png"
                   className={`md:w-30 h-auto object-contain invert`}
-                  alt="cloud"
+                  alt="logo"
                   width={500}
                   height={500}
                 />

@@ -19,8 +19,8 @@ export default function DetailPageClient({ data, locale, itineraryId }) {
         {data.image && (
           <Image
             loading="lazy"
-            src={`/assets/diario/${data.image}`}
-            alt={data.title}
+            src={`/assets/diario/${data.image}` || '/assets/sectionImages/DJI_0977.webp'}
+            alt={data.title || 'Location Image'}
             width={800}
             height={400}
             className="rounded-lg mb-6 max-h-[400px] w-full object-cover"
